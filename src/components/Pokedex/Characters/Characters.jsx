@@ -1,24 +1,13 @@
-import React, {useEffect} from "react";
-import axios from "axios"
+import React from "react";
+
 
 function Characters(props){
 
-
-    const getIndividualCharacters = () => {
-       axios
-            .get({url})
-            .then(response => console.log(response.data))
-    }
-    
-    
-        getIndividualCharacters()
-    
-
-    const { name , url} = props;
+    const { name, sprites, id} = props;
     return(
         <div className="card" id={name}>
-            <h2>{name}</h2>
-            <img src='' alt={`pokemon ${name}`}/>
+            <img src={sprites.front_default} alt="avatar" />
+            <h2>{name}{id}</h2>
         </div>
     )
 };
