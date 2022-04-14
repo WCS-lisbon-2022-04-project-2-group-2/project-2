@@ -47,6 +47,11 @@
   height: 250px;
 }
 
+.cardName{
+  border-top: 1px solid black;;
+  border-bottom: 1px solid black;;
+}
+
 /* 
 .card {
   filter:drop-shadow(4px 10px 15px rgba(137, 137, 137, 0.1));

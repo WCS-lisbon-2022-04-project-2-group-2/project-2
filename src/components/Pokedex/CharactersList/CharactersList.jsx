@@ -25,14 +25,6 @@ function CharactersList(){
         })
     }
 
-    // const getIndividualInformation = () => {
-    //     for (let i = 0; i < characters.length; i++){
-    //         axios
-    //         .get(characters[i].url)
-    //         .then(response => allPokemon.push(response.data))
-    //     }
-        
-    // }
     console.log(allPokemon)
 
     const getNext = () => {
@@ -41,24 +33,6 @@ function CharactersList(){
         .then(response => setCharacters(response.data.next))
     }
 
-    //create module to fetch data from API
-    // const array = []
-    // const getCharacter = () => {
-
-    //     axios
-    //     .get('https://pokeapi.co/api/v2/pokemon/')
-    //     .then(response => (response.data.results.map(e => {
-
-    //         //for every element obtain the name
-    //         //for every name obtain the URL for all the pokemon info
-    //         axios
-    //         .get(`https://pokeapi.co/api/v2/pokemon/${e.name}`)
-    //         .then(response => array.push(response.data))
-    //          //prints the "data" from outside of the map scope
-            
-    //     })))
-    //     console.log(array)
-    // }
     useEffect(() => {
         getCharacter()
     }, [])
@@ -67,26 +41,6 @@ function CharactersList(){
         getIndividualInformation()
     },[characters])
 
-
-
-    
-    
-    // console.log(characters)
-
-    // const getInformation = (event) => {
-    //     event.preventDefault()
-    //     setIndividual(event.target.id)
-
-    //     axios
-    //     .get(`https://pokeapi.co/api/v2/pokemon-form/${individual}`)
-    //     .then(response => console.log(response.data.sprites.front_default))
-    // }
-        // characters.indexOf()
-
-        // axios
-        // .get('https://pokeapi.co/api/v2/pokemon/')
-        // .then(response => setCharacters(response.data.results))
-    
   
     
     //in the following line "characters" is a State, specifically an array
