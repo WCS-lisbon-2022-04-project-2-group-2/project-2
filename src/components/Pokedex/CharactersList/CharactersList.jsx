@@ -101,7 +101,7 @@ function CharactersList(){
                 {/* {displayCharacters} */}
                 {displayImages}
             </div>
-                <button className='btnShowList' type="button" onClick={getCharacter}>Show Characters</button>
+                <button className='btnShowList' type="button" onClick={getCharacter}>Load More</button>
         </div>
     )
 };

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Press+Start+2P&family=Roboto:wght@100;400&display=swap');
+
 .App {
   text-align: center;
 }
@@ -37,7 +39,36 @@
   }
 }
 
-
-.card{
+.card {
   border: 1px solid black;
+}
+.card img {
+  width: 250px;
+  height: 250px;
+}
+
+/* 
+.card {
+  filter:drop-shadow(4px 10px 15px rgba(137, 137, 137, 0.1));
+  border-radius: 10px;
+  background-color: white;
+  width: 100%;
+  height: 480px;
+  border: 1px solid black;
+}
+*/
+.characterList {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, 310px);
+  gap: 20px;
+  justify-content: center;
+} 
+
+button {
+  background-color: #5FA5EF;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  font-family: 'Press Start 2P';
 }
