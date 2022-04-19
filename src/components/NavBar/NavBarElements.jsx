@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../media/images/logo.svg"
 import BurgerMenu from "./BurgerMenu";
 import "./NavBarElements.css"
@@ -20,20 +20,20 @@ function NavBar(){
 		</div>
 
 		<div className="navBar-links">
-		    <NavLink to='/about' activeStyle>
-			        About</NavLink>
-		<NavLink to='/Game' activeStyle>
+		    <Link to='/about'>
+			        About</Link>
+		<Link to='/Game'>
 			Game
-		</NavLink>
-		<NavLink to='/pokedex' activeStyle>
+		</Link>
+		<Link to='/pokedex'>
 			Pokédex
-		</NavLink>
-		<NavLink to='/quiz' activeStyle>
+		</Link>
+		<Link to='/quiz'>
 			Quiz
-		</NavLink>
-		<NavLink to='/news' activeStyle>
+		</Link>
+		<Link to='/news'>
 			News
-		</NavLink>
+		</Link>
 		</div>
 
 		<div className="burger-menu" onClick={toggleBurger}>
@@ -47,24 +47,13 @@ function NavBar(){
                 @media (max-width: 767px){
                  
                     .navBar-links{
-                        display: ${burgerOpen ? 'inline' : 'none'};
-						display:grid;
-                        height: 50vh;
-                        width: 50vw;
-                        margin-top: 50px;
-                        position: absolute;
-						left: 55px;
+                        display: none;
                         
                     }
-					.navBar-links a {
-						font-size: 10px;
-						
-
-					}
+					
                 }
                 
-               
-                
+                          
             `}</style>
 
     </div>
@@ -73,3 +62,5 @@ function NavBar(){
 }
 
 export default NavBar
+
+

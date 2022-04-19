@@ -1,13 +1,26 @@
 import React from "react"
+import { Link } from "react-router-dom";
 import "./BurgerMenu.css"
 
 
 function BurgerMenu({isOpen}) {
     return(
         <>
+        <div className="burger-container">
             <div className="burger burger1"></div>
             <div className="burger burger2"></div>
             <div className="burger burger3"></div> 
+        </div>
+           
+            <ul className="burger-links">
+                <Link to='/about'>About</Link>
+		        <Link to='/Game'>Game</Link>
+		        <Link to='/pokedex'>Pokédex</Link>
+		        <Link to='/quiz'>Quiz</Link>
+		        <Link to='/news'>News
+		        </Link>
+            </ul>
+            
 
             <style jsx>{`
                
@@ -20,6 +33,10 @@ function BurgerMenu({isOpen}) {
                 }
                 .burger3{
                     transform: ${ isOpen ? 'rotate(-45deg)' : 'rotate(0)'};
+                }
+
+                .burger-links{
+                    display: ${ isOpen ? 'grid' : 'none'}
                 }
                 
             `}</style>
