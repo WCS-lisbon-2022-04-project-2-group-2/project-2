@@ -1,14 +1,14 @@
 import React from 'react';
 import { Route, Routes } from "react-router-dom";
 import './App.css'
-import CharactersList from './components/Pokedex/CharactersList/CharactersList';
+import Pokedex from './components/Characters/Pokedex/Pokedex';
 
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/characters-list" element={<CharactersList />}></Route>
+        <Route path="/pokedex" element={<Pokedex />}></Route>
       </Routes>
     </div>
   );

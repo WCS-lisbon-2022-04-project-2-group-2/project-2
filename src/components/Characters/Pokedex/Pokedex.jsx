@@ -3,7 +3,7 @@ import axios from 'axios';
 import PokemonList from '../PokemonList/PokemonList';
 import Pagination from './Pagination';
 
-function CharactersList(){
+function Pokedex(){
     const [allPokemons, setAllPokemons] = useState([])
     const [currentPageUrl, setCurrentPageUrl] = useState("https://pokeapi.co/api/v2/pokemon")
     const [nextPageUrl, setNextPageUrl] = useState()
@@ -58,4 +58,4 @@ function CharactersList(){
     );
 }
 
-export default CharactersList;
+export default Pokedex;
