@@ -1,64 +1,59 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Characters from '../Characters/Characters';
+import PokemonList from '../PokemonList/PokemonList';
+import Pagination from './Pagination';
 
 function CharactersList(){
-    //create the array
-    const [characters, setCharacters] = useState([])
-    const [allPokemon, setAllPokemon] = useState([])
-
-    //fetch the pokemon information, result will be an object containing 2 keys: name, url
-    const getCharacter = () => {
-        axios
-        .get('https://pokeapi.co/api/v2/pokemon/')
-        .then(response => setCharacters(response.data.results))
-    }
-    console.log(characters)
-
-    //fetch information for the individual character, given the url from previous fetch
-
-    const getIndividualInformation = () => {
-        characters.map(each => {
-            axios
-            .get(each.url)
-            .then(response => allPokemon.push(response.data))
-        })
-    }
-
-    console.log(allPokemon)
-
-    const getNext = () => {
-        axios
-        .get('https://pokeapi.co/api/v2/pokemon/')
-        .then(response => setCharacters(response.data.next))
-    }
-
-    useEffect(() => {
-        getCharacter()
-    }, [])
-
-    useEffect(() => {
-        getIndividualInformation()
-    },[characters])
-
+    const [allPokemons, setAllPokemons] = useState([])
+    const [currentPageUrl, setCurrentPageUrl] = useState("https://pokeapi.co/api/v2/pokemon")
+    const [nextPageUrl, setNextPageUrl] = useState()
+    // const [prevPageUrl, setPrevPageUrl] = useState()
+    const [loading, setLoading] = useState(true)
   
-    
-    //in the following line "characters" is a State, specifically an array
-    // const displayCharacters = characters.map(each => <Characters {...each} />)
-    const displayImages = allPokemon.map(each => <Characters {...each}/>)
-    return(
-        <div>
-            <div className='header'>
-                <h1>Pokemon App</h1>
-            </div>
-            <div className='characterList'>
-                {/* {displayCharacters} */}
-                {displayImages}
-            </div>
-                <button className='btnShowList' type="button" onClick={getCharacter}>Load More</button>
-        </div>
-    )
-};
-
+    const pokeInfo = async() => {
+      setLoading(true)
+      const res = await axios.get(currentPageUrl)
+          setNextPageUrl(res.data.next)
+          // setPrevPageUrl(res.data.previous)
+          getPokemon(res.data.results)
+          setLoading(false)
+    }
+  
+    const getPokemon= async(res)=>{
+      res.map(async(el) => {
+        const result = await axios.get(el.url)
+        setAllPokemons(state =>{
+          state=[...state, result.data]
+          return state;
+        })
+      })
+      
+    }
+  
+    useEffect(() => {
+      pokeInfo()
+    },[currentPageUrl])
+  
+  
+    function gotoNextPage() {
+      setCurrentPageUrl(nextPageUrl)
+    }
+  
+    // function gotoPrevPage() {
+    //   setCurrentPageUrl(prevPageUrl)
+    // }
+  
+    if (loading) return "...Loading..."
+  
+    return (
+      <>
+        <PokemonList allPokemons={allPokemons} />
+        <Pagination
+          gotoNextPage={nextPageUrl ? gotoNextPage : null}
+          // gotoPrevPage={prevPageUrl ? gotoPrevPage : null}
+        />
+      </>
+    );
+}
 
 export default CharactersList;

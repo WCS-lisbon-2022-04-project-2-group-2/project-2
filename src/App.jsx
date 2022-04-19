@@ -8,10 +8,10 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/Character" element={<CharactersList />}></Route>
+        <Route path="/characters-list" element={<CharactersList />}></Route>
       </Routes>
     </div>
   );
 }
 
-export default App;
+export default App; 
