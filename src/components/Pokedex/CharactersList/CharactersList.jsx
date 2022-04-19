@@ -13,6 +13,7 @@ function CharactersList(){
     const pokeInfo = async() => {
       setLoading(true)
       const res = await axios.get(currentPageUrl)
+        console.log(res)
           setNextPageUrl(res.data.next)
           // setPrevPageUrl(res.data.previous)
           getPokemon(res.data.results)
@@ -46,13 +47,14 @@ function CharactersList(){
     if (loading) return "...Loading..."
   
     return (
-      <>
+      <div>
+          <div className='characterList'>
         <PokemonList allPokemons={allPokemons} />
+        </div>
         <Pagination
           gotoNextPage={nextPageUrl ? gotoNextPage : null}
-          // gotoPrevPage={prevPageUrl ? gotoPrevPage : null}
         />
-      </>
+      </div>
     );
 }
 
