@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import PokedexContext from "../../../contexts/PokedexContext";
 import './PokemonList.css'
 
-export default function PokemonList({ allPokemons }) {
+export default function PokemonList() {
+  const { allPokemons } = useContext(PokedexContext);
   const myData = []
     .concat(allPokemons)
     .sort((a, b) => (a.id > b.id ? 1 : -1));
