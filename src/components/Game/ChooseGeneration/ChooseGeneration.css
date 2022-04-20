@@ -1,0 +1,13 @@
+.generation-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);    
+}
+
+.generation-container img {
+    width: 100%;
+    height: auto;
+}
+
+.generation-container p {
+    font-size: 1.5rem;
+}

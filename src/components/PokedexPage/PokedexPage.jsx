@@ -6,13 +6,13 @@ function PokedexPage() {
     return (
         <div>
             <div className="cardPokedexPage">
-                <Link to="/pokedex">
+                <Link to="/pokedex-page/pokedex">
                     <h1>Pokédex</h1>
                     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="pokedex section"/>
                 </Link>
             </div>
             <div className="cardPokedexPage">
-                <Link to="/my-pokemon">
+                <Link to="/pokedex-page/my-pokemon">
                     <h1>My Pokémon</h1>
                     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="my captured pokemon section" />
                 </Link>
