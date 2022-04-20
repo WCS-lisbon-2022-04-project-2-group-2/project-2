@@ -8,11 +8,11 @@ function beginGame () {
 
         <div>
         <img
-          className="region-img"
+          className="homePage-img"
           src={
             "https://cdn.discordapp.com/attachments/961547095179948085/966335426254221332/DVMT-6OXcAE2rZY.jpg"
           }
-          alt="pokemon region"
+          alt="Background img"
         />
             <div>
                 <button className="buttonStart">
