@@ -1,0 +1,55 @@
+.pokemon-card{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border: 1px solid #000000;
+}
+
+.pokemon-img{
+    align-self: center;
+    width: 400px;
+    height: 400px;
+   
+}
+
+.card-list{
+    width: 600px;
+    height: 500px;
+    list-style-type: none; 
+    background-color: #5FA5E5; 
+    border: 1px solid #000000;
+}
+
+.pokemon-info {
+    font-family: 'Press Start 2P';
+    color: #ffffff;
+    font-size: 1.5rem;
+   
+    
+}
+
+li{
+    list-style-type: none;
+    margin-bottom: 2rem;
+    grid-template-columns: 1fr 1fr;
+    
+   
+}
+
+li p {
+    color: #000000;
+   line-height: 2rem;
+    font-family: 'Press Start 2P';
+    font-size: 1rem;
+}
+
+li span{
+    color: #000000;
+    line-height: 2rem;
+   
+    font-family: 'Press Start 2P';
+    font-size: 1rem;
+}

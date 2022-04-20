@@ -24,11 +24,9 @@
     }
 
     .burger-links{
-        font-family: 'Press Start 2P';
         position: absolute;
         right: 0;
         width: 100%;
-      
         padding-top: 50px;
         
     }
