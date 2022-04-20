@@ -14,7 +14,7 @@ function BurgerMenu({isOpen}) {
            
             <ul className="burger-links">
                 <Link to='/about'>About</Link>
-		        <Link to='/Game'>Game</Link>
+		        <Link to='/game'>Game</Link>
 		        <Link to='/pokedex'>Pokédex</Link>
 		        <Link to='/quiz'>Quiz</Link>
 		        <Link to='/news'>News

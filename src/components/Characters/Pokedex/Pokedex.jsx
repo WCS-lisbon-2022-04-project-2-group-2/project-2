@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import axios from 'axios';
 import PokemonList from '../PokemonList/PokemonList';
 import Pagination from './Pagination';
+import PokedexContext from '../../../contexts/PokedexContext';
 
 function Pokedex(){
-    const [allPokemons, setAllPokemons] = useState([])
-    const [currentPageUrl, setCurrentPageUrl] = useState("https://pokeapi.co/api/v2/pokemon")
-    const [nextPageUrl, setNextPageUrl] = useState()
-    // const [prevPageUrl, setPrevPageUrl] = useState()
-    const [loading, setLoading] = useState(true)
+  const 
+      {
+        allPokemons, setAllPokemons,
+        currentPageUrl, setCurrentPageUrl,
+        nextPageUrl, setNextPageUrl,
+        loading, setLoading
+      } = useContext(PokedexContext);
   
     const pokeInfo = async() => {
       setLoading(true)
@@ -49,11 +52,11 @@ function Pokedex(){
     return (
       <div>
           <div className='characterList'>
-        <PokemonList allPokemons={allPokemons} />
-        </div>
-        <Pagination
-          gotoNextPage={nextPageUrl ? gotoNextPage : null}
-        />
+            <PokemonList />
+          </div>
+          <Pagination
+            gotoNextPage={nextPageUrl ? gotoNextPage : null}
+          />
       </div>
     );
 }
