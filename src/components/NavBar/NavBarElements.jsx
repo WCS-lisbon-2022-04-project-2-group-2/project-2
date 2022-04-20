@@ -22,10 +22,10 @@ function NavBar(){
 		<div className="navBar-links">
 		    <Link to='/about'>
 			        About</Link>
-		<Link to='/Game'>
+		<Link to='/game'>
 			Game
 		</Link>
-		<Link to='/pokedex'>
+		<Link to='/pokedex-page'>
 			Pokédex
 		</Link>
 		<Link to='/quiz'>
