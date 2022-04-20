@@ -9,7 +9,6 @@ import { PokedexContextProvider } from './contexts/PokedexContext';
 import MyPokemon from './components/PokedexPage/Pokedex/MyPokemon/MyPokemon';
 import ChooseStarter from'./components/Game/ChooseStarter/ChooseStarter';
 import ChooseGeneration from './components/Game/ChooseGeneration/ChooseGeneration';
-
 import { GameContextProvider } from './contexts/GameContext';
 
 

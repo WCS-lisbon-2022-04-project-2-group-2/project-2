@@ -21,19 +21,20 @@ function NavBar(){
 
 		<div className="navBar-links">
 		    <Link to='/about'>
-			        About</Link>
-		<Link to='/game'>
-			Game
-		</Link>
-		<Link to='/pokedex-page'>
-			Pokédex
-		</Link>
-		<Link to='/quiz'>
-			Quiz
-		</Link>
-		<Link to='/news'>
-			News
-		</Link>
+			    About
+			</Link>
+			<Link to='/game'>
+				Game
+			</Link>
+			<Link to='/pokedex-page'>
+				Pokédex
+			</Link>
+			<Link to='/quiz'>
+				Quiz
+			</Link>
+			<Link to='/news'>
+				News
+			</Link>
 		</div>
 
 		<div className="burger-menu" onClick={toggleBurger}>
