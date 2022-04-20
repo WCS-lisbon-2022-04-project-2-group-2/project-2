@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import PokedexContext from "../../../../../contexts/PokedexContext";
+import PokedexContext from "../../../../contexts/PokedexContext";
 import './PokemonList.css'
 
 export default function PokemonList() {

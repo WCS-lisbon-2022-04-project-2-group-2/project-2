@@ -1,8 +1,8 @@
 import React, { useEffect, useContext } from 'react';
 import axios from 'axios';
-import PokemonList from '../Pokedex/PokemonList/PokemonList';
+import PokemonList from './PokemonList/PokemonList';
 import Pagination from './Pagination/Pagination';
-import PokedexContext from '../../../../contexts/PokedexContext';
+import PokedexContext from '../../../contexts/PokedexContext';
 
 function Pokedex(){
   const 
