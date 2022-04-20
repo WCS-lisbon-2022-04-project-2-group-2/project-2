@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, Routes } from "react-router-dom";
 import './App.css'
 import Pokedex from './components/Characters/Pokedex/Pokedex';
-// import NavBarElements from './components/NavBar/NavBarElements'
-import NavBar from './components/NavBar/NavBar';
+import NavBarElements from './components/NavBar/NavBarElements'
+// import NavBar from './components/NavBar/NavBar';
 
 
 
