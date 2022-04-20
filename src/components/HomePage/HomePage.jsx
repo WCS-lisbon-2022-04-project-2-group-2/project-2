@@ -4,15 +4,25 @@ import "./HomePage.css"
 
 function beginGame () {
 
-    return(
+    return (
+
         <div>
-            <button className="buttonStart">
-                <Link to= "/generation">Fight!</Link> 
-                
-            </button>
-            
+        <img
+          className="region-img"
+          src={
+            "https://cdn.discordapp.com/attachments/961547095179948085/966335426254221332/DVMT-6OXcAE2rZY.jpg"
+          }
+          alt="pokemon region"
+        />
+            <div>
+                <button className="buttonStart">
+                    <Link to= "/generation">Fight!</Link> 
+
+                </button>
+            </div>
         </div>
-    )   
+
+)   
 
 }
 export default beginGame
