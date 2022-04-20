@@ -3,14 +3,6 @@ import { Link } from 'react-router-dom';
 import './PokedexPage.css'
 
 function PokedexPage() {
-
-    function goToPokedex(){
-
-    }
-
-    function goToMyPokemon(){
-
-    }
     return (
         <div>
             <div className="cardPokedexPage">
