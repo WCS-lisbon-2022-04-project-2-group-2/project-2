@@ -1,8 +1,10 @@
 import React from 'react';
 import { Route, Routes } from "react-router-dom";
-import CharactersList from './components/Pokedex/CharactersList/CharactersList';
-import NavBarElements from './components/NavBar/NavBarElements'
-import NavBar from './components/NavBar/NavBar'
+import './App.css'
+import Pokedex from './components/Characters/Pokedex/Pokedex';
+// import NavBarElements from './components/NavBar/NavBarElements'
+import NavBar from './components/NavBar/NavBar';
+
 
 
 function App() {
@@ -11,10 +13,10 @@ function App() {
       {/* <NavBar /> */}
       <NavBarElements />
       <Routes>
-        <Route path="/Character" element={<CharactersList />}></Route>
+        <Route path="/pokedex" element={<Pokedex />}></Route>
       </Routes>
     </div>
   );
 }
 
-export default App;
+export default App; 

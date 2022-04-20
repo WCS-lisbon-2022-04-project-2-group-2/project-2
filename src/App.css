@@ -1,12 +1,14 @@
-
-
-
-
-
-
-@media (prefers-reduced-motion: no-preference) {
- 
+*{
+  margin: 0;
+  padding: 0;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Press+Start+2P&family=Roboto:wght@100;400&display=swap');
+
+.App {
+  text-align: center;
+}
+
 
 .App-header {
   background-color: #282c34;
@@ -28,4 +30,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+button {
+  background-color: #5FA5EF;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  font-family: 'Press Start 2P';
 }
