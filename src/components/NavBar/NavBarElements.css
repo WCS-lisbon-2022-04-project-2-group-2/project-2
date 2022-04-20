@@ -4,13 +4,13 @@
   height: 80px;
   display:flex;
   justify-content: space-between;
-  background: linear-gradient(45deg, rgb(156, 14, 14), rgb(238, 238, 244));
+  background: linear-gradient(45deg, #9c0e0e, rgb(238, 238, 244));
 }
 
 .navBar-links{
   display:flex;
   position: relative;
-    left: 300px;
+  left: 300px;
   
 }
 

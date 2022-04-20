@@ -20,6 +20,8 @@ function NavBar(){
 		</div>
 
 		<div className="navBar-links">
+		<Link to='/home'>
+			        Home</Link>
 		    <Link to='/about'>
 			        About</Link>
 		<Link to='/Game'>
@@ -30,9 +32,6 @@ function NavBar(){
 		</Link>
 		<Link to='/quiz'>
 			Quiz
-		</Link>
-		<Link to='/news'>
-			News
 		</Link>
 		</div>
 

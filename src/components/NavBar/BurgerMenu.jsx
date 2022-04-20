@@ -4,6 +4,8 @@ import "./BurgerMenu.css"
 
 
 function BurgerMenu({isOpen}) {
+
+   
     return(
         <>
         <div className="burger-container">
@@ -13,12 +15,12 @@ function BurgerMenu({isOpen}) {
         </div>
            
             <ul className="burger-links">
+                <Link to='/home'>Home</Link>
                 <Link to='/about'>About</Link>
 		        <Link to='/Game'>Game</Link>
 		        <Link to='/pokedex'>Pokédex</Link>
 		        <Link to='/quiz'>Quiz</Link>
-		        <Link to='/news'>News
-		        </Link>
+		       
             </ul>
             
 
