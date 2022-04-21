@@ -10,6 +10,7 @@ import MyPokemon from './components/PokedexPage/Pokedex/MyPokemon/MyPokemon';
 import ChooseStarter from'./components/Game/ChooseStarter/ChooseStarter';
 import ChooseGeneration from './components/Game/ChooseGeneration/ChooseGeneration';
 import { GameContextProvider } from './contexts/GameContext';
+import HomePage from './components/HomePage/HomePage';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       </PokedexContextProvider>
       <GameContextProvider>
         <Routes>
+          <Route path="/" element={<HomePage />}></Route>
           <Route path="/game/choose-generation" element={<ChooseGeneration />}></Route>
           <Route path="/game/choose-starter" element={<ChooseStarter />}></Route>
         </Routes>
