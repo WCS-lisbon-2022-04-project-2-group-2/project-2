@@ -46,7 +46,7 @@ function ChooseGeneration(){
                         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="pokedex section"/>
                     </div>
                 </Link>
-                {/* <Link to="/game/choose-starter" onClick={() => selectGen("4")}>
+                <Link to="/game/choose-starter" onClick={() => selectGen("4")}>
                     <div>
                         <p>Generation 4</p>
                         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="pokedex section"/>
@@ -63,8 +63,7 @@ function ChooseGeneration(){
                         <p>Generation 6</p>
                         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="pokedex section"/>
                     </div>
-                </Link> */}
-                
+                </Link>                
             </div>
         </div>
     );

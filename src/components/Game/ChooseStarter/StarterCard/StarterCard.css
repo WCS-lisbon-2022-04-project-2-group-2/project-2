@@ -1,0 +1,10 @@
+
+.starter-card-container{
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);    
+}
+
+.starter-card-container img {
+    width: 100%;
+    height: auto;
+}
