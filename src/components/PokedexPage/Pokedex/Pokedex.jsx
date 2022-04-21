@@ -9,6 +9,7 @@ function Pokedex(){
       {
         allPokemons, setAllPokemons,
         currentPageUrl, setCurrentPageUrl,
+        prevPageUrl, setPrevPageUrl,
         nextPageUrl, setNextPageUrl,
         loading, setLoading
       } = useContext(PokedexContext);
@@ -17,9 +18,10 @@ function Pokedex(){
       setLoading(true)
       const res = await axios.get(currentPageUrl)
           setNextPageUrl(res.data.next)
-          // setPrevPageUrl(res.data.previous)
+          setPrevPageUrl(res.data.previous)
           getPokemon(res.data.results)
           setLoading(false)
+          setAllPokemons([])
     }
   
     const getPokemon= async(res)=>{
@@ -41,9 +43,9 @@ function Pokedex(){
       setCurrentPageUrl(nextPageUrl)
     }
   
-    // function gotoPrevPage() {
-    //   setCurrentPageUrl(prevPageUrl)
-    // }
+    function gotoPrevPage() {
+      setCurrentPageUrl(prevPageUrl)
+    }
   
     if (loading) return "...Loading..."
   
@@ -53,6 +55,7 @@ function Pokedex(){
             <PokemonList />
           </div>
           <Pagination
+            gotoPrevPage={prevPageUrl ? gotoPrevPage : null}
             gotoNextPage={nextPageUrl ? gotoNextPage : null}
           />
       </div>

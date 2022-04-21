@@ -5,6 +5,7 @@ const PokedexContext = createContext();
 export const PokedexContextProvider = ({ children }) => {
     const [allPokemons, setAllPokemons] = useState([])
     const [currentPageUrl, setCurrentPageUrl] = useState("https://pokeapi.co/api/v2/pokemon")
+    const [prevPageUrl, setPrevPageUrl] = useState()
     const [nextPageUrl, setNextPageUrl] = useState()
     const [loading, setLoading] = useState(true)
 
@@ -15,6 +16,7 @@ export const PokedexContextProvider = ({ children }) => {
                 {{
                     allPokemons, setAllPokemons,
                     currentPageUrl, setCurrentPageUrl,
+                    prevPageUrl, setPrevPageUrl,
                     nextPageUrl, setNextPageUrl,
                     loading, setLoading
                 }}
