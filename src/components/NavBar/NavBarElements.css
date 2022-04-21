@@ -25,9 +25,17 @@
     text-decoration: none;
     align-self: center;
     margin-left: 2.5rem;
-    
     font-weight: 600;
     font-size: 1.2rem;
     color: #000;
+}
+
+@media (max-width: 767px){
+                 
+  .navBar-links{
+      display: none;
+      
+  }
+
 }
 

@@ -1,27 +1,12 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import { useParams } from "react-router-dom";
+import useFetch from "../../../hooks/useFetch";
 import "./PokemonCard.css";
 
 function PokemonCard() {
-  const [pokemon, setPokemon] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState("");
   const params = useParams();
-
-  useEffect(() => {
-    setIsLoading(true);
-    axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${params.id}/`)
-      .then((response) => {
-        setPokemon(response.data);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        setError(err);
-        console.error(err);
-      });
-  }, [params.id]);
+  const url = `https://pokeapi.co/api/v2/pokemon/${params.id}/`;
+  const { isLoading, error, response } = useFetch(url);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -31,42 +16,46 @@ function PokemonCard() {
     return <div>Oops...something went wrong...</div>;
   }
 
-  console.log("pokemon", pokemon);
+  console.log("response", response);
 
-  const types = pokemon.types.map((typeEl) => (
+  const types = response.types.map((typeEl) => (
     <p key={typeEl.type.name}>{typeEl.type.name}</p>
   ));
-  const abilities = pokemon.abilities.map((abilityEl) => (
-    <p>{abilityEl.ability.name}</p>
+  const abilities = response.abilities.map((abilityEl) => (
+    <p key={abilityEl.ability.name}>{abilityEl.ability.name}</p>
   ));
 
   return (
     <div className="pokemon-card">
       <img
         className="pokemon-img"
-        src={pokemon.sprites.other["official-artwork"].front_default}
+        src={response.sprites.other["official-artwork"].front_default}
         alt="pokemon"
       />
 
       <div className="card-list">
-        <ul className="Info-list">
-          <li>
-            <p className="pokemon-info">Height</p>
-            <span>{pokemon.height} ft</span>
-          </li>
-          <li>
-            <p className="pokemon-info">Type</p>
-            {types}
-          </li>
-          <li>
-            <p className="pokemon-info">Weight</p>
-            <span>{pokemon.weight} pds</span>
-          </li>
+        <ul className="info-list">
+          <div className="info-list1">
+            <li className="pokemon-info">
+              <p className="pokemon-title">Height</p>
+              <span className="pokemon-description">{response.height} ft</span>
+            </li>
+            <li className="pokemon-info">
+              <p className="pokemon-title">Type</p>
+              {types}
+            </li>
+          </div>
+          <div className="info-list2">
+            <li className="pokemon-info">
+              <p className="pokemon-title">Weight</p>
+              <span className="pokemon-description">{response.weight} lbs</span>
+            </li>
 
-          <li>
-            <p className="pokemon-info">Abilities</p>
-            {abilities}
-          </li>
+            <li className="pokemon-info">
+              <p className="pokemon-title">Abilities</p>
+              {abilities}
+            </li>
+          </div>
         </ul>
       </div>
     </div>

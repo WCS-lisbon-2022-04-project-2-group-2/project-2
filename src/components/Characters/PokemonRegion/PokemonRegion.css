@@ -1,11 +1,32 @@
-
-.region-img{
-    padding: ;
-    border: 1px solid black;
-  
+.regions-card {
+  margin-top: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
+.region-name {
+  padding-bottom: 2rem;
+}
 
+.region-img {
+  border: 1px solid black;
+  height: 250px;
+  width: 250px;
+}
 
+@media (max-width: 767px) {
+  .regions-card {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
 
-
+  .region-img {
+    height: 100px;
+    width: 100px;
+  }
+}

@@ -3,16 +3,17 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-60%, -50%);
     padding: 10px;
-    border: 1px solid #000000;
+    
 }
 
 .pokemon-img{
     align-self: center;
-    width: 400px;
-    height: 400px;
-   
+    width: 450px;
+    height: 450px;
+    margin-right: 5rem;
+    border: 1px solid #5FA5E5;
 }
 
 .card-list{
@@ -23,33 +24,85 @@
     border: 1px solid #000000;
 }
 
-.pokemon-info {
-    font-family: 'Press Start 2P';
-    color: #ffffff;
-    font-size: 1.5rem;
-   
-    
+.info-list {
+display: flex;
+justify-content: space-between;
+width: 50%;
+position: absolute;
+top: 50%;
+transform: translate(4%, -50%);
 }
 
-li{
+.pokemon-info{
     list-style-type: none;
     margin-bottom: 2rem;
-    grid-template-columns: 1fr 1fr;
-    
-   
+    list-style-type: none; 
 }
 
-li p {
+.info-list1{
+    width:50%
+}
+
+.info-list2{
+    width:50%
+}
+
+.pokemon-title {
+    font-size: 1.5rem;
+    color: #ffffff;
+    line-height: 2;
+}
+
+
+.pokemon-description {
     color: #000000;
    line-height: 2rem;
     font-family: 'Press Start 2P';
     font-size: 1rem;
 }
 
-li span{
-    color: #000000;
-    line-height: 2rem;
-   
-    font-family: 'Press Start 2P';
-    font-size: 1rem;
+
+
+@media (max-width: 767px){
+    .pokemon-card{
+        display: flex;
+       flex-direction: column;
+       justify-content: center;
+       position: absolute;
+       top: 55%;
+       left: 60%;
+       transform: translate(-60%, -50%);
+       padding: 10px;
+       
+    }
+    
+    .pokemon-img{
+        width: 200px;
+        height: 200px;
+        margin-bottom: 2rem;
+        padding: 0;
+        margin-left: auto;
+    }
+
+    .info-list {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        position: absolute;
+        top: 70%;
+        transform: translate(-5%, -50%);
+        font-size: 1rem;
+        }
+    
+    .card-list{
+        width: 350px;
+        height: 300px;
+    }
+
+    .pokemon-title{
+        font-size: 1.1rem;
+    }
+    .pokemon-description {
+        /* font-size: 0.8rem; */
+    }
 }
