@@ -2,16 +2,13 @@ import React, {useContext}  from 'react';
 import './ChooseStarter.css'
 import GameContext from '../../../contexts/GameContext';
 import { Link } from 'react-router-dom';
+import StarterCard from './StarterCard/StarterCard';
 
 function ChooseStarter(){
-    const { generation } = useContext(GameContext);
-
-
-    console.log(generation)
-
+    
     return(
         <div>
-            <h1>Here we'll choose the starter pokemon</h1>
+            <StarterCard />
         </div>
     );
 }

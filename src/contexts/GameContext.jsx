@@ -4,14 +4,14 @@ const GameContext = createContext();
 
 export const GameContextProvider = ({ children }) => {
     const [generation, setGeneration] = useState([]);
-
+    const [chosenStarter, setChosenStarter] = useState([]);
 
     return (
         <GameContext.Provider
             value= 
                 {{
-                    generation, setGeneration
-
+                    generation, setGeneration,
+                    chosenStarter, setChosenStarter
                 }}
         >
             {children}

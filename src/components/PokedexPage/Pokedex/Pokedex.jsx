@@ -16,7 +16,6 @@ function Pokedex(){
     const pokeInfo = async() => {
       setLoading(true)
       const res = await axios.get(currentPageUrl)
-        console.log(res)
           setNextPageUrl(res.data.next)
           // setPrevPageUrl(res.data.previous)
           getPokemon(res.data.results)
@@ -31,7 +30,6 @@ function Pokedex(){
           return state;
         })
       })
-      
     }
   
     useEffect(() => {
