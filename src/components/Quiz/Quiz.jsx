@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import './About.css'
+import './Quiz.css'
 
-function About() {
+function Quiz() {
     return (
         <div>
-            <h1>Here we'll see the About page</h1>
+            <h1>Here we'll see the Quiz game page</h1>
         </div>
       );
     
 }
 
-export default About;
+export default Quiz;

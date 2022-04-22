@@ -21,7 +21,7 @@ function WildPokemon() {
   return (
     <div className="wild-pokemon_card">
       <h1 className="enemy-name">
-        YOU ARE GOING TO FIGHT WITH {name} FROM {params.region}
+        YOU ARE GOING TO FIGHT WITH {name}
       </h1>
       <img
         className="enemy-img"

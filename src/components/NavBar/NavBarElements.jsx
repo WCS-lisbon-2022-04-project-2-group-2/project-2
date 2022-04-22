@@ -14,13 +14,15 @@ function NavBar() {
   return (
     <div className="navBar-container">
       <div>
-        <img className="logo-img" src={logo} alt="Logo" />
+        <Link to="/">
+          <img className="logo-img" src={logo} alt="Logo" />
+        </Link>
       </div>
 
       <div className="navBar-links">
-        <Link to="/home">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/game">Game</Link>
+        <Link to="/">Game</Link>
         <Link to="/pokedex-page">Pokédex</Link>
         <Link to="/quiz">Quiz</Link>
       </div>

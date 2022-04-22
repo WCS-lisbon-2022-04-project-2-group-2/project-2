@@ -14,19 +14,34 @@ import HomePage from './components/HomePage/HomePage';
 import PokemonCard from "./components/PokedexPage/Pokedex/PokemonCard/PokemonCard";
 import PokemonRegion from "./components/Game/PokemonRegion/PokemonRegion";
 import WildPokemon from "./components/Game/WildPokemon/WildPokemon"
+import About from './components/About/About';
+import Quiz from './components/Quiz/Quiz';
 
 import "./App.css";
 
 function App() {
   const location = useLocation();
-  const isHomeLocation = location.pathname === "/";
-  console.log("isHomeLocation", isHomeLocation);
+  // const isHomeLocation = location.pathname === "/game";
+  // console.log("isHomeLocation", isHomeLocation);
+
+  // const displayNavBar = () => {
+  //   if(location.pathname === "/" || 
+  //     location.pathname === "/pokedex-page" || 
+  //     location.pathname === "/pokedex-page/pokedex" ||
+  //     location.pathname === "/pokedex-page/pokedex/:id"){
+  //       return <NavBarElements />
+  //   }else{
+  //     return <NavBar />
+  //   }
+  // }
 
   return (
     <div className="App">
-      {isHomeLocation ? <NavBarElements /> : <NavBar />}
+      <NavBarElements />
       <PokedexContextProvider>
         <Routes>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/quiz" element={<Quiz />}></Route>
           <Route path="/pokedex-page" element={<PokedexPage />}></Route>
           <Route path="/pokedex-page/pokedex" element={<Pokedex />}></Route>
           <Route path="/pokedex-page/pokedex/:id" element={<PokemonCard />} />

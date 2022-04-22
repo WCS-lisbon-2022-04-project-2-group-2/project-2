@@ -1,11 +1,16 @@
 .buttonStart{
     background-color: rgb(156, 14, 14);
     display: flex;
-    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -20%);
     
 }
 
 .buttonStart a{
     color: black;
     text-decoration: none;
+   
+
 }
