@@ -6,3 +6,11 @@
     height: 130px;
     width: 130px;
 }
+
+.pokedex-page-main-container{
+    display: flex;
+    position: absolute; 
+    top: 30%; 
+    left: 50%; 
+    transform: translate(-50%, -20%);
+}

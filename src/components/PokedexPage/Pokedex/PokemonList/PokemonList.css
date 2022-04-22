@@ -1,7 +1,7 @@
 .mainCardContainer{
     display: flex;
     flex-wrap: wrap;
-    border: 2px solid red;
+
     justify-content: center;
     align-items: center;
     

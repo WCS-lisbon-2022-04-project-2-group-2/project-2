@@ -16,6 +16,8 @@ function StarterCard() {
     
    
     return (
+        <>
+        <h1>Choose a Starter Pokémon</h1>
         <div className="starter-card-container">
            { generation.map(number => {
                return (
@@ -27,6 +29,7 @@ function StarterCard() {
                ) 
            })}
         </div>
+        </>
     );
 }
 

@@ -11,6 +11,13 @@
 .buttonStart a{
     color: black;
     text-decoration: none;
-   
 
+}
+
+.homepage-main-container, video{
+    height: 100vh;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    width: 100vw;
+    background-position: 50%;
 }

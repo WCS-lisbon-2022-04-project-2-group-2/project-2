@@ -51,6 +51,7 @@ function ChooseGeneration(){
         }
     return(
         <div>
+            <h1>Choose a Generation of Pokémon</h1>
             <div className="generation-container">
                 <Link to="/game/choose-starter" onClick={() => selectGen("1")}>
                     <div>

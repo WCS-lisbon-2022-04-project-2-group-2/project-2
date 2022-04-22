@@ -1,5 +1,5 @@
 .regions-card {
-  margin-top: 8rem;
+  margin-top: 3rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -12,8 +12,8 @@
 
 .region-img {
   border: 1px solid black;
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
 }
 
 @media (max-width: 767px) {

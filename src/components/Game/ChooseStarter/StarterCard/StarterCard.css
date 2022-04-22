@@ -1,10 +1,11 @@
 
 .starter-card-container{
+    margin-top: 3rem;
     display: grid;
     grid-template-columns: repeat(3, 3fr);    
 }
 
 .starter-card-container img {
-    width: 100%;
+    width: 170px;
     height: auto;
 }
