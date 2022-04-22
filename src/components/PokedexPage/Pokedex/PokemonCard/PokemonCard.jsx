@@ -38,7 +38,7 @@ function PokemonCard() {
           <div className="info-list1">
             <li className="pokemon-info">
               <p className="pokemon-title">Height</p>
-              <span className="pokemon-description">{response.height} ft</span>
+              <span className="pokemon-description">{(Math.round(parseInt(response.height)))/10} m</span>
             </li>
             <li className="pokemon-info">
               <p className="pokemon-title">Type</p>
@@ -48,7 +48,7 @@ function PokemonCard() {
           <div className="info-list2">
             <li className="pokemon-info">
               <p className="pokemon-title">Weight</p>
-              <span className="pokemon-description">{response.weight} lbs</span>
+              <span className="pokemon-description">{(Math.round(parseInt(response.weight)*0.453592*100))/100} Kg</span>
             </li>
 
             <li className="pokemon-info">
