@@ -42,7 +42,7 @@ function PokemonCard() {
             </li>
             <li className="pokemon-info">
               <p className="pokemon-title">Type</p>
-              {types}
+              <span className="pokemon-description">{types}</span>
             </li>
           </div>
           <div className="info-list2">
@@ -53,7 +53,7 @@ function PokemonCard() {
 
             <li className="pokemon-info">
               <p className="pokemon-title">Abilities</p>
-              {abilities}
+              <span className="pokemon-description">{abilities} </span>
             </li>
           </div>
         </ul>

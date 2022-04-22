@@ -14,7 +14,6 @@ function ChooseGeneration(){
     const gen6 = [650,651,652,653,654,655,656,657,658]
     const gen7 = [722,723,724,725,726,727,728,729,730]
     const gen8 = [810,811,812,813,814,815,816,817,818]
-    const gen9 = [905,906,907,908,909,910,911,912,913]
 
     function selectGen(element) {
         switch (element) {
@@ -42,9 +41,6 @@ function ChooseGeneration(){
             case "8":
                 setGeneration(gen8);
                 break;
-            case "9":
-                setGeneration(gen9);
-                break; 
             default:
                 break;
         }
@@ -156,6 +152,42 @@ function ChooseGeneration(){
                                 </div>
                                 <div className="bottom-right">
                                 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/656.png" alt="pokedex section"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Link>
+                <Link to="/game/choose-starter" onClick={() => selectGen("7")}>
+                    <div>
+                        <p>Generation 7</p>
+                        <div className="starter-triangle-container">
+                            <div className="top-triangle">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/722.png" alt="pokedex section"/>
+                            </div>
+                            <div className="bottom-triangle">
+                                <div className="bottom-left">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/725.png" alt="pokedex section"/>
+                                </div>
+                                <div className="bottom-right">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/728.png" alt="pokedex section"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Link>
+                <Link to="/game/choose-starter" onClick={() => selectGen("8")}>
+                    <div>
+                        <p>Generation 8</p>
+                        <div className="starter-triangle-container">
+                            <div className="top-triangle">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/810.png" alt="pokedex section"/>
+                            </div>
+                            <div className="bottom-triangle">
+                                <div className="bottom-left">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/813.png" alt="pokedex section"/>
+                                </div>
+                                <div className="bottom-right">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/816.png" alt="pokedex section"/>
                                 </div>
                             </div>
                         </div>

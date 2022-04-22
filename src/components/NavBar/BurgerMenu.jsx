@@ -12,7 +12,7 @@ function BurgerMenu({ isOpen }) {
       </div>
 
       <ul className="burger-links">
-        <Link to="/">Home</Link>
+
         <Link to="/about">About</Link>
         <Link to="/">Game</Link>
         <Link to="/pokedex-page">Pokédex</Link>

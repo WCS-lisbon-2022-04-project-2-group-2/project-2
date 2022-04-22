@@ -20,7 +20,7 @@ function NavBar() {
       </div>
 
       <div className="navBar-links">
-        <Link to="/">Home</Link>
+
         <Link to="/about">About</Link>
         <Link to="/">Game</Link>
         <Link to="/pokedex-page">Pokédex</Link>

@@ -21,42 +21,42 @@ function PokemonRegion() {
     {
       name: "KANTO",
       src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-      onClick: () => handleClick(1, 150, "KANTO"),
+      onClick: () => handleClick(1, 151, "KANTO"),
     },
     {
       name: "JOHTO",
-      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png",
-      onClick: () => handleClick(151, 300, "JOHTO"),
+      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/152.png",
+      onClick: () => handleClick(152, 251, "JOHTO"),
     },
     {
       name: "HOENN",
-      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/301.png",
-      onClick: () => handleClick(301, 450, "HOENN"),
+      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/252.png",
+      onClick: () => handleClick(252, 386, "HOENN"),
     },
     {
       name: "SINNOH",
-      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/451.png",
-      onClick: () => handleClick(451, 600, "SINNOH"),
+      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/387.png",
+      onClick: () => handleClick(387, 494, "SINNOH"),
     },
     {
       name: "UNOVA",
-      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/601.png",
-      onClick: () => handleClick(601, 750, "UNOVA"),
+      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/495.png",
+      onClick: () => handleClick(495, 649, "UNOVA"),
     },
     {
       name: "KALOS",
-      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/751.png",
-      onClick: () => handleClick(751, 900, "KALOS"),
+      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/650.png",
+      onClick: () => handleClick(650, 721, "KALOS"),
     },
     {
       name: "ALOLA",
-      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-      onClick: () => handleClick(901, 1050, "ALOLA"),
+      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/722.png",
+      onClick: () => handleClick(722, 809, "ALOLA"),
     },
     {
       name: "GALAR",
-      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/650.png",
-      onClick: () => handleClick(1051, 1200, "GALAR"),
+      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/810.png",
+      onClick: () => handleClick(810, 904, "GALAR"),
     },
   ];
 
