@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import './App.css'
 import Pokedex from './components/PokedexPage/Pokedex/Pokedex';
 import NavBarElements from './components/NavBar/NavBarElements'
@@ -11,17 +11,25 @@ import ChooseStarter from'./components/Game/ChooseStarter/ChooseStarter';
 import ChooseGeneration from './components/Game/ChooseGeneration/ChooseGeneration';
 import { GameContextProvider } from './contexts/GameContext';
 import HomePage from './components/HomePage/HomePage';
+import PokemonCard from "./components/PokedexPage/Pokedex/PokemonCard/PokemonCard";
+import PokemonRegion from "./components/Game/PokemonRegion/PokemonRegion";
+import WildPokemon from "./components/Game/WildPokemon/WildPokemon"
 
+import "./App.css";
 
 function App() {
+  const location = useLocation();
+  const isHomeLocation = location.pathname === "/";
+  console.log("isHomeLocation", isHomeLocation);
+
   return (
     <div className="App">
-      {/* <NavBar /> */}
-      <NavBarElements />
+      {isHomeLocation ? <NavBarElements /> : <NavBar />}
       <PokedexContextProvider>
         <Routes>
           <Route path="/pokedex-page" element={<PokedexPage />}></Route>
           <Route path="/pokedex-page/pokedex" element={<Pokedex />}></Route>
+          <Route path="/pokedex-page/pokedex/:id" element={<PokemonCard />} />
           <Route path="/pokedex-page/my-pokemon" element={<MyPokemon />}></Route>
         </Routes>
       </PokedexContextProvider>
@@ -30,10 +38,12 @@ function App() {
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/game/choose-generation" element={<ChooseGeneration />}></Route>
           <Route path="/game/choose-starter" element={<ChooseStarter />}></Route>
+          <Route path="/game/choose-region" element={<PokemonRegion />} />
+          <Route path="/game/wild-pokemon/:region/:id" element={<WildPokemon />} />
         </Routes>
       </GameContextProvider>
     </div>
   );
 }
 
-export default App; 
+export default App;

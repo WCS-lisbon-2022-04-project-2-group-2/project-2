@@ -1,19 +1,28 @@
-import React from 'react';
-import logo from "../../media/images/logo.svg"
-import "./NavBar.css"
-import './NavBarElements.css'
+import React, { useState } from "react";
+import logo from "../../media/images/logo.svg";
+import BurgerMenu from "./BurgerMenu";
+import "./NavBar.css";
 
 function NavBar(props) {
-    return (
-        <div className='navBar'>
-            <div>
-			    <img className="logo-img" src={logo} alt="Logo" />
-		    </div>
+  const [burgerOpen, setBurgerOpen] = useState(false);
 
-            <button className='btn-pokedex'>POKÉDEX</button>
-        </div>
-        
-    );
+  const toggleBurger = () => {
+    setBurgerOpen(!burgerOpen);
+  };
+
+  return (
+    <div className="navBar">
+      <div>
+        <img className="logo-img" src={logo} alt="Logo" />
+      </div>
+
+      <button className="btn-pokedex">POKÉDEX</button>
+
+      <div className="burger-menu" onClick={toggleBurger}>
+        <BurgerMenu isOpen={burgerOpen} />
+      </div>
+    </div>
+  );
 }
 
 export default NavBar;

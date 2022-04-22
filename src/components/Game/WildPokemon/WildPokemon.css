@@ -1,0 +1,10 @@
+.wild-pokemon_card {
+  margin-top: 10rem;
+}
+
+.enemy-img {
+  width: 500px;
+  height: 500px;
+  margin-top: 5rem;
+  border: 2px solid rgb(156, 14, 14);
+}
