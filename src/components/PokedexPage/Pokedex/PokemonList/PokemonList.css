@@ -1,22 +1,21 @@
-.mainCardContainer{
-    display: flex;
-    flex-wrap: wrap;
+.mainCardContainer {
+  display: flex;
+  flex-wrap: wrap;
 
-    justify-content: center;
-    align-items: center;
-    
+  justify-content: center;
+  align-items: center;
 }
 .card {
-    border: 1px solid black;
-    margin: 5px;
-  }
+  background-color: rgb(214, 213, 213);
+  margin: 5px;
+}
 
 .card img {
-    width: 250px;
-    height: 250px;
-  }
-  
-  /* cardName{
-    border-top: 1px solid black;;
-    border-bottom: 1px solid black;;
-  } */
+  width: 250px;
+  height: 250px;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}

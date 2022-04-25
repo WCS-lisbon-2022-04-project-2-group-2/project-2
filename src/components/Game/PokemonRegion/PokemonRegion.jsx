@@ -14,7 +14,7 @@ function PokemonRegion() {
   const handleClick = (min, max, region) => {
     const id = getRandomId(min, max);
 
-    navigate(`/wild-pokemon/${region}/${id}`);
+    navigate(`/game/wild-pokemon/${region}/${id}`);
   };
 
   const regions = [
@@ -62,20 +62,20 @@ function PokemonRegion() {
 
   return (
     <>
-    <h1>Choose a Region to Catch new Pokémon</h1>
-    <div className="regions-card">
-      {regions.map((region) => (
-        <div>
-          <h3 className="region-name">{region.name}</h3>
-          <img
-            className="region-img"
-            src={region.src}
-            alt="pokemon region"
-            onClick={region.onClick}
-          />
-        </div>
-      ))}
-    </div>
+      <h1>Choose a Region to Catch new Pokémon</h1>
+      <div className="regions-card">
+        {regions.map((region) => (
+          <div>
+            <h3 className="region-name">{region.name}</h3>
+            <img
+              className="region-img"
+              src={region.src}
+              alt="pokemon region"
+              onClick={region.onClick}
+            />
+          </div>
+        ))}
+      </div>
     </>
   );
 }

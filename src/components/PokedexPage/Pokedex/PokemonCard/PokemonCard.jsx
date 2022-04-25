@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../../../../hooks/useFetch";
+import { Link } from "react-router-dom";
 import "./PokemonCard.css";
 
 function PokemonCard() {
@@ -16,8 +17,6 @@ function PokemonCard() {
     return <div>Oops...something went wrong...</div>;
   }
 
-  console.log("response", response);
-
   const types = response.types.map((typeEl) => (
     <p key={typeEl.type.name}>{typeEl.type.name}</p>
   ));
@@ -32,13 +31,15 @@ function PokemonCard() {
         src={response.sprites.other["official-artwork"].front_default}
         alt="pokemon"
       />
-
       <div className="card-list">
+        <h2 className="pokemon-card_name">{response.name.toUpperCase()}</h2>
         <ul className="info-list">
           <div className="info-list1">
             <li className="pokemon-info">
               <p className="pokemon-title">Height</p>
-              <span className="pokemon-description">{(Math.round(parseInt(response.height)))/10} m</span>
+              <span className="pokemon-description">
+                {Math.round(parseInt(response.height)) / 10} m
+              </span>
             </li>
             <li className="pokemon-info">
               <p className="pokemon-title">Type</p>
@@ -48,7 +49,10 @@ function PokemonCard() {
           <div className="info-list2">
             <li className="pokemon-info">
               <p className="pokemon-title">Weight</p>
-              <span className="pokemon-description">{(Math.round(parseInt(response.weight)*0.453592*100))/100} Kg</span>
+              <span className="pokemon-description">
+                {Math.round(parseInt(response.weight) * 0.453592 * 100) / 100}{" "}
+                Kg
+              </span>
             </li>
 
             <li className="pokemon-info">

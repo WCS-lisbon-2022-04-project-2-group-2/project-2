@@ -1,41 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Press+Start+2P&family=Roboto:wght@100;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka&family=Press+Start+2P&family=Roboto:wght@100;400&display=swap");
 
 .navBar-container {
   height: 80px;
-  display:flex;
+  display: flex;
   justify-content: space-between;
   background: linear-gradient(45deg, #9c0e0e, rgb(238, 238, 244));
 }
 
-.navBar-links{
-  display:flex;
+.navBar-links {
+  display: flex;
   position: relative;
   left: 300px;
-  
 }
 
-.logo-img{
-  width:50px;
-  height: 50px; 
+.logo-img {
+  width: 50px;
+  height: 50px;
   margin: 1rem;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
-.navBar-links a{
-    text-decoration: none;
-    align-self: center;
-    margin-left: 2.5rem;
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: #000;
+.navBar-links a {
+  text-decoration: none;
+  align-self: center;
+  margin-left: 2.5rem;
+  font-weight: 800;
+  font-size: 2rem;
+  color: #000;
 }
 
-@media (max-width: 767px){
-                 
-  .navBar-links{
-      display: none;
-      
+@media (max-width: 767px) {
+  .navBar-links {
+    display: none;
   }
-
 }
-
