@@ -56,7 +56,7 @@ function PokemonRegion() {
     {
       name: "GALAR",
       src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/810.png",
-      onClick: () => handleClick(810, 904, "GALAR"),
+      onClick: () => handleClick(810, 898, "GALAR"),
     },
   ];
 
