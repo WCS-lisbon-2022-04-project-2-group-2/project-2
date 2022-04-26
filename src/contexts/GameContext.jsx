@@ -5,7 +5,7 @@ const GameContext = createContext();
 export const GameContextProvider = ({ children }) => {
   const [generation, setGeneration] = useState([]);
   const [chosenStarter, setChosenStarter] = useState([]);
-  const [chosenEnemy, setChosenEnemy] = useState([]);
+  const [wildPokemon, setWildPokemon] = useState("");
 
   return (
     <GameContext.Provider
@@ -14,8 +14,8 @@ export const GameContextProvider = ({ children }) => {
         setGeneration,
         chosenStarter,
         setChosenStarter,
-        chosenEnemy,
-        setChosenEnemy,
+        wildPokemon,
+        setWildPokemon,
       }}
     >
       {children}

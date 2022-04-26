@@ -14,6 +14,7 @@ import HomePage from "./components/HomePage/HomePage";
 import PokemonCard from "./components/PokedexPage/Pokedex/PokemonCard/PokemonCard";
 import PokemonRegion from "./components/Game/PokemonRegion/PokemonRegion";
 import WildPokemon from "./components/Game/WildPokemon/WildPokemon";
+import LostBattle from "./components/Game/LostBattle/LostBattle";
 import About from "./components/About/About";
 import Quiz from "./components/Quiz/Quiz";
 
@@ -56,6 +57,7 @@ function App() {
             path="/game/wild-pokemon/:region/:id"
             element={<WildPokemon />}
           />
+          <Route path="/game/lost-battle/:id" element={<LostBattle />} />
         </Routes>
       </GameContextProvider>
     </div>
