@@ -14,6 +14,7 @@ import HomePage from "./components/HomePage/HomePage";
 import PokemonCard from "./components/PokedexPage/Pokedex/PokemonCard/PokemonCard";
 import PokemonRegion from "./components/Game/PokemonRegion/PokemonRegion";
 import WildPokemon from "./components/Game/WildPokemon/WildPokemon";
+import LostBattle from "./components/Game/LostBattle/LostBattle";
 import About from "./components/About/About";
 import Quiz from "./components/Quiz/Quiz";
 
@@ -33,17 +34,35 @@ function App() {
           <Route path="/quiz" element={<Quiz />}></Route>
           <Route path="/pokedex-page" element={<PokedexPage />}></Route>
           <Route path="/pokedex-page/pokedex" element={<Pokedex />}></Route>
-          <Route path="/pokedex-page/pokedex/:id" element={<PokemonCard />}></Route>
-          <Route path="/pokedex-page/my-pokemon" element={<MyPokemon />}></Route>
+          <Route
+            path="/pokedex-page/pokedex/:id"
+            element={<PokemonCard />}
+          ></Route>
+          <Route
+            path="/pokedex-page/my-pokemon"
+            element={<MyPokemon />}
+          ></Route>
         </Routes>
       </PokedexContextProvider>
       <GameContextProvider>
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
-          <Route path="/game/choose-generation" element={<ChooseGeneration />}></Route>
-          <Route path="/game/choose-starter" element={<ChooseStarter />}></Route>
+
+          <Route
+            path="/game/choose-generation"
+            element={<ChooseGeneration />}
+          ></Route>
+          <Route
+            path="/game/choose-starter"
+            element={<ChooseStarter />}
+          ></Route>
           <Route path="/game/choose-region" element={<PokemonRegion />}></Route>
-          <Route path="/game/wild-pokemon/:region/:id" element={<WildPokemon />}></Route>
+          <Route
+            path="/game/wild-pokemon/:region/:id"
+            element={<WildPokemon />}
+          ></Route>
+
+          <Route path="/game/lost-battle/:id" element={<LostBattle />} />
         </Routes>
       </GameContextProvider>
     </div>
