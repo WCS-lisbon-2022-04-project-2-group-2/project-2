@@ -15,6 +15,7 @@ function StarterCard() {
     const saveChosen = async(element) => {
         await setStarter(element)
     }
+    
    
     return (
         <>
