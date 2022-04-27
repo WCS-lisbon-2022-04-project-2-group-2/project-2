@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "./PokemonRegion.css";
+import GameContext from "../../../contexts/GameContext";
 
 function getRandomId(min, max) {
   min = Math.ceil(min);
@@ -9,11 +10,12 @@ function getRandomId(min, max) {
 }
 
 function PokemonRegion() {
+  const {setWildPokemon} = useContext(GameContext)
   const navigate = useNavigate();
 
   const handleClick = (min, max, region) => {
     const id = getRandomId(min, max);
-
+    setWildPokemon(id);
     navigate(`/game/wild-pokemon/${region}/${id}`);
   };
 

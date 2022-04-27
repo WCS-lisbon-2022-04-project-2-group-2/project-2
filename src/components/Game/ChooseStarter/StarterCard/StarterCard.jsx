@@ -5,15 +5,16 @@ import { Link } from "react-router-dom";
 import './StarterCard.css'
 
 function StarterCard() {
-    const {generation, chosenStarter, setChosenStarter} = useContext(GameContext);
-    console.log(generation)
+    const {generation, setStarter} = useContext(GameContext);
 
-    
-    const saveToLocalStorage = async(el) => {
-        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${el}/`)
-        localStorage.setItem(el, res.data.name);
+    // const saveToLocalStorage = async(el) => {
+    //     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${el}/`)
+    //     localStorage.setItem(el, res.data.name);
+    // }
+
+    const saveChosen = async(element) => {
+        await setStarter(element)
     }
-    
    
     return (
         <>
@@ -22,7 +23,7 @@ function StarterCard() {
            { generation.map(number => {
                return (
                     <div>
-                        <Link to="/game/choose-region" onClick={() => saveToLocalStorage(number)}>
+                        <Link to="/game/choose-region" onClick={() => saveChosen(number)}>
                             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${number}.png`} alt={`pokemon no.${number}`} />
                         </Link>
                     </div>

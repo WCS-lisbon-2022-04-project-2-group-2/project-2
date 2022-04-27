@@ -16,6 +16,8 @@ import PokemonRegion from "./components/Game/PokemonRegion/PokemonRegion";
 import WildPokemon from "./components/Game/WildPokemon/WildPokemon";
 import About from "./components/About/About";
 import Quiz from "./components/Quiz/Quiz";
+import FightEscape from "./components/Game/FightEscape/FightEscape";
+import Fight from "./components/Game/Fight/Fight";
 
 import "./App.css";
 
@@ -44,6 +46,8 @@ function App() {
           <Route path="/game/choose-starter" element={<ChooseStarter />}></Route>
           <Route path="/game/choose-region" element={<PokemonRegion />}></Route>
           <Route path="/game/wild-pokemon/:region/:id" element={<WildPokemon />}></Route>
+          <Route path="/game/fight-escape" element={<FightEscape />}></Route>
+          <Route path="/game/fight" element={<Fight />}></Route>
         </Routes>
       </GameContextProvider>
     </div>
