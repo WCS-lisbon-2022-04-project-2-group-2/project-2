@@ -6,6 +6,8 @@ import Typed from 'react-typed';
 import WildBox from './WildBox';
 import StarterBox from './StarterBox';
 import TextBox from './TextBox';
+import Attacks from "./Attacks";
+import FightOver from "./FightOver"
 
  function Fight() {
     const { starter, wildPokemon, loading, setLoading, move, setMove, isSelected, setIsSelected, textMessageOne, setTextMessageOne,
@@ -49,101 +51,103 @@ import TextBox from './TextBox';
     }, [wildFaint])
 
 
-    const enemyTurn = (wildAttackName) => {
-        //wildAttack will be a random number between 0.01 and 0.99
-        let effectiveness = Number.parseFloat((Math.random() * (0.99 - 0.01)) + 0.01).toFixed(2);
-        if (effectiveness >= 0.9){
-            setWildAttackDamage(50);
-        }else if(effectiveness >= 0.5 && effectiveness < 0.9){
-            setWildAttackDamage(30);
-        }else{
-            setWildAttackDamage(10);
-        }
-        //if enemy health reaches 0, fight is over
-        if( wildHealth === 0){ 
-            setTextMessageOne(`${nameWildPokemon} fainted.`)
-            setTextMessageTwo(`${nameStarter} wins!`)
-            setWildFaint(true)
-            setTimeout(() => {
-                setGameOver(true)
-            }, 3000);
+    // const enemyTurn = (wildAttackName) => {
+    //     //wildAttack will be a random number between 0.01 and 0.99
+    //     let effectiveness = Number.parseFloat((Math.random() * (0.99 - 0.01)) + 0.01).toFixed(2);
+    //     if (effectiveness >= 0.9){
+    //         setWildAttackDamage(50);
+    //     }else if(effectiveness >= 0.5 && effectiveness < 0.9){
+    //         setWildAttackDamage(30);
+    //     }else{
+    //         setWildAttackDamage(10);
+    //     }
+    //     //if enemy health reaches 0, fight is over
+    //     if( wildHealth === 0){ 
+    //         setTextMessageOne(`${nameWildPokemon} fainted.`)
+    //         setTextMessageTwo(`${nameStarter} wins!`)
+    //         setWildFaint(true)
+    //         setTimeout(() => {
+    //             setGameOver(true)
+    //         }, 3000);
             
-        } 
-        // if enemy is still alive, proceed with enemy turn
-        else {
-            if (starterHealth <= 0){
-                setStarterHealth(0)
-                setTextMessageOne(`${nameWildPokemon} used ${wildAttackName} for ${wildAttackDamage} damage!`)
-            }
-        else {
-            setStarterHealth(starterHealth- wildAttackDamage)
-            setTextMessageOne(`${nameWildPokemon} used ${wildAttackName} for ${wildAttackDamage} damage!`)
-          }
-        }
-        setTimeout(() => {
-            if (starterHealth === 0) {
-                setTextMessageOne(`${nameStarter} fainted.`)
-                setTextMessageTwo(`${nameWildPokemon} wins!`)
-                setStarterFaint(true)
-                setTimeout(() => {
-                    setGameOver(true)
-                }, 3000);
-            } else {
-                setTextMessageOne("")
-            }
-        }, 2000);
-    }
+    //     } 
+    //     // if enemy is still alive, proceed with enemy turn
+    //     else {
+    //         if (starterHealth <= 0){
+    //             setStarterHealth(0)
+    //             setTextMessageOne(`${nameWildPokemon} used ${wildAttackName} for ${wildAttackDamage} damage!`)
+    //         }
+    //     else {
+    //         setStarterHealth(starterHealth- wildAttackDamage)
+    //         setTextMessageOne(`${nameWildPokemon} used ${wildAttackName} for ${wildAttackDamage} damage!`)
+    //       }
+    //     }
+    //     setTimeout(() => {
+    //         if (starterHealth === 0) {
+    //             setTextMessageOne(`${nameStarter} fainted.`)
+    //             setTextMessageTwo(`${nameWildPokemon} wins!`)
+    //             setStarterFaint(true)
+    //             setTimeout(() => {
+    //                 setGameOver(true)
+    //             }, 3000);
+    //         } else {
+    //             setTextMessageOne("")
+    //         }
+    //     }, 2000);
+    // }
       
-    const handleAttackClick = (starterAttackName) => {
-        // implicit return single value
-        // this.setState(prevState => ({
-        //   enemyHP: prevState.enemyHP - damage
-        // }));
-        let starterAttack = Number.parseFloat((Math.random() * (0.99 - 0.01)) + 0.01).toFixed(2);
-        if (starterAttack >= 0.9){
-            setStarterAttackDamage(50);
-        }else if(starterAttack >= 0.5 && starterAttack < 0.9){
-            setStarterAttackDamage(30);
-        }else{
-            setStarterAttackDamage(10);
-        }
+    // const handleAttackClick = (starterAttackName) => {
+    //     // implicit return single value
+    //     // this.setState(prevState => ({
+    //     //   enemyHP: prevState.enemyHP - damage
+    //     // }));
+    //     let starterAttack = Number.parseFloat((Math.random() * (0.99 - 0.01)) + 0.01).toFixed(2);
+    //     if (starterAttack >= 0.9){
+    //         setStarterAttackDamage(50);
+    //     }else if(starterAttack >= 0.5 && starterAttack < 0.9){
+    //         setStarterAttackDamage(30);
+    //     }else{
+    //         setStarterAttackDamage(10);
+    //     }
         
-        // use starterAttackDamage to calculate enemy health and adjust progress bar
-        if (wildHealth - starterAttackDamage <= 0){
-            setWildHealth(0)
-            setTextMessageOne(`${nameStarter} used ${starterAttackName} for ${starterAttackDamage} damage!`)
-        } else {
-            setWildHealth(wildHealth - starterAttackDamage)
-            setTextMessageOne(`${nameStarter} used ${starterAttackName} for ${starterAttackDamage} damage!`)
-        }
-        setTimeout(() => {
-            let effectiveness = Number.parseFloat((Math.random() * (0.99 - 0.01)) + 0.01).toFixed(2);
-            if (effectiveness >= 0.9){
-                setWildAttackDamage(50);
-            }else if(effectiveness >= 0.5 && effectiveness < 0.9){
-                setWildAttackDamage(30);
-            }else{
-                setWildAttackDamage(10);
-            }
-            // determine next wildAttackName between the 4 in the wildMoves array
-            let moveNumber = Math.floor(Math.random() * 4);
-            setWildAttackName(wildMoves[moveNumber])
+    //     // use starterAttackDamage to calculate enemy health and adjust progress bar
+    //     if (wildHealth - starterAttackDamage <= 0){
+    //         setWildHealth(0)
+    //         setTextMessageOne(`${nameStarter} used ${starterAttackName} for ${starterAttackDamage} damage!`)
+    //     } else {
+    //         setWildHealth(wildHealth - starterAttackDamage)
+    //         setTextMessageOne(`${nameStarter} used ${starterAttackName} for ${starterAttackDamage} damage!`)
+    //     }
+    //     setTimeout(() => {
+    //         let effectiveness = Number.parseFloat((Math.random() * (0.99 - 0.01)) + 0.01).toFixed(2);
+    //         if (effectiveness >= 0.9){
+    //             setWildAttackDamage(50);
+    //         }else if(effectiveness >= 0.5 && effectiveness < 0.9){
+    //             setWildAttackDamage(30);
+    //         }else{
+    //             setWildAttackDamage(10);
+    //         }
+    //         // determine next wildAttackName between the 4 in the wildMoves array
+    //         let moveNumber = Math.floor(Math.random() * 4);
+    //         setWildAttackName(wildMoves[moveNumber])
     
-            // once the state is changed, start enemy turn
-            enemyTurn(wildAttackName);
-        }, 3000);
-    }
+    //         // once the state is changed, start enemy turn
+    //         enemyTurn(wildAttackName);
+    //     }, 3000);
+    // }
 
-    //reset all states after the fight is over
-    const handleFightOver = () =>{
-        setStarterHealth(200)
-        setWildHealth(200)
-        setGameOver(false)
-        setTextMessageOne("")
-        setTextMessageTwo("")
-        setWildFaint(false)
-        setStarterFaint(false)
-    }
+    // //reset all states after the fight is over
+    // const handleFightOver = () =>{
+    //     starter()
+    //     wildPokemon()
+    //     setStarterHealth(200)
+    //     setWildHealth(200)
+    //     setGameOver(false)
+    //     setTextMessageOne("")
+    //     setTextMessageTwo("")
+    //     setWildFaint(false)
+    //     setStarterFaint(false)
+    // }
 
     return (
         <div className="container h-100">
@@ -162,19 +166,18 @@ import TextBox from './TextBox';
                       )}
                     {textMessageOne === "" &&
                       gameOver === false &&
-                      Object.keys(starterMoves).map((key, index) => {
+                      starterMoves.map((key, index) => {
                         return (
                           <Attacks
                             key={key}
                             index={index}
-                            details={this.state.playerAttacks[key]}
-                            handleAttackClick={this.handleAttackClick}
+                            onClick={setStarterAttackName(starterMoves[key])}
                           />
                         );
                       })}
   
-                    {this.state.gameOver === true && (
-                      <PlayAgain handlePlayAgain={this.handlePlayAgain} />
+                    {gameOver === true && (
+                      <FightOver  />
                     )}
                   </div>
                 </div>
