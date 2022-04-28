@@ -9,6 +9,17 @@ export const GameContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [isSelected, setIsSelected] = useState(false);
   const [move, setMove] = useState("");
+  const [wildHealth, setWildHealth] = useState(100);
+  const [starterHealth, setStarterHealth] = useState(100);
+  const [textMessageOne, setTextMessageOne] = useState(" ");
+  const [textMessageTwo, setTextMessageTwo] = useState("");
+  const [wildFaint, setWildFaint] = useState("");
+  const [starterFaint, setStarterFaint] = useState("");
+  const [gameOver, setGameOver] = useState(false);
+  const [wildAttackDamage, setWildAttackDamage] = useState();
+  const [wildAttackName, setWildAttackName] = useState("");
+  const [starterAttackDamage, setStarterAttackDamage] = useState();
+  const [starterAttackName, setStarterAttackName] = useState("");
 
   return (
     <GameContext.Provider
@@ -24,7 +35,20 @@ export const GameContextProvider = ({ children }) => {
         move, 
         setMove,
         isSelected, 
-        setIsSelected
+        setIsSelected,
+        starterHealth, 
+        setStarterHealth,
+        wildHealth,
+        setWildHealth,
+        textMessageOne, setTextMessageOne,
+        textMessageTwo, setTextMessageTwo,
+        wildFaint, setWildFaint,
+        starterFaint, setStarterFaint,
+        gameOver, setGameOver,
+        wildAttackDamage, setWildAttackDamage,
+        wildAttackName, setWildAttackName,
+        starterAttackDamage, setStarterAttackDamage,
+        starterAttackName, setStarterAttackName
       }}
     >
       {children}

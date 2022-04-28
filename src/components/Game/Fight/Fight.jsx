@@ -6,18 +6,13 @@ import useFetch from "../../../hooks/useFetch";
 import HealthBar from "../HealthBar/HealthBar";
 import axios from "axios";
 import Typed from 'react-typed';
-import { useTimeout } from 'usehooks-ts'
-
-
-
+// import { useTimeout } from 'usehooks-ts'
 
 function Fight() {
-    const [visible, setVisible] = useState(true);
-    const hide = () => setVisible(false);
-    useTimeout(hide, 5000);
-    const [wildHealth, setWildHealth] = useState(100);
-    const [starterHealth, setStarterHealth] = useState(100);
-    const { starter, wildPokemon, loading, setLoading, move, setMove, isSelected, setIsSelected} = useContext(GameContext);
+    const { starter, wildPokemon, loading, setLoading, move, setMove, isSelected, setIsSelected, textMessageOne, setTextMessageOne,
+        textMessageTwo, setTextMessageTwo, wildFaint, setWildFaint, starterFaint, setStarterFaint, wildHealth, setWildHealth, 
+        starterHealth, setStarterHealth, gameOver, setGameOver, wildAttackDamage, setWildAttackDamage, wildAttackName, setWildAttackName,
+        starterAttackDamage, setStarterAttackDamage, starterAttackName, setStarterAttackName} = useContext(GameContext);
     const urlWildPokemon = `https://pokeapi.co/api/v2/pokemon/${wildPokemon}/`;
     const { isLoading, error, response } = useFetch(urlWildPokemon);
 
@@ -40,6 +35,7 @@ function Fight() {
     const moveWild2 = response.moves[1].move.name.toUpperCase();
     const moveWild3 = response.moves[2].move.name.toUpperCase();
     const moveWild4 = response.moves[3].move.name.toUpperCase();
+    const wildMoves = [moveWild1, moveWild2, moveWild3, moveWild4]
 
     const nameStarter = response2.name.toUpperCase();
     // const typeStarter = response2.types[0].type.name.toUpperCase();
@@ -48,13 +44,174 @@ function Fight() {
     const moveStarter3 = response2.moves[2].move.name.toUpperCase();
     const moveStarter4 = response2.moves[3].move.name.toUpperCase();
 
+  
+
+    const startingBattle = () => {
+        setTimeout(() => {
+            (() => {
+            setTextMessageOne(state => {
+                state = (`Wild ${nameWildPokemon} is ready to fight!`)
+                return state;
+            })
+
+            setEnemyFaint(state => {
+                state = false
+                return state;
+            })
+            }),
+
+            (() => {
+                setTimeout(() => {
+                    setTextMessageOne(`Go ${nameStarter}!`)
+                    setStarterFaint(false)
+
+                    (() => {
+                        setTimeout(() => {
+                            setTextMessageOne("")
+                        }, 3000)
+                    })
+                }, 3000)
+            })
+        }, 1000);
+    };
+
+    const enemyTurn = (wildAttackName) => {
+        //wildAttack will be a random number between 0.01 and 0.99
+        wildAttack = Number.parseFloat((Math.random() * (0.99 - 0.01)) + 0.01).toFixed(2);
+        if (wildAttack >= 0.9){
+            setWildAttackDamage(50);
+        }else if(wildAttack >= 0.5 && wildAttack < 0.9){
+            setWildAttackDamage(30);
+        }else{
+            setWildAttackDamage(10);
+        }
+        
+        if( wildHealth === 0){ 
+            setTextMessageOne(`${nameWildPokemon} fainted.`)
+            setTextMessageTwo(`${nameStarter} wins!`)
+            setWildFaint(true)
+            ,
+            () => {
+                setTimeout(() => {
+                  setGameOver(true)
+                }, 3000);
+            }
+            
+        } 
+        // if enemy is still alive, proceed with enemy turn
+        else {
+            prevState => {
+                if (prevState.starterHealth - wildAttackDamage <= 0) {
+                    setStarterHealth(state => {
+                        state = 0;
+                        return state;
+                    })
+                    setTextMessageOne(state =>{
+                        state = (`${nameWildPokemon} used ${wildAttackName} for ${wildAttackDamage} damage!`);
+                        return state;
+                    })
+                } else {
+                    setStarterHealth(state => {
+                        state = prevState.starterHealth - wildAttackDamage
+                        return state;
+                    })
+                    setTextMessageOne(state => {
+                        state = `${nameWildPokemon} used ${wildAttackName} for ${wildAttackDamage} damage!`
+                        return state;
+                    })
+                }
+            },
+            () => {
+                setTimeout(() => {
+                  if (starterHealth === 0) {
+                    setTextMessageOne(`${nameStarter} fainted.`)
+                    setTextMessageTwo(`${nameWildPokemon} wins!`)
+                    setStarterFaint(true)
+                    ,
+                    () => {
+                        setTimeout(() => {
+                            setGameOver(true)
+                        }, 3000);
+                      }
+                  } else {
+                      setTextMessageOne("")
+                  }
+                }, 2000);
+            }
+        }
+    }
+
+    handleAttackClick = (name, damage) => {
+        // implicit return single value
+        // this.setState(prevState => ({
+        //   enemyHP: prevState.enemyHP - damage
+        // }));
+
+        //name is the move's Name, damage is the move's Damage
+        
+        starterAttack = Number.parseFloat((Math.random() * (0.99 - 0.01)) + 0.01).toFixed(2);
+        if (starterAttack >= 0.9){
+            setStarterAttackDamage(50);
+        }else if(starterAttack >= 0.5 && starterAttack < 0.9){
+            setStarterAttackDamage(30);
+        }else{
+            setStarterAttackDamage(10);
+        }
+    
+        // use attack to calculate enemy HP and adjust progress bar
+        
+        prevState => {
+        if (prevState.wildHealth - starterAttackDamage <= 0) {
+            setWildHealth(state => {
+                state = 0;
+                return state;
+            })
+            setTextMessageOne(state =>{
+                state = (`${nameStarterPokemon} used ${starterAttackName} for ${starterAttackDamage} damage!`);
+                return state;
+            })
+        } else {
+            setWildHealth(state => {
+                state = prevState.wildHealth - starterAttackDamage
+                return state;
+            })
+            setTextMessageOne(state => {
+                state = `${starterWildPokemon} used ${starterAttackName} for ${starterAttackDamage} damage!`
+                return state;
+            })
+        }
+        },
+        () => {
+        // wait X seconds before enemy attacks
+        setTimeout(() => {
+            wildAttack = Number.parseFloat((Math.random() * (0.99 - 0.01)) + 0.01).toFixed(2);
+            if (wildAttack >= 0.9){
+                setWildAttackDamage(50);
+            }else if(wildAttack >= 0.5 && wildAttack < 0.9){
+                setWildAttackDamage(30);
+            }else{
+                setWildAttackDamage(10);
+            }
+            // calc next the wild move between the 4 available in the wildMoves array
+            let moveNumber = Math.floor(Math.random() * 4); // possible results: 0,1,2,3
+            setWildAttackName(wildMoves[moveNumber])
+
+            // once the state is changed, start enemy turn
+            enemyTurn(wildAttackName);
+        }, 3000);
+        }
+    };
+
+    
+
     const selectMove = async(element) => {
+        
         await setMove(element)
-        setIsSelected(true);
+        setSelect(true);
+        console.log(select)
     }
 
     function Moves(){
-    
         return(
             <div className="fight-moves-container">
                 <button onClick={() => selectMove(moveStarter1)}>{moveStarter1}</button>
@@ -103,7 +260,7 @@ function Fight() {
                             backSpeed={30}
                             // loop
                         />
-                        <button onClick={setIsSelected(false)}>Continue</button>
+                        <button onClick={setSelect(false)}>Continue</button>
                     </>
                 );
             case effectiveness < 0.5:
@@ -126,14 +283,14 @@ function Fight() {
                     <>
                         <Typed
                             strings={[
-                                `${nameStarter} used ${move}`,
+                                `${name} used ${move}`,
                                 `It's not very effective...`
                             ]}
                             typeSpeed={40}
                             backSpeed={30}
                             // loop
                         />
-                        <button onClick={setIsSelected(false)}>Continue</button>
+                        <button onClick={setSelect(false)}>Continue</button>
                     </>
                 );
             case effectiveness >= 0.9:
@@ -152,25 +309,28 @@ function Fight() {
                         setWildHealth(newHealth)
                     }
                 }
-                setIsSelected(false);
                 return (
                     <>
                         <Typed
                             strings={[
-                                `${nameStarter} used ${move}`,
+                                `${name} used ${move}`,
                                 `It's SUPER effective!`
                             ]}
                             typeSpeed={40}
                             backSpeed={30}
                             // loop
                         />
-                        <button onClick={setIsSelected(false)}>Continue</button>
+                        <button onClick={setSelect(false)}>Continue</button>
                     </>
                 );
             default:
                 break;
         }
     }
+
+    useEffect(() => {
+        startingBattle();
+    })
     return(
         <div className="fight-game-main-container">
             <div className="fight-wild-pokemon-container">
@@ -190,10 +350,10 @@ function Fight() {
                 />
             </div>
 
-            {visible && isSelected ? <Messages move={move} name={nameStarter} /> : <Moves /> }
+            {select ? <Messages move={move} name={nameStarter} /> : <Moves /> }
         </div>
     );
     
 }
-
+}
 export default Fight;
