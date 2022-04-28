@@ -8,25 +8,15 @@ import HealthBar from "../HealthBar/HealthBar";
 
 function FightEscape() {
     const { wildPokemon, wildHealth } = useContext(GameContext);
-    const url = `https://pokeapi.co/api/v2/pokemon/${wildPokemon}/`;
-    const { isLoading, error, response } = useFetch(url);
 
-    if (isLoading) {
-        return <div>Loading...</div>;
-    }
-    
-    if (error) {
-        return <div>Oops...something went wrong...</div>;
-    }
-    
-    const name = response.name.toUpperCase();
+    const name = wildPokemon[0].name.toUpperCase();
 
     return(
         <div>
             <h1>Wild {name}</h1>
             <HealthBar completed={wildHealth}/>
             <img
-                src={response.sprites.front_default}
+                src={wildPokemon[0].sprites.front_default}
                 alt={`${name}`}
             />
 

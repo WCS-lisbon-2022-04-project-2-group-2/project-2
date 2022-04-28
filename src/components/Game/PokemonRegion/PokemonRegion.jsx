@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "./PokemonRegion.css";
 import GameContext from "../../../contexts/GameContext";
+import useFetch from "../../../hooks/useFetch";
+import axios from "axios";
 
 function getRandomId(min, max) {
   min = Math.ceil(min);
@@ -13,9 +15,10 @@ function PokemonRegion() {
   const {setWildPokemon} = useContext(GameContext)
   const navigate = useNavigate();
 
-  const handleClick = (min, max, region) => {
+  const handleClick = async(min, max, region) => {
     const id = getRandomId(min, max);
-    setWildPokemon(id);
+    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+    setWildPokemon([res.data]);
     navigate(`/game/wild-pokemon/${region}/${id}`);
   };
 

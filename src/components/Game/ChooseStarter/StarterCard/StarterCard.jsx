@@ -13,7 +13,8 @@ function StarterCard() {
     // }
 
     const saveChosen = async(element) => {
-        await setStarter(element)
+        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${element}/`)
+        setStarter([res.data])
     }
     
    
