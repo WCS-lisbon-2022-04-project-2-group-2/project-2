@@ -46,7 +46,7 @@ function WildBox() {
 
           {/* ENEMY POKEMON AVATAR PICTURE */}
           <div className="mr-sm-4 avatar-box">
-            <WildAvatar wildFaint={wildFaint} />
+            <WildAvatar />
 
             <div className="oval" />
           </div>

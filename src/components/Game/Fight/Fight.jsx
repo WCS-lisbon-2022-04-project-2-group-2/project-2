@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import GameContext from "../../../contexts/GameContext";
 import "./Fight.css";
 import Typed from 'react-typed';
+import WildBox from './WildBox';
+import StarterBox from './StarterBox';
+import TextBox from './TextBox';
 
  function Fight() {
     const { starter, wildPokemon, loading, setLoading, move, setMove, isSelected, setIsSelected, textMessageOne, setTextMessageOne,
@@ -22,6 +25,7 @@ import Typed from 'react-typed';
     const moveStarter2 = starter[0].moves[1].move.name.toUpperCase();
     const moveStarter3 = starter[0].moves[2].move.name.toUpperCase();
     const moveStarter4 = starter[0].moves[3].move.name.toUpperCase();
+    const starterMoves = [moveStarter1, moveStarter2, moveStarter3, moveStarter4]
 
   
     const startingBattle = () => {
@@ -147,36 +151,18 @@ import Typed from 'react-typed';
             <div className="col-sm-12">
               {/* BATTLE SCREEN CONTAINER */}
               <div id="battle-container" className="px-2 mx-auto">
-                <EnemyBox
-                  enemyName={this.state.enemyName}
-                  enemyLevel={this.state.enemyLevel}
-                  enemyHP={this.state.enemyHP}
-                  enemyMaxHP={this.state.enemyMaxHP}
-                  enemyFaint={this.state.enemyFaint}
-                />
-  
-                <PlayerBox
-                  playerName={this.state.playerName}
-                  playerLevel={this.state.playerLevel}
-                  playerHP={this.state.playerHP}
-                  playerMaxHP={this.state.playerMaxHP}
-                  playerFaint={this.state.playerFaint}
-                />
-  
+                <WildBox/>
+                <StarterBox/>
                 {/* TEXT BOX SECTION */}
                 <div id="text-box">
                   <div id="text-box-content">
-                    {this.state.textMessageOne !== "" &&
-                      this.state.gameOver === false && (
-                        <TextBox
-                          messageOne={this.state.textMessageOne}
-                          messageTwo={this.state.textMessageTwo}
-                        />
+                    {textMessageOne !== "" &&
+                      gameOver === false && (
+                        <TextBox/>
                       )}
-  
-                    {this.state.textMessageOne === "" &&
-                      this.state.gameOver === false &&
-                      Object.keys(this.state.playerAttacks).map((key, index) => {
+                    {textMessageOne === "" &&
+                      gameOver === false &&
+                      Object.keys(starterMoves).map((key, index) => {
                         return (
                           <Attacks
                             key={key}
