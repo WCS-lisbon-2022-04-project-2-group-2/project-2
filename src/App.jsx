@@ -16,7 +16,6 @@ import PokemonRegion from "./components/Game/PokemonRegion/PokemonRegion";
 import WildPokemon from "./components/Game/WildPokemon/WildPokemon";
 import LostBattle from "./components/Game/LostBattle/LostBattle";
 import RestartGame from "./components/Game/RestartGame/RestartGame";
-
 import About from "./components/About/About";
 import Quiz from "./components/Quiz/Quiz";
 

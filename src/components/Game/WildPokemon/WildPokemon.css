@@ -4,6 +4,14 @@
 
 .enemy-img {
   width: 400px;
-  height: 400px;
+  height: auto;
   margin-top: 5rem;
+}
+
+@media (max-width: 767px) {
+  .enemy-img {
+    width: 300px;
+
+    margin-top: 7rem;
+  }
 }
