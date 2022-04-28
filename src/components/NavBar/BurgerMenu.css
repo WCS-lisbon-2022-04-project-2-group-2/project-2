@@ -26,7 +26,7 @@
     right: 0;
     width: 100%;
     z-index: 2;
-    padding-top: 50px;
+    padding-top: 50px 0;
   }
   .burger-links a {
     text-decoration: none;
