@@ -9,10 +9,10 @@ export default function Captured() {
     const { wildPokemon } = useContext(GameContext)
 
     // Para testes de CSS
-     const url = "https://pokeapi.co/api/v2/pokemon/4/";
+    //  const url = "https://pokeapi.co/api/v2/pokemon/4/";
 
     // correcta
-    // const url = `https://pokeapi.co/api/v2/pokemon/${wildPokemon}/`;
+    const url = `https://pokeapi.co/api/v2/pokemon/${wildPokemon}/`;
 
     const { isLoading, error, response } = useFetch(url);
         
