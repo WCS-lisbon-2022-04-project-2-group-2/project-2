@@ -1,6 +1,12 @@
-h1 {
-  margin-top: 2rem;
-  font-size: 3rem;
+.lost-battle_title {
+  margin-top: 3rem;
+  font-size: 4rem;
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
 }
 
 .lost-pokemon_container {
@@ -8,7 +14,7 @@ h1 {
 }
 .lost-fight_pokemon {
   width: 350px;
-  height: 350px;
+  height: auto;
   margin-top: 5rem;
 }
 
@@ -24,4 +30,15 @@ h1 {
   border: 1px solid #000000;
   border-radius: 10px;
   cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .lost-fight_pokemon {
+    width: 250px;
+    margin-top: 7rem;
+  }
+  .lost-battle_title {
+    margin-top: 10rem;
+    font-size: 2rem;
+  }
 }

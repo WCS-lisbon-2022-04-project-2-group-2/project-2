@@ -11,3 +11,14 @@
   width: 170px;
   height: auto;
 }
+
+@media (max-width: 767px) {
+  .starter-card-container {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+  }
+  .starter-card-container img {
+    width: 130px;
+  }
+}

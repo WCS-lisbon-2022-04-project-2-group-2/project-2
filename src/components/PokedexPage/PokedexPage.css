@@ -1,21 +1,17 @@
 .pokedex-page-main-container {
   display: flex;
   justify-content: center;
-  margin-top: 150px;
-  margin-top: 3rem;
-}
-
-.cardPokedexPage {
-  margin-right: 4rem;
-  margin-left: 4rem;
+  justify-content: space-around;
+  margin-top: 7rem;
 }
 
 .pokedex-title {
   margin-bottom: 2rem;
 }
+
 .cardPokedexPage img {
-  height: 130px;
-  width: 130px;
+  width: 400px;
+  height: auto;
 }
 
 @media (max-width: 767px) {
@@ -29,5 +25,9 @@
 
   .cardPokedexPage {
     margin-bottom: 6rem;
+  }
+  .cardPokedexPage img {
+    width: 200px;
+    height: auto;
   }
 }

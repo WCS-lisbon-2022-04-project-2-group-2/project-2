@@ -22,7 +22,9 @@ function LostBattle() {
 
   return (
     <div>
-      <h1>You Lost the Fight! {name} ran away!</h1>
+      <h1 className="lost-battle_title">
+        You Lost the Fight! {name} ran away!
+      </h1>
       <div className="lost-pokemon_container">
         <img
           className="lost-fight_pokemon"
