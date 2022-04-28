@@ -10,30 +10,31 @@ export default function Capture() {
 
     const { wildPokemon } = useContext(GameContext)
 
-        // Para testes de CSS
-        const url = "https://pokeapi.co/api/v2/pokemon/1/";
+    // Para testes de CSS
+    //  const url = "https://pokeapi.co/api/v2/pokemon/1/";
 
-        // correcta
-        // const url = `https://pokeapi.co/api/v2/pokemon/${wildPokemon}/`;
+    // correcta
+    const url = `https://pokeapi.co/api/v2/pokemon/${wildPokemon}/`;
 
-        const { isLoading, error, response } = useFetch(url);
+    const { isLoading, error, response } = useFetch(url);
         
-        if (isLoading) {
-            return <div>Loading...</div>;
-        }
+     if (isLoading) {
+        return <div>Loading...</div>;
+    }
         
-        if (error) {
-            return <div>Oops...something went wrong...</div>;
-        }
+    if (error) {
+        return <div>Oops...something went wrong...</div>;
+    }
         
-        const name = response.name.toUpperCase();
+    const name = response.name.toUpperCase();
 
-        const capturePokemon = () => {
-            localStorage.setItem(wildPokemon, name)
-        }
+    const capturePokemon = () => {
+        localStorage.setItem(wildPokemon, name)
+    }
 
     return (
         <div>
+            <div className='catch-pokemon_info'>
             <h1 className="catch-pokemon_title">
                 {name} fainted!
             </h1>
@@ -41,7 +42,8 @@ export default function Capture() {
             src={response.sprites.other["official-artwork"].front_default}
             alt="Fainted Pokemon" 
             />
-            <div>
+            </div>
+            <div className='capture_buttons'>
             <Link to="/game/captured">
                 <button onClick={()=> capturePokemon()} className="btn-catch">
                     Catch
