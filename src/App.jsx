@@ -15,6 +15,8 @@ import PokemonCard from "./components/PokedexPage/Pokedex/PokemonCard/PokemonCar
 import PokemonRegion from "./components/Game/PokemonRegion/PokemonRegion";
 import WildPokemon from "./components/Game/WildPokemon/WildPokemon";
 import LostBattle from "./components/Game/LostBattle/LostBattle";
+import RestartGame from "./components/Game/RestartGame/RestartGame";
+
 import About from "./components/About/About";
 import Quiz from "./components/Quiz/Quiz";
 
@@ -61,8 +63,8 @@ function App() {
             path="/game/wild-pokemon/:region/:id"
             element={<WildPokemon />}
           ></Route>
-
           <Route path="/game/lost-battle/:id" element={<LostBattle />} />
+          <Route path="/game/restart-game/" element={<RestartGame />} />
         </Routes>
       </GameContextProvider>
     </div>
