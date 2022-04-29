@@ -16,9 +16,7 @@ export const GameContextProvider = ({ children }) => {
   const [wildFaint, setWildFaint] = useState("");
   const [starterFaint, setStarterFaint] = useState("");
   const [gameOver, setGameOver] = useState(false);
-  const [wildAttackDamage, setWildAttackDamage] = useState();
   const [wildAttackName, setWildAttackName] = useState("");
-  const [starterAttackDamage, setStarterAttackDamage] = useState();
   const [starterAttackName, setStarterAttackName] = useState("");
 
   return (
@@ -45,9 +43,7 @@ export const GameContextProvider = ({ children }) => {
         wildFaint, setWildFaint,
         starterFaint, setStarterFaint,
         gameOver, setGameOver,
-        wildAttackDamage, setWildAttackDamage,
         wildAttackName, setWildAttackName,
-        starterAttackDamage, setStarterAttackDamage,
         starterAttackName, setStarterAttackName
       }}
     >
