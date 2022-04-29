@@ -16,11 +16,11 @@ import FightOver from "./FightOver"
         starterAttackDamage, setStarterAttackDamage, starterAttackName, setStarterAttackName} = useContext(GameContext);
 
     const nameWildPokemon = wildPokemon[0].name.toUpperCase();
-    const moveWild1 = wildPokemon[0].moves[0].move.name.toUpperCase();
-    const moveWild2 = wildPokemon[0].moves[1].move.name.toUpperCase();
-    const moveWild3 = wildPokemon[0].moves[2].move.name.toUpperCase();
-    const moveWild4 = wildPokemon[0].moves[3].move.name.toUpperCase();
-    const wildMoves = [moveWild1, moveWild2, moveWild3, moveWild4]
+    // const moveWild1 = wildPokemon[0].moves[0].move.name.toUpperCase();
+    // const moveWild2 = wildPokemon[0].moves[1].move.name.toUpperCase();
+    // const moveWild3 = wildPokemon[0].moves[2].move.name.toUpperCase();
+    // const moveWild4 = wildPokemon[0].moves[3].move.name.toUpperCase();
+    // const wildMoves = [moveWild1, moveWild2, moveWild3, moveWild4]
 
     const nameStarter = starter[0].name.toUpperCase();
     const moveStarter1 = starter[0].moves[0].move.name.toUpperCase();
@@ -39,7 +39,7 @@ import FightOver from "./FightOver"
             setStarterFaint(false)
     
             setTimeout(() => {
-            setTextMessageOne('')
+            setTextMessageOne("")
             }, 3000)
         }, 3000)
         }, 1000)
@@ -164,14 +164,13 @@ import FightOver from "./FightOver"
                       gameOver === false && (
                         <TextBox/>
                       )}
+                      
                     {textMessageOne === "" &&
                       gameOver === false &&
-                      starterMoves.map((key, index) => {
+                      starterMoves.map((el) => {
                         return (
                           <Attacks
-                            key={key}
-                            index={index}
-                            onClick={setStarterAttackName(starterMoves[key])}
+                            onClick={setStarterAttackName(starterMoves[el])}
                           />
                         );
                       })}
