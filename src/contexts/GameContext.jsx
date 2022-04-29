@@ -5,7 +5,11 @@ const GameContext = createContext();
 export const GameContextProvider = ({ children }) => {
   const [generation, setGeneration] = useState([]);
   const [chosenStarter, setChosenStarter] = useState([]);
-  const [chosenEnemy, setChosenEnemy] = useState([]);
+  const [wildPokemon, setWildPokemon] = useState("");
+  const [winPokemon, setWinPokemon] = useState(
+    "https://pokeapi.co/api/v2/pokemon/1"
+  );
+
 
   return (
     <GameContext.Provider
@@ -14,8 +18,11 @@ export const GameContextProvider = ({ children }) => {
         setGeneration,
         chosenStarter,
         setChosenStarter,
-        chosenEnemy,
-        setChosenEnemy,
+        wildPokemon,
+        setWildPokemon,
+        winPokemon,
+        setWinPokemon,
+
       }}
     >
       {children}

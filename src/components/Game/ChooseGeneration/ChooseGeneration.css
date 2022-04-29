@@ -1,21 +1,17 @@
-.choose-generation_title {
+h1 {
   font-size: 2.5rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .generation-container {
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.generation-container img {
-  width: 100%;
-  height: auto;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .generation-container p {
   font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .starter-triangle-container {
@@ -32,14 +28,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   left: 26px;
 }
 
 .bottom-triangle {
   display: flex;
   justify-content: center;
-
   top: 13px;
 }
 
@@ -49,4 +43,20 @@
 
 .bottom-right {
   left: 42px;
+}
+
+@media (max-width: 767px) {
+  .generation-container {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .starter-triangle-container img {
+    height: 80px;
+    width: auto;
+  }
+  .starter-triangle-container img {
+    height: 65px;
+    width: 65px;
+  }
 }
