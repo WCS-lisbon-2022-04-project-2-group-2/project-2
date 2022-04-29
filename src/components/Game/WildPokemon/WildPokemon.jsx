@@ -20,9 +20,7 @@ function WildPokemon() {
 
   return (
     <div className="wild-pokemon_card">
-      <h1 className="enemy-name">
-        YOU ARE GOING TO FIGHT WITH {name}
-      </h1>
+      <h1>YOU ARE GOING TO FIGHT WITH {name}</h1>
       <img
         className="enemy-img"
         src={response.sprites.other["official-artwork"].front_default}

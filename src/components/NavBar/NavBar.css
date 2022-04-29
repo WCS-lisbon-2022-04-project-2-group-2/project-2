@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka&family=Press+Start+2P&family=Roboto:wght@100;400;700&display=swap");
+
 .navBar {
   height: 80px;
   display: flex;
@@ -14,6 +16,8 @@
 }
 
 .btn-pokedex {
+  display: flex;
+  justify-content: center;
   position: absolute;
   left: 80%;
   margin: 15px 50px;
@@ -23,6 +27,10 @@
   border: 2.5px solid #b74b4b;
   border-radius: 10px;
   color: #ebeaed;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  align-items: center;
 }
 
 @media (max-width: 767px) {

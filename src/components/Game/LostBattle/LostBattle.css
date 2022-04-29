@@ -1,0 +1,44 @@
+.lost-battle_title {
+  margin-top: 3rem;
+  font-size: 4rem;
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+}
+
+.lost-pokemon_container {
+  position: relative;
+}
+.lost-fight_pokemon {
+  width: 350px;
+  height: auto;
+  margin-top: 5rem;
+}
+
+.btn-lost_game {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  font-weight: bold;
+  background-color: #5fa5e5;
+  font-size: 1.5rem;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .lost-fight_pokemon {
+    width: 250px;
+    margin-top: 7rem;
+  }
+  .lost-battle_title {
+    margin-top: 10rem;
+    font-size: 2rem;
+  }
+}

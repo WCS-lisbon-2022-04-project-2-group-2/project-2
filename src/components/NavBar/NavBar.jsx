@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import logo from "../../media/images/logo.svg";
 import BurgerMenu from "./BurgerMenu";
-import "./NavBar.css";
 import { Link } from "react-router-dom";
+import "./NavBar.css";
 
 function NavBar(props) {
   const [burgerOpen, setBurgerOpen] = useState(false);
