@@ -1,11 +1,19 @@
-import React from 'react';
-import './Pagination.css';
+import React from "react";
+import "./Pagination.css";
 
 export default function Pagination({ gotoNextPage, gotoPrevPage }) {
   return (
-    <div>
-      {gotoNextPage && <button onClick={gotoPrevPage}>PREV</button>}
-      {gotoNextPage && <button onClick={gotoNextPage}>NEXT</button>}
+    <div className="btn-container">
+      {gotoNextPage && (
+        <button className="btn-prev" onClick={gotoPrevPage}>
+          PREV
+        </button>
+      )}
+      {gotoNextPage && (
+        <button className="btn-next" onClick={gotoNextPage}>
+          NEXT
+        </button>
+      )}
     </div>
-  )
+  );
 }
