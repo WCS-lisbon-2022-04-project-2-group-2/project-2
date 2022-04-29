@@ -11,13 +11,14 @@ function BurgerMenu({ isOpen }) {
         <div className="burger burger3"></div>
       </div>
 
-      <ul className="burger-links">
-
-        <Link to="/about">About</Link>
-        <Link to="/">Game</Link>
-        <Link to="/pokedex-page">Pokédex</Link>
-        <Link to="/quiz">Quiz</Link>
-      </ul>
+      <div className="burger-links_container">
+        <ul className="burger-links">
+          <Link to="/about">About</Link>
+          <Link to="/">Game</Link>
+          <Link to="/pokedex-page">Pokédex</Link>
+          <Link to="/quiz">Quiz</Link>
+        </ul>
+      </div>
 
       <style jsx>{`
         .burger1 {

@@ -20,9 +20,9 @@ function WildPokemon() {
 
   return (
     <div className="wild-pokemon_card">
-      <h1 className="enemy-name">
-        WILD {name} APPEARED!
-      </h1>
+
+      <h1 className="enemy-name">WILD {name} APPEARED! </h1>
+
       <img
         className="enemy-img"
         src={response.sprites.other["official-artwork"].front_default}

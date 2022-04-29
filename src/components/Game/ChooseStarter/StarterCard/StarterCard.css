@@ -1,11 +1,24 @@
-
-.starter-card-container{
-    margin-top: 3rem;
-    display: grid;
-    grid-template-columns: repeat(3, 3fr);    
+.choose-starter_title {
+  margin-top: 2rem;
+}
+.starter-card-container {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
 }
 
 .starter-card-container img {
-    width: 170px;
-    height: auto;
+  width: 170px;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .starter-card-container {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+  }
+  .starter-card-container img {
+    width: 130px;
+  }
 }

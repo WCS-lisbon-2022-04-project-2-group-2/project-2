@@ -1,8 +1,8 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import GameContext from "../../../../contexts/GameContext";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import './StarterCard.css'
+import "./StarterCard.css";
 
 function StarterCard() {
     const {generation, setStarter} = useContext(GameContext);
@@ -34,6 +34,7 @@ function StarterCard() {
         </div>
         </>
     );
+
 }
 
-export default StarterCard; 
+export default StarterCard;
