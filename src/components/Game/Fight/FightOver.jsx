@@ -13,7 +13,7 @@ function FightOver () {
         setStarterHealth(200)
         setWildHealth(200)
         setGameOver(false)
-        setTextMessageOne("")
+        setTextMessageOne(" ")
         setTextMessageTwo("")
         setWildFaint(false)
         setStarterFaint(false)

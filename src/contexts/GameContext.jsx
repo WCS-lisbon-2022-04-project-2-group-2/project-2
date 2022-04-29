@@ -13,8 +13,8 @@ export const GameContextProvider = ({ children }) => {
   const [starterHealth, setStarterHealth] = useState(200);
   const [textMessageOne, setTextMessageOne] = useState(" ");
   const [textMessageTwo, setTextMessageTwo] = useState("");
-  const [wildFaint, setWildFaint] = useState("");
-  const [starterFaint, setStarterFaint] = useState("");
+  const [wildFaint, setWildFaint] = useState(false);
+  const [starterFaint, setStarterFaint] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [wildAttackName, setWildAttackName] = useState("");
   const [starterAttackName, setStarterAttackName] = useState("");
