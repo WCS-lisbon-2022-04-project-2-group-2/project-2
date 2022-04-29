@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
 import {Link} from "react-router-dom"
-import useFetch from '../../hooks/useFetch';
+import useFetch from "../../../hooks/useFetch";
 import "./Capture.css";
 
-import GameContext from '../../contexts/GameContext';
+import GameContext from "../../../contexts/GameContext"
 
 
 export default function Capture() {

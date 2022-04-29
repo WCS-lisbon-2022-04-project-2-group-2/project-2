@@ -1,3 +1,6 @@
+.choose-starter-main-container{
+  overflow-x: hidden;
+}
 .choose-starter_title {
   margin-top: 2rem;
 }
@@ -16,7 +19,7 @@
   .starter-card-container {
     margin-top: 2rem;
     display: grid;
-    grid-template-columns: repeat(2, 2fr);
+    grid-template-columns: repeat(3, 3fr);
   }
   .starter-card-container img {
     width: 130px;

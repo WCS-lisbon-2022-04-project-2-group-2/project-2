@@ -20,10 +20,8 @@ import About from "./components/About/About";
 import Quiz from "./components/Quiz/Quiz";
 import FightEscape from "./components/Game/FightEscape/FightEscape";
 import Fight from "./components/Game/Fight/Fight";
-
 import Captured from "./components/Game/Captured/Captured";
-
-import Capture from "./components/Capture/Capture";
+import Capture from "./components/Game/Capture/Capture";
 
 
 import "./App.css";

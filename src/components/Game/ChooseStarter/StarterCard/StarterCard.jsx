@@ -19,12 +19,12 @@ function StarterCard() {
     
    
     return (
-        <>
-        <h1>Choose a Starter Pokémon</h1>
+        <div className="choose-starter-main-container">
+        <h1 className="choose-starter_title">Choose a Starter Pokémon</h1>
         <div className="starter-card-container">
            { generation.map(number => {
                return (
-                    <div>
+                    <div className="">
                         <Link to="/game/choose-region" onClick={() => saveChosen(number)}>
                             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${number}.png`} alt={`pokemon no.${number}`} />
                         </Link>
@@ -32,7 +32,7 @@ function StarterCard() {
                ) 
            })}
         </div>
-        </>
+        </div>
     );
 
 }

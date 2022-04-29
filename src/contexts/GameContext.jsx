@@ -18,7 +18,6 @@ export const GameContextProvider = ({ children }) => {
   const [gameOver, setGameOver] = useState(false);
   const [wildAttackName, setWildAttackName] = useState("");
   const [starterAttackName, setStarterAttackName] = useState("");
-  const [wildPokemon, setWildPokemon] = useState("");
   const [winPokemon, setWinPokemon] = useState(
     "https://pokeapi.co/api/v2/pokemon/1"
   );
@@ -48,9 +47,7 @@ export const GameContextProvider = ({ children }) => {
         starterFaint, setStarterFaint,
         gameOver, setGameOver,
         wildAttackName, setWildAttackName,
-        starterAttackName, setStarterAttackName
-        wildPokemon,
-        setWildPokemon,
+        starterAttackName, setStarterAttackName,
         winPokemon,
         setWinPokemon,
       }}
