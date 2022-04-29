@@ -10,6 +10,7 @@ export const GameContextProvider = ({ children }) => {
     "https://pokeapi.co/api/v2/pokemon/1"
   );
 
+
   return (
     <GameContext.Provider
       value={{
@@ -21,6 +22,7 @@ export const GameContextProvider = ({ children }) => {
         setWildPokemon,
         winPokemon,
         setWinPokemon,
+
       }}
     >
       {children}
