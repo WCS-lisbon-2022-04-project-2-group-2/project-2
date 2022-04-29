@@ -18,7 +18,11 @@ import LostBattle from "./components/Game/LostBattle/LostBattle";
 import RestartGame from "./components/Game/RestartGame/RestartGame";
 import About from "./components/About/About";
 import Quiz from "./components/Quiz/Quiz";
+
+import Captured from "./components/Game/Captured/Captured";
+
 import Capture from "./components/Capture/Capture";
+
 
 import "./App.css";
 
@@ -60,9 +64,13 @@ function App() {
           ></Route>
           <Route path="/game/choose-region" element={<PokemonRegion />}></Route>
           <Route path="/game/wild-pokemon/:region/:id" element={<WildPokemon />}></Route>
+
+          <Route path="/game/captured" element={<Captured />}></Route>
+
           <Route path="/game/capture" element={<Capture />}></Route>
           <Route path="/game/lost-battle/:id" element={<LostBattle />} />
           <Route path="/game/restart-game/" element={<RestartGame />} />
+
 
         </Routes>
       </GameContextProvider>
