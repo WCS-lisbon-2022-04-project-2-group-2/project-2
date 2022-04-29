@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Kanto from "../../../media/images/Kanto.png";
 import Johto from "../../../media/images/Johto.png";
@@ -9,6 +9,9 @@ import Kalos from "../../../media/images/kalos.jpg";
 import Alola from "../../../media/images/kalos.jpg";
 import Galar from "../../../media/images/Galar.png";
 import "./PokemonRegion.css";
+import GameContext from "../../../contexts/GameContext";
+import useFetch from "../../../hooks/useFetch";
+import axios from "axios";
 
 function getRandomId(min, max) {
   min = Math.ceil(min);
@@ -17,11 +20,13 @@ function getRandomId(min, max) {
 }
 
 function PokemonRegion() {
+  const {setWildPokemon} = useContext(GameContext)
   const navigate = useNavigate();
 
-  const handleClick = (min, max, region) => {
+  const handleClick = async(min, max, region) => {
     const id = getRandomId(min, max);
-
+    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+    setWildPokemon([res.data]);
     navigate(`/game/wild-pokemon/${region}/${id}`);
   };
 

@@ -4,25 +4,55 @@ const GameContext = createContext();
 
 export const GameContextProvider = ({ children }) => {
   const [generation, setGeneration] = useState([]);
-  const [chosenStarter, setChosenStarter] = useState([]);
+  const [starter, setStarter] = useState();
+  const [wildPokemon, setWildPokemon] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [isSelected, setIsSelected] = useState(false);
+  const [move, setMove] = useState("");
+  const [wildHealth, setWildHealth] = useState(200);
+  const [starterHealth, setStarterHealth] = useState(200);
+  const [textMessageOne, setTextMessageOne] = useState(" ");
+  const [textMessageTwo, setTextMessageTwo] = useState("");
+  const [wildFaint, setWildFaint] = useState(false);
+  const [starterFaint, setStarterFaint] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
+  const [wildAttackName, setWildAttackName] = useState("");
+  const [starterAttackName, setStarterAttackName] = useState("");
   const [wildPokemon, setWildPokemon] = useState("");
   const [winPokemon, setWinPokemon] = useState(
     "https://pokeapi.co/api/v2/pokemon/1"
   );
-
 
   return (
     <GameContext.Provider
       value={{
         generation,
         setGeneration,
-        chosenStarter,
-        setChosenStarter,
+        starter,
+        setStarter,
+        wildPokemon, 
+        setWildPokemon,
+        loading,
+        setLoading,
+        move, 
+        setMove,
+        isSelected, 
+        setIsSelected,
+        starterHealth, 
+        setStarterHealth,
+        wildHealth,
+        setWildHealth,
+        textMessageOne, setTextMessageOne,
+        textMessageTwo, setTextMessageTwo,
+        wildFaint, setWildFaint,
+        starterFaint, setStarterFaint,
+        gameOver, setGameOver,
+        wildAttackName, setWildAttackName,
+        starterAttackName, setStarterAttackName
         wildPokemon,
         setWildPokemon,
         winPokemon,
         setWinPokemon,
-
       }}
     >
       {children}
@@ -31,3 +61,4 @@ export const GameContextProvider = ({ children }) => {
 };
 
 export default GameContext;
+
