@@ -1,6 +1,27 @@
-button {
-  background-color: #5fa5ef;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding: 1rem;
+.btn-container {
+  margin: 3rem;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+.btn-prev {
+  width: 190px;
+  height: 60px;
+  font-weight: bold;
+  background-color: #5fa5e5;
+  font-size: 1.5rem;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-next {
+  width: 180px;
+  height: 60px;
+  font-weight: bold;
+  background-color: #f5ec00;
+  font-size: 1.5rem;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  cursor: pointer;
 }

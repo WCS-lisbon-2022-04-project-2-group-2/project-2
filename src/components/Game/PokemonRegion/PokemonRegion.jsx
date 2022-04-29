@@ -1,5 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Kanto from "../../../media/images/Kanto.png";
+import Johto from "../../../media/images/Johto.png";
+import Hoenn from "../../../media/images/Hoenn.png";
+import Sinnoh from "../../../media/images/Sinnoh.png";
+import Unova from "../../../media/images/Unova.png";
+import Kalos from "../../../media/images/kalos.jpg";
+import Alola from "../../../media/images/kalos.jpg";
+import Galar from "../../../media/images/Galar.png";
 import "./PokemonRegion.css";
 
 function getRandomId(min, max) {
@@ -20,42 +28,42 @@ function PokemonRegion() {
   const regions = [
     {
       name: "KANTO",
-      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+      src: `${Kanto}`,
       onClick: () => handleClick(1, 151, "KANTO"),
     },
     {
       name: "JOHTO",
-      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/152.png",
+      src: `${Johto}`,
       onClick: () => handleClick(152, 251, "JOHTO"),
     },
     {
       name: "HOENN",
-      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/252.png",
+      src: `${Hoenn}`,
       onClick: () => handleClick(252, 386, "HOENN"),
     },
     {
       name: "SINNOH",
-      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/387.png",
+      src: `${Sinnoh}`,
       onClick: () => handleClick(387, 494, "SINNOH"),
     },
     {
       name: "UNOVA",
-      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/495.png",
+      src: `${Unova}`,
       onClick: () => handleClick(495, 649, "UNOVA"),
     },
     {
       name: "KALOS",
-      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/650.png",
+      src: `${Kalos}`,
       onClick: () => handleClick(650, 721, "KALOS"),
     },
     {
       name: "ALOLA",
-      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/722.png",
+      src: `${Alola}`,
       onClick: () => handleClick(722, 809, "ALOLA"),
     },
     {
       name: "GALAR",
-      src: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/810.png",
+      src: `${Galar}`,
       onClick: () => handleClick(810, 898, "GALAR"),
     },
   ];
