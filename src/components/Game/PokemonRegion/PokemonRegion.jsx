@@ -6,7 +6,7 @@ import Hoenn from "../../../media/images/Hoenn.png";
 import Sinnoh from "../../../media/images/Sinnoh.png";
 import Unova from "../../../media/images/Unova.png";
 import Kalos from "../../../media/images/kalos.jpg";
-import Alola from "../../../media/images/kalos.jpg";
+import Alola from "../../../media/images/Alola.png";
 import Galar from "../../../media/images/Galar.png";
 import "./PokemonRegion.css";
 import GameContext from "../../../contexts/GameContext";
@@ -20,12 +20,12 @@ function getRandomId(min, max) {
 }
 
 function PokemonRegion() {
-  const {setWildPokemon} = useContext(GameContext)
+  const { setWildPokemon } = useContext(GameContext);
   const navigate = useNavigate();
 
-  const handleClick = async(min, max, region) => {
+  const handleClick = async (min, max, region) => {
     const id = getRandomId(min, max);
-    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`);
     setWildPokemon([res.data]);
     navigate(`/game/wild-pokemon/${region}/${id}`);
   };
@@ -78,7 +78,7 @@ function PokemonRegion() {
       <h1>Choose a Region to Catch new Pokémon</h1>
       <div className="regions-card">
         {regions.map((region) => (
-          <div>
+          <div key={region.name}>
             <h3 className="region-name">{region.name}</h3>
             <img
               className="region-img"

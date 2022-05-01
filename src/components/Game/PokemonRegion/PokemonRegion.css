@@ -1,5 +1,8 @@
-.regions-card {
+h1 {
   margin-top: 2rem;
+}
+.regions-card {
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
@@ -21,10 +24,14 @@
 @media (max-width: 767px) {
   .regions-card {
     margin-top: 3rem;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
     justify-content: center;
     gap: 15px;
+  }
+
+  .region-name {
+    padding-bottom: 1rem;
   }
 
   .region-img {

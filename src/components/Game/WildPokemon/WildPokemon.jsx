@@ -20,7 +20,6 @@ function WildPokemon() {
 
   return (
     <div className="wild-pokemon_card">
-
       <h1 className="enemy-name">WILD {name} APPEARED! </h1>
 
       <img
@@ -28,9 +27,12 @@ function WildPokemon() {
         src={response.sprites.other["official-artwork"].front_default}
         alt="pokemon region"
       />
-      <div>
-        <Link to={"/game/fight-escape"}>
-          <button className="wild-pokemon-button" >Continue...</button>
+      <div className="wild-pokemon-btn_container">
+        <Link to={"/game/fight"}>
+          <button className="wild-pokemon-btn_fight">FIGHT</button>
+        </Link>
+        <Link to={"/game/choose-region"}>
+          <button className="wild-pokemon-btn_escape">ESCAPE</button>
         </Link>
       </div>
     </div>
@@ -38,4 +40,3 @@ function WildPokemon() {
 }
 
 export default WildPokemon;
-

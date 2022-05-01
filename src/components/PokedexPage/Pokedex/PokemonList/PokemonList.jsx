@@ -11,8 +11,8 @@ export default function PokemonList() {
       <div className="mainCardContainer" id="name">
         {myData.map((item) => {
           return (
-            <Link to={`/pokedex-page/pokedex/${item.id}`}>
-              <div className="card" key={item.id}>
+            <Link key={item.id} to={`/pokedex-page/pokedex/${item.id}`}>
+              <div className="card">
                 <img
                   src={item.sprites.other["official-artwork"].front_default}
                   alt={`pokemon ${item.name}`}

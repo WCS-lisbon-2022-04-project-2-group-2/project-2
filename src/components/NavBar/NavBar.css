@@ -5,6 +5,7 @@
   display: flex;
   position: relative;
   justify-content: space-between;
+  overflow-x: hidden;
   background: linear-gradient(45deg, rgb(156, 14, 14), rgb(238, 238, 244));
 }
 

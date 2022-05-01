@@ -8,6 +8,7 @@ import PokedexPage from "./components/PokedexPage/PokedexPage";
 import { PokedexContextProvider } from "./contexts/PokedexContext";
 import MyPokemon from "./components/PokedexPage/Pokedex/MyPokemon/MyPokemon";
 import ChooseStarter from "./components/Game/ChooseStarter/ChooseStarter";
+import StarterCard from "./components/Game/ChooseStarter/StarterCard/StarterCard";
 import ChooseGeneration from "./components/Game/ChooseGeneration/ChooseGeneration";
 import { GameContextProvider } from "./contexts/GameContext";
 import HomePage from "./components/HomePage/HomePage";
@@ -17,12 +18,9 @@ import WildPokemon from "./components/Game/WildPokemon/WildPokemon";
 import LostBattle from "./components/Game/LostBattle/LostBattle";
 import RestartGame from "./components/Game/RestartGame/RestartGame";
 import About from "./components/About/About";
-import Quiz from "./components/Quiz/Quiz";
-import FightEscape from "./components/Game/FightEscape/FightEscape";
 import Fight from "./components/Game/Fight/Fight";
 import Captured from "./components/Game/Captured/Captured";
 import Capture from "./components/Game/Capture/Capture";
-
 
 import "./App.css";
 
@@ -35,43 +33,45 @@ function App() {
       {isGameUrl ? <NavBar /> : <NavBarElements />}
 
       <PokedexContextProvider>
-        <Routes>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/quiz" element={<Quiz />}></Route>
-          <Route path="/pokedex-page" element={<PokedexPage />}></Route>
-          <Route path="/pokedex-page/pokedex" element={<Pokedex />}></Route>
-          <Route
-            path="/pokedex-page/pokedex/:id"
-            element={<PokemonCard />}
-          ></Route>
-          <Route
-            path="/pokedex-page/my-pokemon"
-            element={<MyPokemon />}
-          ></Route>
-        </Routes>
+        <GameContextProvider>
+          <Routes>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/pokedex-page" element={<PokedexPage />}></Route>
+            <Route path="/pokedex-page/pokedex" element={<Pokedex />}></Route>
+            <Route
+              path="/pokedex-page/pokedex/:id"
+              element={<PokemonCard />}
+            ></Route>
+            <Route
+              path="/pokedex-page/my-pokemon"
+              element={<MyPokemon />}
+            ></Route>
+            <Route path="/" element={<HomePage />}></Route>
+            <Route
+              path="/game/choose-generation"
+              element={<ChooseGeneration />}
+            ></Route>
+            <Route
+              path="/game/choose-starter"
+              element={<ChooseStarter />}
+            ></Route>
+            <Route path="/game/starter-card" element={<StarterCard />}></Route>
+            <Route
+              path="/game/choose-region"
+              element={<PokemonRegion />}
+            ></Route>
+            <Route
+              path="/game/wild-pokemon/:region/:id"
+              element={<WildPokemon />}
+            ></Route>
+            <Route path="/game/fight" element={<Fight />}></Route>
+            <Route path="/game/captured" element={<Captured />}></Route>
+            <Route path="/game/capture" element={<Capture />}></Route>
+            <Route path="/game/lost-battle/:id" element={<LostBattle />} />
+            <Route path="/game/restart-game/" element={<RestartGame />} />
+          </Routes>
+        </GameContextProvider>
       </PokedexContextProvider>
-      <GameContextProvider>
-        <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-
-          <Route
-            path="/game/choose-generation"
-            element={<ChooseGeneration />}
-          ></Route>
-          <Route
-            path="/game/choose-starter"
-            element={<ChooseStarter />}
-          ></Route>
-          <Route path="/game/choose-region" element={<PokemonRegion />}></Route>
-          <Route path="/game/wild-pokemon/:region/:id" element={<WildPokemon />}></Route>
-          <Route path="/game/fight-escape" element={<FightEscape />}></Route>
-          <Route path="/game/fight" element={<Fight />}></Route>
-          <Route path="/game/captured" element={<Captured />}></Route>
-          <Route path="/game/capture" element={<Capture />}></Route>
-          <Route path="/game/lost-battle/:id" element={<LostBattle />} />
-          <Route path="/game/restart-game/" element={<RestartGame />} />
-        </Routes>
-      </GameContextProvider>
     </div>
   );
 }

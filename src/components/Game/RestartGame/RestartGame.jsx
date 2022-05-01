@@ -32,7 +32,7 @@ function RestartGame() {
         <Link to="/game/choose-region">
           <button className="btn-choose_new_region">CHOOSE NEW REGION</button>
         </Link>
-        <Link to="/game/choose-starter">
+        <Link to="/game/starter-card">
           <button className="btn-choose_new_fighter">CHOOSE NEW FIGHTER</button>
         </Link>
       </div>

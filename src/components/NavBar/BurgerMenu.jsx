@@ -16,7 +16,6 @@ function BurgerMenu({ isOpen }) {
           <Link to="/about">About</Link>
           <Link to="/">Game</Link>
           <Link to="/pokedex-page">Pokédex</Link>
-          <Link to="/quiz">Quiz</Link>
         </ul>
       </div>
 

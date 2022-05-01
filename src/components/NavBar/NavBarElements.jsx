@@ -20,11 +20,9 @@ function NavBar() {
       </div>
 
       <div className="navBar-links">
-
         <Link to="/about">About</Link>
         <Link to="/">Game</Link>
         <Link to="/pokedex-page">Pokédex</Link>
-        <Link to="/quiz">Quiz</Link>
       </div>
 
       <div className="burger-menu" onClick={toggleBurger}>

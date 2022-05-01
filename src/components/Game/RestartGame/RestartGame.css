@@ -12,6 +12,7 @@
 .win-pokemon_img {
   /* Start the shake animation and make the animation last for 0.5 seconds */
   animation: shake 1.5s;
+  margin-bottom: 3rem;
 
   /* When the animation is finished, start again */
   animation-iteration-count: revert;
@@ -55,19 +56,22 @@
 
 .btn-choose_new_region {
   width: 220px;
+  height: 60px;
   font-weight: bold;
   background-color: #5fa5e5;
-  font-size: 1rem;
+  font-size: 1.1rem;
   border: 1px solid #000000;
   border-radius: 10px;
+  color: #ffffff;
   cursor: pointer;
 }
 
 .btn-choose_new_fighter {
   width: 220px;
+  height: 60px;
   font-weight: bold;
   background-color: rgb(156, 14, 14);
-  font-size: 1rem;
+  font-size: 1.1rem;
   border: 1px solid #000000;
   border-radius: 10px;
   cursor: pointer;
@@ -86,11 +90,12 @@
   }
   .btn-choose_new_region {
     width: 180px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .btn-choose_new_fighter {
     width: 180px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
   }
 }
