@@ -37,14 +37,14 @@ function Fight() {
         // setStarterFaint(false)
         setTimeout(() => {
           setTextMessageOne("");
-        }, 2000);
-      }, 2000);
-    }, 2000);
+        }, 1000);
+      }, 1000);
+    }, 1000);
   };
 
   useEffect(() => {
     startingBattle();
-  }, [wildFaint, starterFaint]);
+  }, []);
 
   return (
     <div className="container h-100">
