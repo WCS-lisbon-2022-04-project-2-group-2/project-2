@@ -7,6 +7,8 @@ import StarterBox from "./StarterBox";
 import TextBox from "./TextBox";
 import Attacks from "./Attacks";
 import FightOver from "./FightOver";
+import EnemyTurn from "./EnemyTurn";
+import EnemyFaints from "./EnemyFaints";
 
 function Fight() {
   const {
@@ -14,9 +16,10 @@ function Fight() {
     wildPokemon,
     textMessageOne,
     setTextMessageOne,
-    wildFaint,
-    starterFaint,
     gameOver,
+    starterTurnOver,
+    wildTurnOver,
+    wildHealth,
   } = useContext(GameContext);
 
   const nameWildPokemon = wildPokemon[0].name.toUpperCase();
@@ -41,7 +44,7 @@ function Fight() {
       }, 1000);
     }, 1000);
   };
-  
+
 
   useEffect(() => {
     startingBattle();
@@ -58,14 +61,15 @@ function Fight() {
             {/* TEXT BOX SECTION */}
             <div id="text-box">
               <div id="text-box-content">
+                {/* Show initial message and attack messages from both starter and wild */}
                 {textMessageOne !== "" && gameOver === false && <TextBox />}
-
-                {textMessageOne === "" &&
-                  gameOver === false &&
-                  starterMoves.map((el) => {
-                    return <Attacks key={el} el={el} />;
-                  })}
-
+                {/* Show CONTINUE button after Starter Attack */}
+                {textMessageOne === "" && gameOver === false && starterTurnOver === true && wildTurnOver === false && wildHealth > 0 && <EnemyTurn />}
+                {/* Show CONTINUE button after wildHealth reaches 0 and pokemon FAINTS */}
+                {textMessageOne === "" && gameOver === false && starterTurnOver === true && wildTurnOver === false && wildHealth <= 0 && <EnemyFaints />}
+                {/* Show the 4 starter attacks */}
+                {textMessageOne === "" && gameOver === false && starterTurnOver === false && wildTurnOver === true && starterMoves.map((el) => {return <Attacks key={el} el={el} />;})}
+                {/* Show GAME OVER message */}
                 {gameOver === true && <FightOver />}
               </div>
             </div>
