@@ -3,7 +3,7 @@ import GameContext from "../../../contexts/GameContext";
 import WildAvatar from "./WildAvatar";
 
 function WildBox() {
-  const { wildHealth, wildPokemon, wildFaint } = useContext(GameContext);
+  const { wildHealth, wildPokemon, wildOverKill } = useContext(GameContext);
   const nameWild = wildPokemon[0].name.toUpperCase();
   // calc enemy progress bar percentage based on HP
   let percentage = (wildHealth / 200) * 100 + "%";
@@ -42,12 +42,22 @@ function WildBox() {
                 />
               </div>
             </div>
+
             <div id="hero-hp" className="d-flex">
               <div className="ml-auto mr-3">
                 <h5>
                   {wildHealth}/{200}
                 </h5>
               </div>
+
+          </div>
+          <div id="hero-hp" className="d-flex">
+            <div className="ml-auto mr-3">
+              <h5>
+                {wildOverKill ? `0/200` :`${wildHealth}/200`}
+                
+              </h5>
+
             </div>
           </div>
         </div>

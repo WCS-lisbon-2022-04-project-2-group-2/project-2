@@ -9,8 +9,8 @@ export const GameContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [isSelected, setIsSelected] = useState(false);
   const [move, setMove] = useState("");
-  const [wildHealth, setWildHealth] = useState(200);
-  const [starterHealth, setStarterHealth] = useState(200);
+  const [wildHealth, setWildHealth] = useState(100);
+  const [starterHealth, setStarterHealth] = useState(100);
   const [textMessageOne, setTextMessageOne] = useState(" ");
   const [textMessageTwo, setTextMessageTwo] = useState("");
   const [wildFaint, setWildFaint] = useState(false);
@@ -21,6 +21,10 @@ export const GameContextProvider = ({ children }) => {
   const [winPokemon, setWinPokemon] = useState(
     "https://pokeapi.co/api/v2/pokemon/1"
   );
+  const [starterOverKill, setStarterOverKill] = useState(false);
+  const [wildOverKill, setWildOverKill] = useState(false);
+  const [starterTurnOver, setStarterTurnOver] = useState(false)
+  const [wildTurnOver, setWildTurnOver] = useState(false)
 
   return (
     <GameContext.Provider
@@ -50,6 +54,10 @@ export const GameContextProvider = ({ children }) => {
         starterAttackName, setStarterAttackName,
         winPokemon,
         setWinPokemon,
+        starterOverKill, setStarterOverKill,
+        wildOverKill, setWildOverKill,
+        starterTurnOver, setStarterTurnOver,
+        wildTurnOver, setWildTurnOver
       }}
     >
       {children}

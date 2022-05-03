@@ -3,12 +3,14 @@ import StarterAvatar from "./StarterAvatar";
 import GameContext from "../../../contexts/GameContext";
 
 function StarterBox() {
-  const { starterHealth, starter } = useContext(GameContext);
-  const starterName = starter[0].name.toUpperCase();
-  // calc starter progress bar percentage based on HP
-  let percentage = (starterHealth / 200) * 100 + "%";
-  let num = (starterHealth / 200) * 100;
-  let progressColor;
+
+    const { starterHealth, starter, starterOverKill} = useContext(GameContext)
+    const starterName = starter[0].name.toUpperCase();
+    // calc starter progress bar percentage based on HP
+    let percentage = (starterHealth / 200) * 100 + "%";
+    let num = (starterHealth / 200) * 100;
+    let progressColor;
+
 
   // use player progress bar calc to style colors
   if (num <= 25) {
@@ -53,7 +55,7 @@ function StarterBox() {
             <div id="hero-hp" className="d-flex">
               <div className="ml-auto mr-3">
                 <h5>
-                  {starterHealth}/{200}
+                  {starterOverKill ? `0/200` :`${starterHealth}/200`}
                 </h5>
               </div>
             </div>

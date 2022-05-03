@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import GameContext from "../../../contexts/GameContext";
 import "./Fight.css";
-import Typed from "react-typed";
+// import Typed from "react-typed";
 import WildBox from "./WildBox";
 import StarterBox from "./StarterBox";
 import TextBox from "./TextBox";
@@ -41,6 +41,7 @@ function Fight() {
       }, 1000);
     }, 1000);
   };
+  
 
   useEffect(() => {
     startingBattle();
