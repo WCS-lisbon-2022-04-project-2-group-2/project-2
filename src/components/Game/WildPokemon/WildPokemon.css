@@ -1,6 +1,8 @@
 .enemy-img {
   width: 350px;
   height: auto;
+  animation-duration: 2s;
+  animation-name: slideIn;
 }
 
 .wild-pokemon-btn_container {
@@ -32,6 +34,17 @@
   border-radius: 10px;
   cursor: pointer;
 }
+
+@keyframes slideIn {
+  from {
+    margin-left: -2000px;
+  }
+
+  to {
+    margin-left: 0%;
+  }
+}
+
 @media (max-width: 767px) {
   .enemy-img {
     width: 250px;

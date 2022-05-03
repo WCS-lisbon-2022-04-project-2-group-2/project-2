@@ -28,24 +28,26 @@ function WildBox() {
           <div className="d-flex justify-content-between align-items-center">
             <h2 id="enemy-name">{nameWild}</h2>
           </div>
-          <div className="d-flex justify-content-between align-items-center ml-3 mr-1">
-            <h5>HP</h5>
-            <div className="progress ml-1 both-progress">
-              <div
-                className={progressColor}
-                role="progressbar"
-                style={{ width: percentage }}
-                aria-valuenow="75"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              />
+          <div className="health-points_container">
+            <div className="d-flex justify-content-between align-items-center ml-3 mr-1">
+              <h5>HP</h5>
+              <div className="progress ml-1 both-progress">
+                <div
+                  className={progressColor}
+                  role="progressbar"
+                  style={{ width: percentage }}
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                />
+              </div>
             </div>
-          </div>
-          <div id="hero-hp" className="d-flex">
-            <div className="ml-auto mr-3">
-              <h5>
-                {wildHealth}/{200}
-              </h5>
+            <div id="hero-hp" className="d-flex">
+              <div className="ml-auto mr-3">
+                <h5>
+                  {wildHealth}/{200}
+                </h5>
+              </div>
             </div>
           </div>
         </div>

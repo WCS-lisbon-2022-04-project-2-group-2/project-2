@@ -1,5 +1,5 @@
 .about-background_img {
-  height: 100vh;
+  height: 90vh;
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 2;
@@ -13,8 +13,10 @@
 }
 
 h1 {
-  margin: 2rem 0 0;
-  font-size: 3rem;
+  margin: 2rem 1rem;
+  font-weight: 400;
+  font-size: 4rem;
+  color: #295783;
 }
 .about-game_container {
   display: flex;
@@ -23,14 +25,14 @@ h1 {
 }
 .about-game_card {
   width: 900px;
-  height: 500px;
+  height: 400px;
   border: 2px solid #295783;
   border-radius: 10px;
   margin-top: 3rem;
 
   display: flex;
   justify-content: center;
-  background-color: #5fa5e5;
+  background-color: #96c2ea;
 }
 .game-rules_desktop {
   font-size: 1.8rem;
@@ -38,6 +40,11 @@ h1 {
   line-height: 1.5;
   color: #ffffff;
   padding: 1rem;
+  font-weight: 400;
+  color: #000000;
+}
+.game-rules_mobile {
+  display: none;
 }
 
 @media (max-width: 767px) {
@@ -51,14 +58,14 @@ h1 {
     justify-content: center;
   }
   .about-background_img {
-    height: 100vh;
+    height: 85vh;
     width: 70vw;
     left: 0;
   }
 
   .about-game_card {
     width: 320px;
-    height: 500px;
+    height: 400px;
     margin-top: 3rem;
   }
   .game-rules_desktop {

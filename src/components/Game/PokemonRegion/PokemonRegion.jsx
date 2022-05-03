@@ -75,7 +75,7 @@ function PokemonRegion() {
 
   return (
     <>
-      <h1>Choose a Region to Catch new Pokémon</h1>
+      <h1>Choose a Region to Catch New Pokémon</h1>
       <div className="regions-card">
         {regions.map((region) => (
           <div key={region.name}>

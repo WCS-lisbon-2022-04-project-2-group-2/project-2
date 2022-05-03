@@ -3,39 +3,40 @@ import StarterAvatar from "./StarterAvatar";
 import GameContext from "../../../contexts/GameContext";
 
 function StarterBox() {
-    const { starterHealth, starter } = useContext(GameContext)
-    const starterName = starter[0].name.toUpperCase();
-    // calc starter progress bar percentage based on HP
-    let percentage = (starterHealth / 200) * 100 + "%";
-    let num = (starterHealth / 200) * 100;
-    let progressColor;
+  const { starterHealth, starter } = useContext(GameContext);
+  const starterName = starter[0].name.toUpperCase();
+  // calc starter progress bar percentage based on HP
+  let percentage = (starterHealth / 200) * 100 + "%";
+  let num = (starterHealth / 200) * 100;
+  let progressColor;
 
-    // use player progress bar calc to style colors
-    if (num <= 25) {
-        progressColor = "progress-bar bg-danger";
-    } else if (num <= 50) {
-        progressColor = "progress-bar bg-warning";
-    } else if (num > 50) {
-        progressColor = "progress-bar bg-success";
-    }
+  // use player progress bar calc to style colors
+  if (num <= 25) {
+    progressColor = "progress-bar bg-danger";
+  } else if (num <= 50) {
+    progressColor = "progress-bar bg-warning";
+  } else if (num > 50) {
+    progressColor = "progress-bar bg-success";
+  }
 
-    return (
-      <div>
-        {/* HERO POKEMON CONTAINER */}
-        <div id="hero-container">
-          {/* HERO POKEMON AVATAR PICTURE */}
-          <div className="avatar-box ml-sm-5">
-            <StarterAvatar />
+  return (
+    <div>
+      {/* HERO POKEMON CONTAINER */}
+      <div id="hero-container">
+        {/* HERO POKEMON AVATAR PICTURE */}
+        <div className="avatar-box ml-sm-5">
+          <StarterAvatar />
 
-            <div className="oval" />
+          <div className="oval" />
+        </div>
+        {/* END HERO POKEMON AVATAR PICTURE */}
+
+        {/* HERO POKEMON INFO BOX */}
+        <div id="hero-info-box">
+          <div className="d-flex justify-content-between align-items-center">
+            <h2 id="hero-name">{starterName}</h2>
           </div>
-          {/* END HERO POKEMON AVATAR PICTURE */}
-
-          {/* HERO POKEMON INFO BOX */}
-          <div id="hero-info-box">
-            <div className="d-flex justify-content-between align-items-center">
-              <h2 id="hero-name">{starterName}</h2>
-            </div>
+          <div className="health-points_container">
             <div className="d-flex justify-content-between align-items-center ml-3 mr-1">
               <h5>HP</h5>
               <div className="progress ml-1 both-progress">
@@ -57,11 +58,12 @@ function StarterBox() {
               </div>
             </div>
           </div>
-          {/* END HERO POKEMON INFO BOX */}
         </div>
-        {/* END HERO POKEMON CONTAINER */}
+        {/* END HERO POKEMON INFO BOX */}
       </div>
-    );
-  }
+      {/* END HERO POKEMON CONTAINER */}
+    </div>
+  );
+}
 
 export default StarterBox;

@@ -42,7 +42,7 @@ function Attacks({ el }) {
       setWildFaint(true);
       setTimeout(() => {
         setGameOver(true);
-      }, 3000);
+      }, 1000);
     }
   }, [
     wildHealth,
@@ -78,7 +78,7 @@ function Attacks({ el }) {
     }
     setTimeout(() => {
       setTextMessageOne("");
-    }, 3000);
+    }, 1000);
   };
 
   const handleAttackClick = (attack) => {
@@ -95,6 +95,7 @@ function Attacks({ el }) {
       );
     } else {
       setWildHealth(wildHealth - getPlayerAttackDamage(effectiveness));
+      console.log(wildHealth);
       setTextMessageOne(
         `${nameStarter} used ${attack} for ${getPlayerAttackDamage(
           effectiveness
