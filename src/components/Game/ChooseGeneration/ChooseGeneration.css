@@ -11,13 +11,16 @@ h1 {
 
 .generation-container p {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 300;
 }
 
 .starter-triangle-container {
   display: flex;
   flex-direction: column;
   position: relative;
+  background-color: #f0ecec;
+  border-radius: 10px;
+  margin: 5px;
 }
 .starter-triangle-container img {
   height: 100px;
