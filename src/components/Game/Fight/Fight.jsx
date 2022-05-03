@@ -41,6 +41,7 @@ function Fight() {
       }, 1000);
     }, 1000);
   };
+  
 
   useEffect(() => {
     startingBattle();
