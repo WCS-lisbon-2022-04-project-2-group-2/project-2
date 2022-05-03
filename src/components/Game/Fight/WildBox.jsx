@@ -20,15 +20,14 @@ function WildBox() {
   }
 
   return (
-    <div>
-      {/* ENEMY POKEMON CONTAINER */}
-      <div id="enemy-container">
-        {/* ENEMY POKEMON INFO BOX */}
-        <div id="enemy-info-box">
-          <div className="d-flex justify-content-between align-items-center">
-            <h2 id="enemy-name">{nameWild}</h2>
-          </div>
-          <div className="health-points_container">
+      <div>
+        {/* ENEMY POKEMON CONTAINER */}
+        <div id="enemy-container">
+          {/* ENEMY POKEMON INFO BOX */}
+          <div id="enemy-info-box">
+            <div className="d-flex justify-content-between align-items-center">
+              <h2 id="enemy-name">{nameWild}</h2>
+            </div>
             <div className="d-flex justify-content-between align-items-center ml-3 mr-1">
               <h5>HP</h5>
               <div className="progress ml-1 both-progress">
@@ -42,38 +41,27 @@ function WildBox() {
                 />
               </div>
             </div>
-
             <div id="hero-hp" className="d-flex">
               <div className="ml-auto mr-3">
                 <h5>
-                  {wildHealth}/{200}
+                  {wildOverKill ? `0/200` :`${wildHealth}/200`}
                 </h5>
               </div>
-
-          </div>
-          <div id="hero-hp" className="d-flex">
-            <div className="ml-auto mr-3">
-              <h5>
-                {wildOverKill ? `0/200` :`${wildHealth}/200`}
-                
-              </h5>
-
             </div>
           </div>
+          {/* END ENEMY POKEMON INFO BOX */}
+  
+          {/* ENEMY POKEMON AVATAR PICTURE */}
+          <div className="mr-sm-4 avatar-box">
+            <WildAvatar />
+  
+            <div className="oval" />
+          </div>
+          {/* END ENEMY POKEMON AVATAR PICTURE */}
         </div>
-        {/* END ENEMY POKEMON INFO BOX */}
-
-        {/* ENEMY POKEMON AVATAR PICTURE */}
-        <div className="mr-sm-4 avatar-box">
-          <WildAvatar />
-
-          <div className="oval" />
-        </div>
-        {/* END ENEMY POKEMON AVATAR PICTURE */}
+        {/* END ENEMY POKEMON CONTAINER */}
       </div>
-      {/* END ENEMY POKEMON CONTAINER */}
-    </div>
-  );
-}
+    );
+  }
 
 export default WildBox;
