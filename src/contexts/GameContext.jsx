@@ -16,15 +16,15 @@ export const GameContextProvider = ({ children }) => {
   const [wildFaint, setWildFaint] = useState(false);
   const [starterFaint, setStarterFaint] = useState(false);
   const [gameOver, setGameOver] = useState(false);
-  const [wildAttackName, setWildAttackName] = useState("");
-  const [starterAttackName, setStarterAttackName] = useState("");
   const [winPokemon, setWinPokemon] = useState(
     "https://pokeapi.co/api/v2/pokemon/1"
   );
   const [starterOverKill, setStarterOverKill] = useState(false);
   const [wildOverKill, setWildOverKill] = useState(false);
-  const [starterTurnOver, setStarterTurnOver] = useState(false)
-  const [wildTurnOver, setWildTurnOver] = useState(false)
+
+  //by default the starter's turn is the first, so starterTurnOver is set to false and wildTurnOver is set to true
+  const [starterTurnOver, setStarterTurnOver] = useState(false) 
+  const [wildTurnOver, setWildTurnOver] = useState(true)
 
   return (
     <GameContext.Provider
@@ -50,8 +50,6 @@ export const GameContextProvider = ({ children }) => {
         wildFaint, setWildFaint,
         starterFaint, setStarterFaint,
         gameOver, setGameOver,
-        wildAttackName, setWildAttackName,
-        starterAttackName, setStarterAttackName,
         winPokemon,
         setWinPokemon,
         starterOverKill, setStarterOverKill,

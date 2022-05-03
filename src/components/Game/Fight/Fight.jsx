@@ -19,7 +19,7 @@ const getPlayerAttackDamage = (effectiveness) => {
   }
 };
 
-function ContinueToEnemyTurn(){
+function EnemyTurn(){
   
     const {
       wildHealth,
@@ -66,9 +66,7 @@ function ContinueToEnemyTurn(){
           setGameOver(true);
       }, 3000);
       }
-  }, [
-
-  ]);
+  }, []);
 
   const enemyTurn = (attack) => {
       const effectiveness = Number.parseFloat(Math.random() * (0.99 - 0.01) + 0.01).toFixed(2);
@@ -88,17 +86,21 @@ function ContinueToEnemyTurn(){
       );
       }
       setTimeout(() => {
-      setTextMessageOne("");
+
+        setTextMessageOne("");
       }, 3000);
   };
 
     const handleEnemyTurn = () => {
-      setStarterTurnOver(false)
-      setWildTurnOver(false)
       const moveNumber = Math.floor(Math.random() * 4); // results: 0...3
       const wildAttackName = wildMoves[moveNumber];
       enemyTurn(wildAttackName)
+      setTimeout(() => {
+        setStarterTurnOver(false)
+        setWildTurnOver(true)
+      }, 3000);
     }
+    
     return (
       <div>
         <button onClick={()=>handleEnemyTurn()}>Continue to Enemy turn</button>
@@ -132,7 +134,10 @@ function Fight() {
     gameOver,
     starterTurnOver,
     wildTurnOver,
-    wildHealth
+    wildHealth,
+    setTextMessageTwo,
+    setGameOver,
+    setWildFaint
   } = useContext(GameContext);
 
   const nameWildPokemon = wildPokemon[0].name.toUpperCase();
@@ -164,20 +169,14 @@ function Fight() {
   }, []);
 
   function FinalPart(){
-    const {setWildFaint, setGameOver, starterHealth, setStarterFaint} = useContext(GameContext)
-    
+
     const handleFinalPart = () => {
-      if (wildHealth <= 0 ) {
-        setWildFaint(true);
-        setTimeout(() => {
+          setTextMessageOne(`${nameWildPokemon} fainted.`);
+          setTextMessageTwo(`${nameStarter} wins!`);
+          setWildFaint(true);
+          setTimeout(() => {
             setGameOver(true);
-        }, 3000);
-      }else if(starterHealth <= 0){
-        setStarterFaint(true);
-        setTimeout(() => {
-            setGameOver(true);
-        }, 3000);
-      }
+          }, 3000);
     }
 
     return (
@@ -199,18 +198,18 @@ function Fight() {
             <div id="text-box">
               <div id="text-box-content">
                 {/* Show initial message, attack messages from starter and wild */}
-                {textMessageOne !== "" && gameOver === false && starterTurnOver === false && wildTurnOver === false && <TextBox />}
+                {textMessageOne !== "" && gameOver === false && <TextBox />}
 
                 {/* Show Continue button after Starter Attack */}
-                {textMessageOne !== "" && gameOver === false && starterTurnOver === true && wildTurnOver === false && wildHealth > 0 && <ContinueToEnemyTurn />}
+                {textMessageOne === "" && gameOver === false && starterTurnOver === true && wildTurnOver === false && wildHealth > 0 && <EnemyTurn />}
 
-                {gameOver === false && starterTurnOver === true && wildTurnOver === false && wildHealth <= 0 && <FinalPart />}
+                {textMessageOne === "" && gameOver === false && starterTurnOver === true && wildTurnOver === false && wildHealth <= 0 && <FinalPart />}
 
                 {/* Show Continue button after Enemy Attack */}
                 {/* {textMessageOne === "" && gameOver === false && starterTurnOver === false && wildTurnOver === true && <ContinueToStarterTurn />} */}
 
                 {/* Show the 4 starter attacks */}
-                {textMessageOne === "" && gameOver === false && starterTurnOver === false && wildTurnOver === false && starterMoves.map((el) => {return <Attacks key={el} el={el} />;})}
+                {textMessageOne === "" && gameOver === false && starterTurnOver === false && wildTurnOver === true && starterMoves.map((el) => {return <Attacks key={el} el={el} />;})}
 
                 {/* Show GAME OVER message */}
                 {gameOver === true && <FightOver />}

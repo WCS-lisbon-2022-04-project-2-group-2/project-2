@@ -24,7 +24,8 @@ function Attacks({ el }) {
     starterHealth,
     setStarterHealth,
     setStarterFaint,
-    setStarterTurnOver
+    setStarterTurnOver,
+    setWildTurnOver
   } = useContext(GameContext);
 
   const nameWildPokemon = wildPokemon[0].name.toUpperCase();
@@ -54,17 +55,7 @@ function Attacks({ el }) {
         setGameOver(true);
       }, 3000);
     }
-  }, [
-    wildHealth,
-    starterHealth,
-    nameWildPokemon,
-    nameStarter,
-    setGameOver,
-    setTextMessageOne,
-    setTextMessageTwo,
-    setWildFaint,
-    setStarterFaint
-  ]);
+  }, []);
 
   // const enemyTurn = (attack) => {
   //   const effectiveness = Number.parseFloat(
@@ -115,6 +106,8 @@ function Attacks({ el }) {
     
     setTimeout(() => {
       setStarterTurnOver(true)
+      setWildTurnOver(false)
+      setTextMessageOne("")
     }, 3000);
     // setTimeout(() => {
     //   const moveNumber = Math.floor(Math.random() * 4); // results: 0...3

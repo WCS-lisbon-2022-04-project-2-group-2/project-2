@@ -24,12 +24,12 @@ function FightOver () {
     return (
         <div className="battle-text-content">
             <p id="play-again-text">
-                {wildFaint ? `${nameWildPokemon} fainted.` : null}
+                {/* {wildFaint ? `${nameWildPokemon} fainted.` : null}
                 {starterFaint ? `${nameStarter} fainted.` : null}
                 <br />
                 {starterFaint ? `${nameWildPokemon} wins!` : null}
                 {wildFaint ? `${nameStarter} wins!` : null}
-                <br />
+                <br /> */}
                 <Link to="/game/capture" onClick={() => handleFightOver()}>
                     Click Here To Continue
                 </Link>
