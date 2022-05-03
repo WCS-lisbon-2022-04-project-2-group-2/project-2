@@ -54,7 +54,7 @@ function ChooseGeneration() {
       <div className="generation-container">
         <Link to="/game/choose-starter" onClick={() => selectGen("1")}>
           <div>
-            <p className="gen-one">Generation 1</p>
+            <p className="gen-title">Generation 1</p>
             <div className="starter-triangle-container">
               <div className="top-triangle">
                 <img
@@ -81,7 +81,7 @@ function ChooseGeneration() {
         </Link>
         <Link to="/game/choose-starter" onClick={() => selectGen("2")}>
           <div>
-            <p className="gen-two">Generation 2</p>
+            <p className="gen-title">Generation 2</p>
             <div className="starter-triangle-container">
               <div className="top-triangle">
                 <img
@@ -108,7 +108,7 @@ function ChooseGeneration() {
         </Link>
         <Link to="/game/choose-starter" onClick={() => selectGen("3")}>
           <div>
-            <p className="gen-three">Generation 3</p>
+            <p className="gen-title">Generation 3</p>
             <div className="starter-triangle-container">
               <div className="top-triangle">
                 <img
@@ -135,7 +135,7 @@ function ChooseGeneration() {
         </Link>
         <Link to="/game/choose-starter" onClick={() => selectGen("4")}>
           <div>
-            <p className="gen-four">Generation 4</p>
+            <p className="gen-title">Generation 4</p>
             <div className="starter-triangle-container">
               <div className="top-triangle">
                 <img
@@ -162,7 +162,7 @@ function ChooseGeneration() {
         </Link>
         <Link to="/game/choose-starter" onClick={() => selectGen("5")}>
           <div>
-            <p className="gen-five">Generation 5</p>
+            <p className="gen-title">Generation 5</p>
             <div className="starter-triangle-container">
               <div className="top-triangle">
                 <img
@@ -189,7 +189,7 @@ function ChooseGeneration() {
         </Link>
         <Link to="/game/choose-starter" onClick={() => selectGen("6")}>
           <div>
-            <p className="gen-six">Generation 6</p>
+            <p className="gen-title">Generation 6</p>
             <div className="starter-triangle-container">
               <div className="top-triangle">
                 <img
@@ -216,7 +216,7 @@ function ChooseGeneration() {
         </Link>
         <Link to="/game/choose-starter" onClick={() => selectGen("7")}>
           <div>
-            <p className="gen-seven">Generation 7</p>
+            <p className="gen-title">Generation 7</p>
             <div className="starter-triangle-container">
               <div className="top-triangle">
                 <img
@@ -243,7 +243,7 @@ function ChooseGeneration() {
         </Link>
         <Link to="/game/choose-starter" onClick={() => selectGen("8")}>
           <div>
-            <p className="gen-eight">Generation 8</p>
+            <p className="gen-title">Generation 8</p>
             <div className="starter-triangle-container">
               <div className="top-triangle">
                 <img
