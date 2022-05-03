@@ -22,19 +22,12 @@ function Attacks({ el }) {
     starter,
     wildPokemon,
     starterHealth,
-    setStarterHealth,
     setStarterFaint,
     setStarterTurnOver,
     setWildTurnOver
   } = useContext(GameContext);
 
   const nameWildPokemon = wildPokemon[0].name.toUpperCase();
-  const moveWild1 = wildPokemon[0].moves[0].move.name.toUpperCase();
-  const moveWild2 = wildPokemon[0].moves[1].move.name.toUpperCase();
-  const moveWild3 = wildPokemon[0].moves[2].move.name.toUpperCase();
-  const moveWild4 = wildPokemon[0].moves[3].move.name.toUpperCase();
-  const wildMoves = [moveWild1, moveWild2, moveWild3, moveWild4];
-
   const nameStarter = starter[0].name.toUpperCase();
 
   useEffect(() => {
@@ -56,32 +49,6 @@ function Attacks({ el }) {
       }, 3000);
     }
   }, []);
-
-  // const enemyTurn = (attack) => {
-  //   const effectiveness = Number.parseFloat(
-  //     Math.random() * (0.99 - 0.01) + 0.01
-  //   ).toFixed(2);
-  //   // if enemy is still alive, proceed with enemy turn
-
-  //   if (starterHealth <= 0) {
-  //     setStarterHealth(0);
-  //     setTextMessageOne(
-  //       `${nameWildPokemon} used ${attack} for ${getPlayerAttackDamage(
-  //         effectiveness
-  //       )} damage!`
-  //     );
-  //   } else {
-  //     setStarterHealth(starterHealth - getPlayerAttackDamage(effectiveness));
-  //     setTextMessageOne(
-  //       `${nameWildPokemon} used ${attack} for ${getPlayerAttackDamage(
-  //         effectiveness
-  //       )} damage!`
-  //     );
-  //   }
-  //   setTimeout(() => {
-  //     setTextMessageOne("");
-  //   }, 3000);
-  // };
 
   const handleAttackClick = (attack) => {
     const effectiveness = Number.parseFloat(
