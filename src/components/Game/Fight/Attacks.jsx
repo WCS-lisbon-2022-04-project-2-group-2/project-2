@@ -23,7 +23,8 @@ function Attacks({ el }) {
     wildPokemon,
     starterHealth,
     setStarterHealth,
-    setStarterFaint
+    setStarterFaint,
+    setStarterTurnOver
   } = useContext(GameContext);
 
   const nameWildPokemon = wildPokemon[0].name.toUpperCase();
@@ -65,31 +66,31 @@ function Attacks({ el }) {
     setStarterFaint
   ]);
 
-  const enemyTurn = (attack) => {
-    const effectiveness = Number.parseFloat(
-      Math.random() * (0.99 - 0.01) + 0.01
-    ).toFixed(2);
-    // if enemy is still alive, proceed with enemy turn
+  // const enemyTurn = (attack) => {
+  //   const effectiveness = Number.parseFloat(
+  //     Math.random() * (0.99 - 0.01) + 0.01
+  //   ).toFixed(2);
+  //   // if enemy is still alive, proceed with enemy turn
 
-    if (starterHealth <= 0) {
-      setStarterHealth(0);
-      setTextMessageOne(
-        `${nameWildPokemon} used ${attack} for ${getPlayerAttackDamage(
-          effectiveness
-        )} damage!`
-      );
-    } else {
-      setStarterHealth(starterHealth - getPlayerAttackDamage(effectiveness));
-      setTextMessageOne(
-        `${nameWildPokemon} used ${attack} for ${getPlayerAttackDamage(
-          effectiveness
-        )} damage!`
-      );
-    }
-    setTimeout(() => {
-      setTextMessageOne("");
-    }, 3000);
-  };
+  //   if (starterHealth <= 0) {
+  //     setStarterHealth(0);
+  //     setTextMessageOne(
+  //       `${nameWildPokemon} used ${attack} for ${getPlayerAttackDamage(
+  //         effectiveness
+  //       )} damage!`
+  //     );
+  //   } else {
+  //     setStarterHealth(starterHealth - getPlayerAttackDamage(effectiveness));
+  //     setTextMessageOne(
+  //       `${nameWildPokemon} used ${attack} for ${getPlayerAttackDamage(
+  //         effectiveness
+  //       )} damage!`
+  //     );
+  //   }
+  //   setTimeout(() => {
+  //     setTextMessageOne("");
+  //   }, 3000);
+  // };
 
   const handleAttackClick = (attack) => {
     const effectiveness = Number.parseFloat(
@@ -111,14 +112,17 @@ function Attacks({ el }) {
         )} damage!`
       );
     }
-
+    
     setTimeout(() => {
-      const moveNumber = Math.floor(Math.random() * 4); // results: 0...3
-      const wildAttackName = wildMoves[moveNumber];
-
-      // once the state is changed, start enemy turn
-      enemyTurn(wildAttackName);
+      setStarterTurnOver(true)
     }, 3000);
+    // setTimeout(() => {
+    //   const moveNumber = Math.floor(Math.random() * 4); // results: 0...3
+    //   const wildAttackName = wildMoves[moveNumber];
+
+    //   // once the state is changed, start enemy turn
+    //   enemyTurn(wildAttackName);
+    // }, 3000);
   };
 
   return (

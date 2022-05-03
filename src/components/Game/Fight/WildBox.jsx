@@ -45,7 +45,6 @@ function WildBox() {
             <div className="ml-auto mr-3">
               <h5>
                 {wildOverKill ? `0/200` :`${wildHealth}/200`}
-                
               </h5>
             </div>
           </div>
