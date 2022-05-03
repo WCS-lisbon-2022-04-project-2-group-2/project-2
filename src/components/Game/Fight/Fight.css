@@ -1,10 +1,18 @@
 .avatar {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 
 .hide {
   opacity: 0;
+}
+
+#enemy-name {
+  margin-bottom: 0.5rem;
+}
+
+#hero-name {
+  margin-bottom: 0.5rem;
 }
 
 #enemy-container .oval {
@@ -32,6 +40,7 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 #enemy-container {
@@ -80,6 +89,11 @@
   width: 100%;
 }
 
+.health-points_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 #hero-container {
   justify-content: space-between;
   position: relative;
@@ -91,11 +105,8 @@
 
 #text-box {
   position: relative;
-  top: 100px;
+  top: 80px;
   height: 100px;
-  margin-left: -0.5rem;
-  margin-right: -0.5rem;
-  padding: 10px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -148,6 +159,9 @@
   }
   #battle-container {
     margin-top: 3rem;
-    margin-left: 10px;
+    margin-left: 0;
+  }
+  #text-box {
+    width: 100vw;
   }
 }
