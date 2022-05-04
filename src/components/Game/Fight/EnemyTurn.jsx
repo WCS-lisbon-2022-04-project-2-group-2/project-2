@@ -3,11 +3,11 @@ import GameContext from "../../../contexts/GameContext";
 
 const getPlayerAttackDamage = (effectiveness) => {
   if (effectiveness >= 0.9) {
-    return 50;
+    return Math.floor(Math.random() * (Math.floor(50) - Math.ceil(40))) + Math.ceil(40);
   } else if (effectiveness >= 0.5 && effectiveness < 0.9) {
-    return 30;
+    return Math.floor(Math.random() * (Math.floor(39) - Math.ceil(25))) + Math.ceil(25);;
   } else {
-    return 10;
+    return Math.floor(Math.random() * (Math.floor(24) - Math.ceil(10))) + Math.ceil(10);;
   }
 };
 

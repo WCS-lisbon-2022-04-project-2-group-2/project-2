@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import GameContext from "../../../contexts/GameContext";
 import WildAvatar from "./WildAvatar";
+import "./Fight.css";
 
 function WildBox() {
   const { wildHealth, wildPokemon, wildOverKill } = useContext(GameContext);
@@ -43,7 +44,9 @@ function WildBox() {
           </div>
           <div id="hero-hp" className="d-flex">
             <div className="ml-auto mr-3">
-              <h5>{wildOverKill ? `0/200` : `${wildHealth}/200`}</h5>
+              <h5>
+                {wildHealth}/200
+              </h5>
             </div>
           </div>
           {/* END ENEMY POKEMON INFO BOX */}

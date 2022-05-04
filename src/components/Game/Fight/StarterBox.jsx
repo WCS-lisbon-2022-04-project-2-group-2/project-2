@@ -4,8 +4,9 @@ import GameContext from "../../../contexts/GameContext";
 
 function StarterBox() {
 
-    const { starterHealth, starter, starterOverKill} = useContext(GameContext)
+    const { starterHealth, starter} = useContext(GameContext)
     const starterName = starter[0].name.toUpperCase();
+    
     // calc starter progress bar percentage based on HP
     let percentage = (starterHealth / 200) * 100 + "%";
     let num = (starterHealth / 200) * 100;
@@ -34,30 +35,28 @@ function StarterBox() {
         {/* END HERO POKEMON AVATAR PICTURE */}
 
         {/* HERO POKEMON INFO BOX */}
-        <div id="hero-info-box">
+        <div id="enemy-info-box">
           <div className="d-flex justify-content-between align-items-center">
-            <h2 id="hero-name">{starterName}</h2>
+            <h2 id="enemy-name">{starterName}</h2>
           </div>
-          <div className="health-points_container">
-            <div className="d-flex justify-content-between align-items-center ml-3 mr-1">
-              <h5>HP</h5>
-              <div className="progress ml-1 both-progress">
-                <div
-                  className={progressColor}
-                  role="progressbar"
-                  style={{ width: percentage }}
-                  aria-valuenow="75"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                />
-              </div>
+          <div className="d-flex justify-content-between align-items-center ml-3 mr-1">
+            <h5>HP</h5>
+            <div className="progress ml-1 both-progress">
+              <div
+                className={progressColor}
+                role="progressbar"
+                style={{ width: percentage }}
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              />
             </div>
-            <div id="hero-hp" className="d-flex">
-              <div className="ml-auto mr-3">
-                <h5>
-                  {starterOverKill ? `0/200` :`${starterHealth}/200`}
-                </h5>
-              </div>
+          </div>
+          <div id="hero-hp" className="d-flex">
+            <div className="ml-auto mr-3">
+              <h5>
+                {starterHealth}/200
+              </h5>
             </div>
           </div>
         </div>
@@ -69,3 +68,4 @@ function StarterBox() {
 }
 
 export default StarterBox;
+

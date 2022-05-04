@@ -1,3 +1,6 @@
+progress {
+  vertical-align: baseline; }
+
 .avatar {
   width: 150px;
   height: 150px;
@@ -165,3 +168,34 @@
     width: 100vw;
   }
 }
+
+/* from CSS bootstrap */
+.d-flex {
+  display: flex !important; }
+
+.justify-content-between {
+  justify-content: space-between !important; }
+
+.align-items-center {
+  align-items: center !important; }
+
+.mr-1,
+.mx-1 {
+  margin-right: 0.25rem !important; }
+
+.progress {
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 10px; }
+
+.bg-success {
+  background-color: #28a745 !important; }
+
+.bg-warning {
+background-color: #ffc107 !important; }
+
+.bg-danger {
+  background-color: #dc3545 !important; }
