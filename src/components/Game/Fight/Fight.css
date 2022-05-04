@@ -165,3 +165,35 @@
     width: 100vw;
   }
 }
+
+/* from CSS bootstrap */
+.d-flex {
+  display: flex !important; }
+
+.justify-content-between {
+  justify-content: space-between !important; }
+
+.align-items-center {
+  align-items: center !important; }
+
+.mr-1,
+.mx-1 {
+  margin-right: 0.25rem !important; }
+
+.progress {
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #5bd66f;
+  border-radius: 10px; }
+/* 
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #007bff;
+  transition: width 0.9s ease-out; } */
