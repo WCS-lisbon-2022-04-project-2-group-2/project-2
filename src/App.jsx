@@ -20,8 +20,6 @@ import RestartGame from "./components/Game/RestartGame/RestartGame";
 import About from "./components/About/About";
 import Fight from "./components/Game/Fight/Fight";
 import Captured from "./components/Game/Captured/Captured";
-import Capture from "./components/Game/Capture/Capture";
-
 import "./App.css";
 
 function App() {
@@ -43,7 +41,7 @@ function App() {
               element={<PokemonCard />}
             ></Route>
             <Route
-              path="/pokedex-page/my-pokemon"
+              path="/pokedex-page/my-pokemon/"
               element={<MyPokemon />}
             ></Route>
             <Route path="/" element={<HomePage />}></Route>
@@ -66,7 +64,6 @@ function App() {
             ></Route>
             <Route path="/game/fight" element={<Fight />}></Route>
             <Route path="/game/captured" element={<Captured />}></Route>
-            <Route path="/game/capture" element={<Capture />}></Route>
             <Route path="/game/lost-battle/:id" element={<LostBattle />} />
             <Route path="/game/restart-game/" element={<RestartGame />} />
           </Routes>

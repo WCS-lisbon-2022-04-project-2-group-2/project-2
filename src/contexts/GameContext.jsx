@@ -5,7 +5,7 @@ const GameContext = createContext();
 export const GameContextProvider = ({ children }) => {
   const [generation, setGeneration] = useState([]);
   const [starter, setStarter] = useState();
-  const [wildPokemon, setWildPokemon] = useState("");
+  const [wildPokemon, setWildPokemon] = useState({});
   const [loading, setLoading] = useState(true);
   const [isSelected, setIsSelected] = useState(false);
   const [move, setMove] = useState("");
@@ -28,6 +28,7 @@ export const GameContextProvider = ({ children }) => {
 
   //to update the catch Pokemons
   const [totalPokemon, setTotalPokemon] = useState(0);
+  const [capturedPokemons, setCapturedPokemons] = useState([]);
 
   return (
     <GameContext.Provider
@@ -70,6 +71,8 @@ export const GameContextProvider = ({ children }) => {
         setWildTurnOver,
         totalPokemon,
         setTotalPokemon,
+        capturedPokemons,
+        setCapturedPokemons,
       }}
     >
       {children}

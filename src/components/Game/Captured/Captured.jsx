@@ -1,17 +1,22 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 
 import GameContext from "../../../contexts/GameContext";
+import "./Captured.css";
 
 export default function Captured() {
-  const { wildPokemon, setTotalPokemon } = useContext(GameContext);
+  const navigate = useNavigate();
+  const { wildPokemon, setCapturedPokemons } = useContext(GameContext);
+
+  const [isMessageOpen, setIsMessageOpen] = useState(false);
 
   // Para testes de CSS
-  //  const url = "https://pokeapi.co/api/v2/pokemon/4/";
+  const url = "https://pokeapi.co/api/v2/pokemon/4/";
 
   // correcta
-  const url = `https://pokeapi.co/api/v2/pokemon/${wildPokemon}/`;
+
+  //   const url = `https://pokeapi.co/api/v2/pokemon/${wildPokemon.id}/`;
 
   const { isLoading, error, response } = useFetch(url);
 
@@ -25,28 +30,38 @@ export default function Captured() {
 
   const name = response.name.toUpperCase();
 
-  const totalPokemonIncrement = () => {
-    setTotalPokemon((prevState) => prevState + 1);
+  const handleCapturePokemon = () => {
+    setIsMessageOpen(true);
+    setCapturedPokemons((prevState) => [...prevState, response]);
     localStorage.setItem(wildPokemon, name);
+
+    setTimeout(() => {
+      navigate("/pokedex-page/my-pokemon");
+    }, 3000);
   };
 
   return (
-    <div>
+    <div className="captured-pokemon_card">
       <div className="captured-pokemon_info">
         <img
           className="captured_pokemon"
           src={response.sprites.other["official-artwork"].front_default}
           alt="Captured Pokemon"
         />
-        <h1 className="captured-pokemon_title">
-          Congratulations, {name} was captured!
-        </h1>
+        {isMessageOpen && (
+          <div className="captured-pokemon_message_container">
+            <p className="captured-pokemon_message">
+              CONGRATULATIONS! {name} was captured!
+            </p>
+          </div>
+        )}
       </div>
-      <Link to="/game/restart-game">
-        <button onClick={totalPokemonIncrement} className="btn-save">
-          Save
+
+      {!isMessageOpen && (
+        <button onClick={handleCapturePokemon} className="btn-save">
+          Capture
         </button>
-      </Link>
+      )}
     </div>
   );
 }

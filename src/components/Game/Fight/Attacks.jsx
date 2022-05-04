@@ -24,7 +24,7 @@ function Attacks({ el }) {
     starterHealth,
     setStarterFaint,
     setStarterTurnOver,
-    setWildTurnOver
+    setWildTurnOver,
   } = useContext(GameContext);
 
   const nameWildPokemon = wildPokemon[0].name.toUpperCase();
@@ -32,15 +32,14 @@ function Attacks({ el }) {
 
   useEffect(() => {
     //if enemy health reaches 0, fight is over
-    if (wildHealth <= 0 ) {
+    if (wildHealth <= 0) {
       setTextMessageOne(`${nameWildPokemon} fainted.`);
       setTextMessageTwo(`${nameStarter} wins!`);
       setWildFaint(true);
       setTimeout(() => {
         setGameOver(true);
       }, 1000);
-    }
-    else if(starterHealth <= 0){
+    } else if (starterHealth <= 0) {
       setTextMessageOne(`${nameStarter} fainted.`);
       setTextMessageTwo(`${nameWildPokemon} wins!`);
       setStarterFaint(true);
@@ -64,18 +63,17 @@ function Attacks({ el }) {
       );
     } else {
       setWildHealth(wildHealth - getPlayerAttackDamage(effectiveness));
-      console.log(wildHealth);
       setTextMessageOne(
         `${nameStarter} used ${attack} for ${getPlayerAttackDamage(
           effectiveness
         )} damage!`
       );
     }
-    
+
     setTimeout(() => {
-      setStarterTurnOver(true)
-      setWildTurnOver(false)
-      setTextMessageOne("")
+      setStarterTurnOver(true);
+      setWildTurnOver(false);
+      setTextMessageOne("");
     }, 3000);
     // setTimeout(() => {
     //   const moveNumber = Math.floor(Math.random() * 4); // results: 0...3

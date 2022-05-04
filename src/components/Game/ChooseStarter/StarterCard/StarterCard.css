@@ -36,7 +36,8 @@
   .starter-card-container {
     display: grid;
     grid-template-columns: repeat(3, 3fr);
-    gap: 10px;
+    gap: 15px;
+    margin-top: 2rem;
   }
 
   .starter-card_pokemon {

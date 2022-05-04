@@ -45,7 +45,6 @@ function Fight() {
     }, 1000);
   };
 
-
   useEffect(() => {
     startingBattle();
   }, []);
@@ -64,11 +63,25 @@ function Fight() {
                 {/* Show initial message and attack messages from both starter and wild */}
                 {textMessageOne !== "" && gameOver === false && <TextBox />}
                 {/* Show CONTINUE button after Starter Attack */}
-                {textMessageOne === "" && gameOver === false && starterTurnOver === true && wildTurnOver === false && wildHealth > 0 && <EnemyTurn />}
+                {textMessageOne === "" &&
+                  gameOver === false &&
+                  starterTurnOver === true &&
+                  wildTurnOver === false &&
+                  wildHealth > 0 && <EnemyTurn />}
                 {/* Show CONTINUE button after wildHealth reaches 0 and pokemon FAINTS */}
-                {textMessageOne === "" && gameOver === false && starterTurnOver === true && wildTurnOver === false && wildHealth <= 0 && <EnemyFaints />}
+                {textMessageOne === "" &&
+                  gameOver === false &&
+                  starterTurnOver === true &&
+                  wildTurnOver === false &&
+                  wildHealth <= 0 && <EnemyFaints />}
                 {/* Show the 4 starter attacks */}
-                {textMessageOne === "" && gameOver === false && starterTurnOver === false && wildTurnOver === true && starterMoves.map((el) => {return <Attacks key={el} el={el} />;})}
+                {textMessageOne === "" &&
+                  gameOver === false &&
+                  starterTurnOver === false &&
+                  wildTurnOver === true &&
+                  starterMoves.map((el) => {
+                    return <Attacks key={el} el={el} />;
+                  })}
                 {/* Show GAME OVER message */}
                 {gameOver === true && <FightOver />}
               </div>
