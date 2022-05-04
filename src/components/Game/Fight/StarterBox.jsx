@@ -4,8 +4,9 @@ import GameContext from "../../../contexts/GameContext";
 
 function StarterBox() {
 
-    const { starterHealth, starter, starterOverKill} = useContext(GameContext)
+    const { starterHealth, starter} = useContext(GameContext)
     const starterName = starter[0].name.toUpperCase();
+    
     // calc starter progress bar percentage based on HP
     let percentage = (starterHealth / 200) * 100 + "%";
     let num = (starterHealth / 200) * 100;
@@ -36,7 +37,7 @@ function StarterBox() {
         {/* HERO POKEMON INFO BOX */}
         <div id="enemy-info-box">
           <div className="d-flex justify-content-between align-items-center">
-            <h2 id="enemy-name">{starterHealth}</h2>
+            <h2 id="enemy-name">{starterName}</h2>
           </div>
           <div className="d-flex justify-content-between align-items-center ml-3 mr-1">
             <h5>HP</h5>
