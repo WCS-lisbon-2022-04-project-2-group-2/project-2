@@ -1,52 +1,52 @@
-import React, {useContext} from 'react';
-import {Link} from "react-router-dom"
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 
-import GameContext from '../../../contexts/GameContext';
+import GameContext from "../../../contexts/GameContext";
 
 export default function Captured() {
+  const { wildPokemon, setTotalPokemon } = useContext(GameContext);
 
-    const { wildPokemon } = useContext(GameContext)
+  // Para testes de CSS
+  //  const url = "https://pokeapi.co/api/v2/pokemon/4/";
 
-    // Para testes de CSS
-    //  const url = "https://pokeapi.co/api/v2/pokemon/4/";
+  // correcta
+  const url = `https://pokeapi.co/api/v2/pokemon/${wildPokemon}/`;
 
-    // correcta
-    const url = `https://pokeapi.co/api/v2/pokemon/${wildPokemon}/`;
+  const { isLoading, error, response } = useFetch(url);
 
-    const { isLoading, error, response } = useFetch(url);
-        
-     if (isLoading) {
-        return <div>Loading...</div>;
-    }
-        
-    if (error) {
-        return <div>Oops...something went wrong...</div>;
-    }
-        
-    const name = response.name.toUpperCase();
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
-    const capturedPokemon = () => {
-        localStorage.setItem(wildPokemon, name)
-    }
+  if (error) {
+    return <div>Oops...something went wrong...</div>;
+  }
 
-    return (
-        <div>
-            <div className='captured-pokemon_info'>
-            <img className="captured_pokemon"
-            src={response.sprites.other["official-artwork"].front_default}
-            alt="Captured Pokemon" 
-            />
-            <h1 className="captured-pokemon_title">
-            Congratulations, {name} was captured!
-            </h1>
-            </div>
-            <Link to="/game/restart-game">
-                <button onClick={()=> capturedPokemon()} className="btn-save">
-                    Save
-                </button>
-            </Link>
-        </div>
-    );
+  const name = response.name.toUpperCase();
+
+  const totalPokemonIncrement = () => {
+    setTotalPokemon((prevState) => prevState + 1);
+    localStorage.setItem(wildPokemon, name);
+  };
+
+  return (
+    <div>
+      <div className="captured-pokemon_info">
+        <img
+          className="captured_pokemon"
+          src={response.sprites.other["official-artwork"].front_default}
+          alt="Captured Pokemon"
+        />
+        <h1 className="captured-pokemon_title">
+          Congratulations, {name} was captured!
+        </h1>
+      </div>
+      <Link to="/game/restart-game">
+        <button onClick={totalPokemonIncrement} className="btn-save">
+          Save
+        </button>
+      </Link>
+    </div>
+  );
 }
-

@@ -9,8 +9,8 @@ export const GameContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [isSelected, setIsSelected] = useState(false);
   const [move, setMove] = useState("");
-  const [wildHealth, setWildHealth] = useState(100);
-  const [starterHealth, setStarterHealth] = useState(100);
+  const [wildHealth, setWildHealth] = useState(200);
+  const [starterHealth, setStarterHealth] = useState(200);
   const [textMessageOne, setTextMessageOne] = useState(" ");
   const [textMessageTwo, setTextMessageTwo] = useState("");
   const [wildFaint, setWildFaint] = useState(false);
@@ -23,8 +23,11 @@ export const GameContextProvider = ({ children }) => {
   const [wildOverKill, setWildOverKill] = useState(false);
 
   //by default the starter's turn is the first, so starterTurnOver is set to false and wildTurnOver is set to true
-  const [starterTurnOver, setStarterTurnOver] = useState(false) 
-  const [wildTurnOver, setWildTurnOver] = useState(true)
+  const [starterTurnOver, setStarterTurnOver] = useState(false);
+  const [wildTurnOver, setWildTurnOver] = useState(true);
+
+  //to update the catch Pokemons
+  const [totalPokemon, setTotalPokemon] = useState(0);
 
   return (
     <GameContext.Provider
@@ -33,29 +36,40 @@ export const GameContextProvider = ({ children }) => {
         setGeneration,
         starter,
         setStarter,
-        wildPokemon, 
+        wildPokemon,
         setWildPokemon,
         loading,
         setLoading,
-        move, 
+        move,
         setMove,
-        isSelected, 
+        isSelected,
         setIsSelected,
-        starterHealth, 
+        starterHealth,
         setStarterHealth,
         wildHealth,
         setWildHealth,
-        textMessageOne, setTextMessageOne,
-        textMessageTwo, setTextMessageTwo,
-        wildFaint, setWildFaint,
-        starterFaint, setStarterFaint,
-        gameOver, setGameOver,
+        textMessageOne,
+        setTextMessageOne,
+        textMessageTwo,
+        setTextMessageTwo,
+        wildFaint,
+        setWildFaint,
+        starterFaint,
+        setStarterFaint,
+        gameOver,
+        setGameOver,
         winPokemon,
         setWinPokemon,
-        starterOverKill, setStarterOverKill,
-        wildOverKill, setWildOverKill,
-        starterTurnOver, setStarterTurnOver,
-        wildTurnOver, setWildTurnOver
+        starterOverKill,
+        setStarterOverKill,
+        wildOverKill,
+        setWildOverKill,
+        starterTurnOver,
+        setStarterTurnOver,
+        wildTurnOver,
+        setWildTurnOver,
+        totalPokemon,
+        setTotalPokemon,
       }}
     >
       {children}
@@ -64,4 +78,3 @@ export const GameContextProvider = ({ children }) => {
 };
 
 export default GameContext;
-
