@@ -1,17 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import GameContext from "../../../contexts/GameContext";
 
-const getPlayerAttackDamage = (effectiveness) => {
-  if (effectiveness >= 0.9) {
-    return Math.floor(Math.random() * (Math.floor(50) - Math.ceil(40))) + Math.ceil(40);
-  } else if (effectiveness >= 0.5 && effectiveness < 0.9) {
-    return Math.floor(Math.random() * (Math.floor(39) - Math.ceil(25))) + Math.ceil(25);;
-  } else {
-    return Math.floor(Math.random() * (Math.floor(24) - Math.ceil(10))) + Math.ceil(10);;
-  }
-};
-
-
 function Attacks({ el }) {
   const {
     wildHealth,
@@ -62,24 +51,18 @@ function Attacks({ el }) {
   ]);
 
   const handleAttackClick = (attack) => {
-    const effectiveness = Number.parseFloat(
-      Math.random() * (0.99 - 0.01) + 0.01
-    ).toFixed(2);
+    const effectiveness = Number.parseFloat(Math.random() * (50 - 10) + 10).toFixed(0);
     // use getPlayerAttackDamage to calculate enemy health and adjust progress bar
-    if (wildHealth - getPlayerAttackDamage(effectiveness) <= 0) {
+    if (wildHealth - effectiveness <= 0) {
       setWildHealth(0);
       setTextMessageOne(
-        `${nameStarter} used ${attack} for ${getPlayerAttackDamage(
-          effectiveness
-        )} damage!`
+        `${nameStarter} used ${attack} for ${effectiveness} damage!`
       );
       setWinPokemon(nameStarter);
     } else {
-      setWildHealth(wildHealth - getPlayerAttackDamage(effectiveness));
+      setWildHealth(wildHealth - effectiveness);
       setTextMessageOne(
-        `${nameStarter} used ${attack} for ${getPlayerAttackDamage(
-          effectiveness
-        )} damage!`
+        `${nameStarter} used ${attack} for ${effectiveness} damage!`
       );
     }
 

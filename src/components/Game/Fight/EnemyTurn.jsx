@@ -1,16 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import GameContext from "../../../contexts/GameContext";
 
-const getPlayerAttackDamage = (effectiveness) => {
-  if (effectiveness >= 0.9) {
-    return Math.floor(Math.random() * (Math.floor(50) - Math.ceil(40))) + Math.ceil(40);
-  } else if (effectiveness >= 0.5 && effectiveness < 0.9) {
-    return Math.floor(Math.random() * (Math.floor(39) - Math.ceil(25))) + Math.ceil(25);;
-  } else {
-    return Math.floor(Math.random() * (Math.floor(24) - Math.ceil(10))) + Math.ceil(10);;
-  }
-};
-
 function EnemyTurn() {
   const {
     wildHealth,
@@ -49,25 +39,19 @@ function EnemyTurn() {
   }, [setGameOver, setStarterFaint, setWildFaint, starterHealth, wildHealth]);
 
   const enemyTurn = (attack) => {
-    const effectiveness = Number.parseFloat(
-      Math.random() * (0.99 - 0.01) + 0.01
-    ).toFixed(2);
+    const effectiveness = Number.parseFloat(Math.random() * (50 - 10) + 10).toFixed(0)
     // if enemy is still alive, proceed with enemy turn
 
-    if (starterHealth - getPlayerAttackDamage(effectiveness) <= 0) {
+    if (starterHealth - effectiveness <= 0) {
       setStarterHealth(0);
       setTextMessageOne(
-        `${nameWildPokemon} used ${attack} for ${getPlayerAttackDamage(
-          effectiveness
-        )} damage!`
+        `${nameWildPokemon} used ${attack} for ${effectiveness} damage!`
       );
       setWinPokemon(nameWildPokemon);
     } else {
-      setStarterHealth(starterHealth - getPlayerAttackDamage(effectiveness));
+      setStarterHealth(starterHealth - effectiveness);
       setTextMessageOne(
-        `${nameWildPokemon} used ${attack} for ${getPlayerAttackDamage(
-          effectiveness
-        )} damage!`
+        `${nameWildPokemon} used ${attack} for ${effectiveness} damage!`
       );
     }
     setTimeout(() => {
