@@ -5,20 +5,8 @@ import { Link } from "react-router-dom";
 import "./LostBattle.css";
 
 function LostBattle() {
-  //   const { wildPokemon } = useContext(GameContext);
-  let wildPokemon = 10;
-  const url = `https://pokeapi.co/api/v2/pokemon/${wildPokemon}/`;
-  const { isLoading, error, response } = useFetch(url);
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Oops...something went wrong...</div>;
-  }
-
-  const name = response.name.toUpperCase();
+  const { wildPokemon } = useContext(GameContext);
+  const name = wildPokemon[0].name.toUpperCase();
 
   return (
     <div>
@@ -28,7 +16,7 @@ function LostBattle() {
       <div className="lost-pokemon_container">
         <img
           className="lost-fight_pokemon"
-          src={response.sprites.other["official-artwork"].front_default}
+          src={wildPokemon[0].sprites.other["official-artwork"].front_default}
           alt="pokemon loser"
         />
 

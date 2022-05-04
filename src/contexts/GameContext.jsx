@@ -9,16 +9,14 @@ export const GameContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [isSelected, setIsSelected] = useState(false);
   const [move, setMove] = useState("");
-  const [wildHealth, setWildHealth] = useState(100);
-  const [starterHealth, setStarterHealth] = useState(100);
+  const [wildHealth, setWildHealth] = useState(50);
+  const [starterHealth, setStarterHealth] = useState(50);
   const [textMessageOne, setTextMessageOne] = useState(" ");
   const [textMessageTwo, setTextMessageTwo] = useState("");
   const [wildFaint, setWildFaint] = useState(false);
   const [starterFaint, setStarterFaint] = useState(false);
   const [gameOver, setGameOver] = useState(false);
-  const [winPokemon, setWinPokemon] = useState(
-    "https://pokeapi.co/api/v2/pokemon/1"
-  );
+  const [winPokemon, setWinPokemon] = useState("");
   const [starterOverKill, setStarterOverKill] = useState(false);
   const [wildOverKill, setWildOverKill] = useState(false);
 

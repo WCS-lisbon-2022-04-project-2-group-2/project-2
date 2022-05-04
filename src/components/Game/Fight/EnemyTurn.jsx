@@ -25,7 +25,8 @@ function EnemyTurn(){
         setStarterHealth,
         setStarterFaint,
         setStarterTurnOver,
-        setWildTurnOver
+        setWildTurnOver,
+        setWinPokemon
     } = useContext(GameContext);
 
     const nameWildPokemon = wildPokemon[0].name.toUpperCase();
@@ -62,8 +63,11 @@ function EnemyTurn(){
         if (starterHealth - getPlayerAttackDamage(effectiveness)<=0) {
         setStarterHealth(0);
         setTextMessageOne(
-            `${nameStarter} is exhausted!`
+            `${nameWildPokemon} used ${attack} for ${getPlayerAttackDamage(
+                effectiveness
+                )} damage!`
         );
+        setWinPokemon(nameWildPokemon);
         } else {
         setStarterHealth(starterHealth - getPlayerAttackDamage(effectiveness));
         setTextMessageOne(

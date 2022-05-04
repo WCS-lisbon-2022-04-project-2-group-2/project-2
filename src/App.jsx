@@ -56,18 +56,12 @@ function App() {
               element={<ChooseStarter />}
             ></Route>
             <Route path="/game/starter-card" element={<StarterCard />}></Route>
-            <Route
-              path="/game/choose-region"
-              element={<PokemonRegion />}
-            ></Route>
-            <Route
-              path="/game/wild-pokemon/:region/:id"
-              element={<WildPokemon />}
-            ></Route>
+            <Route path="/game/choose-region" element={<PokemonRegion />}></Route>
+            <Route path="/game/wild-pokemon/:region/:id" element={<WildPokemon />}></Route>
             <Route path="/game/fight" element={<Fight />}></Route>
             <Route path="/game/captured" element={<Captured />}></Route>
             <Route path="/game/capture" element={<Capture />}></Route>
-            <Route path="/game/lost-battle/:id" element={<LostBattle />} />
+            <Route path="/game/lost-battle" element={<LostBattle />} />
             <Route path="/game/restart-game/" element={<RestartGame />} />
           </Routes>
         </GameContextProvider>
