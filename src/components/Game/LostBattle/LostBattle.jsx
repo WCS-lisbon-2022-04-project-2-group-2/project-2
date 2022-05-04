@@ -21,7 +21,7 @@ function LostBattle() {
   const name = response.name.toUpperCase();
 
   return (
-    <div>
+    <div className="lost-battle_card">
       <h1 className="lost-battle_title">
         You Lost the Fight! {name} ran away!
       </h1>

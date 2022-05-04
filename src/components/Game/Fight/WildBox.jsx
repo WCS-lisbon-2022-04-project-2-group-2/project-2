@@ -49,20 +49,15 @@ function WildBox() {
                   {wildHealth}/{200}
                 </h5>
               </div>
-
-          </div>
-          <div id="hero-hp" className="d-flex">
-            <div className="ml-auto mr-3">
-              <h5>
-                {wildOverKill ? `0/200` :`${wildHealth}/200`}
-                
-              </h5>
-
+            </div>
+            <div id="hero-hp" className="d-flex">
+              <div className="ml-auto mr-3">
+                <h5>{wildOverKill ? `0/200` : `${wildHealth}/200`}</h5>
+              </div>
             </div>
           </div>
+          {/* END ENEMY POKEMON INFO BOX */}
         </div>
-        {/* END ENEMY POKEMON INFO BOX */}
-
         {/* ENEMY POKEMON AVATAR PICTURE */}
         <div className="mr-sm-4 avatar-box">
           <WildAvatar />

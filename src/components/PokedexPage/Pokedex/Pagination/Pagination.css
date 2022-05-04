@@ -1,11 +1,11 @@
 .btn-container {
-  margin: 3rem;
+  margin: 2rem;
   display: flex;
   justify-content: center;
   justify-content: space-around;
 }
 .btn-prev {
-  width: 190px;
+  width: 250px;
   height: 60px;
   font-weight: bold;
   background-color: #5fa5e5;
@@ -16,7 +16,7 @@
 }
 
 .btn-next {
-  width: 180px;
+  width: 250px;
   height: 60px;
   font-weight: bold;
   background-color: #f5ec00;
