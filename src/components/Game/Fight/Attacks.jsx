@@ -25,6 +25,7 @@ function Attacks({ el }) {
     setStarterFaint,
     setStarterTurnOver,
     setWildTurnOver,
+    setWinPokemon,
   } = useContext(GameContext);
 
   const nameWildPokemon = wildPokemon[0].name.toUpperCase();
@@ -61,6 +62,7 @@ function Attacks({ el }) {
           effectiveness
         )} damage!`
       );
+      setWinPokemon(nameStarter);
     } else {
       setWildHealth(wildHealth - getPlayerAttackDamage(effectiveness));
       setTextMessageOne(

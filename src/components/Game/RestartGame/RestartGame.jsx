@@ -1,14 +1,15 @@
-import React from "react";
-
+import React, {useContext} from "react";
+import GameContext from "../../../contexts/GameContext";
 import useFetch from "../../../hooks/useFetch";
 import { Link } from "react-router-dom";
 import "./RestartGame.css";
 
 function RestartGame() {
-  //   const { wildPokemon } = useContext(GameContext);
-  let winPokemon = 2;
+  const { winPokemon } = useContext(GameContext);
 
-  const url = `https://pokeapi.co/api/v2/pokemon/${winPokemon}/`;
+  //to lower case
+  const lowerCaseName = winPokemon.toLowerCase()
+  const url = `https://pokeapi.co/api/v2/pokemon/${lowerCaseName}/`;
   const { isLoading, error, response } = useFetch(url);
 
   if (isLoading) {
