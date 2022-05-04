@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 import Kanto from "../../../media/images/Kanto.png";
 import Johto from "../../../media/images/Johto.png";
 import Hoenn from "../../../media/images/Hoenn.png";
@@ -10,8 +12,6 @@ import Alola from "../../../media/images/Alola.png";
 import Galar from "../../../media/images/Galar.png";
 import "./PokemonRegion.css";
 import GameContext from "../../../contexts/GameContext";
-import useFetch from "../../../hooks/useFetch";
-import axios from "axios";
 
 function getRandomId(min, max) {
   min = Math.ceil(min);

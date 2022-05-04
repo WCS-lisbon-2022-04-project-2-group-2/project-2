@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-import GameContext from "../../../contexts/GameContext";
-import useFetch from "../../../hooks/useFetch";
 import { Link } from "react-router-dom";
+import GameContext from "../../../contexts/GameContext";
 import "./LostBattle.css";
 
 function LostBattle() {
   const { wildPokemon } = useContext(GameContext);
-  const name = wildPokemon[0].name.toUpperCase();
+  const name = wildPokemon.name.toUpperCase();
 
   return (
     <div className="lost-battle_card">
@@ -16,7 +15,7 @@ function LostBattle() {
       <div className="lost-pokemon_container">
         <img
           className="lost-fight_pokemon"
-          src={wildPokemon[0].sprites.other["official-artwork"].front_default}
+          src={wildPokemon.sprites.other["official-artwork"].front_default}
           alt="pokemon loser"
         />
 

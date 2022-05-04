@@ -1,35 +1,11 @@
 import React, { useContext } from "react";
 
-import useFetch from "../../../../hooks/useFetch";
 import GameContext from "../../../../contexts/GameContext";
 
 import "./MyPokemon.css";
 
 function MyPokemon() {
-  const { capturedPokemons, wildPokemon } = useContext(GameContext);
-
-  // Para testes de CSS
-  const url = "https://pokeapi.co/api/v2/pokemon/4/";
-  //   const url = `https://pokeapi.co/api/v2/pokemon/${wildPokemon.id}/`;
-  const { response, isLoading, error } = useFetch(url);
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Oops...something went wrong...</div>;
-  }
-
-  //   ⁄⁄ TODO: change test array to capturedPokemons
-  const testArray = [
-    ...capturedPokemons,
-    ...capturedPokemons,
-    ...capturedPokemons,
-    ...capturedPokemons,
-    ...capturedPokemons,
-    ...capturedPokemons,
-  ];
+  const { capturedPokemons } = useContext(GameContext);
 
   return (
     <>
@@ -40,7 +16,7 @@ function MyPokemon() {
         </div>
         <div className="my-pokemon_display">
           {capturedPokemons &&
-            testArray.map((pokemon) => (
+            capturedPokemons.map((pokemon) => (
               <div key={pokemon.id}>
                 <img
                   className="pokemon-img_captured"

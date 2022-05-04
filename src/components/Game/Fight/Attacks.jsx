@@ -28,7 +28,7 @@ function Attacks({ el }) {
     setWinPokemon,
   } = useContext(GameContext);
 
-  const nameWildPokemon = wildPokemon[0].name.toUpperCase();
+  const nameWildPokemon = wildPokemon.name.toUpperCase();
   const nameStarter = starter[0].name.toUpperCase();
 
   useEffect(() => {
@@ -48,7 +48,17 @@ function Attacks({ el }) {
         setGameOver(true);
       }, 3000);
     }
-  }, []);
+  }, [
+    nameStarter,
+    nameWildPokemon,
+    setGameOver,
+    setStarterFaint,
+    setTextMessageOne,
+    setTextMessageTwo,
+    setWildFaint,
+    starterHealth,
+    wildHealth,
+  ]);
 
   const handleAttackClick = (attack) => {
     const effectiveness = Number.parseFloat(
