@@ -3,7 +3,7 @@ import GameContext from "../../../contexts/GameContext";
 
 function WildAvatar() {
   const { wildFaint, wildPokemon } = useContext(GameContext);
-  const wildImage = wildPokemon[0].sprites.front_default;
+  const wildImage = wildPokemon[0].sprites.front_default ;
   let animation;
   if (wildFaint === true) {
     animation = "animated fadeOut slow";

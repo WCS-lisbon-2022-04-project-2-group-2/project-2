@@ -7,7 +7,9 @@ import "./Captured.css";
 
 export default function Captured() {
   const navigate = useNavigate();
-  const { wildPokemon, setCapturedPokemons } = useContext(GameContext);
+  const { wildPokemon, setGeneration, setStarter, setWildPokemon, setWildHealth, setStarterHealth,
+    setTextMessageOne, setTextMessageTwo, setWildFaint, setStarterFaint, setGameOver, setWinPokemon,
+    setStarterTurnOver, setWildTurnOver } = useContext(GameContext);
   const [isMessageOpen, setIsMessageOpen] = useState(false);
 
   const name = wildPokemon[0].name.toUpperCase();
@@ -23,7 +25,22 @@ export default function Captured() {
     localStorage.setItem("myPokemon", JSON.stringify(parsed));
     setTimeout(() => {
       navigate("/pokedex-page/my-pokemon");
+      //resetting all states after capture
+      setGeneration([])
+      setStarter()
+      setWildPokemon()
+      setWildHealth(200)
+      setStarterHealth(200)
+      setTextMessageOne(" ")
+      setTextMessageTwo("")
+      setWildFaint(false)
+      setStarterFaint(false)
+      setGameOver(false)
+      setWinPokemon("")
+      setStarterTurnOver(false)
+      setWildTurnOver(true)
     }, 3000);
+
   };
 
   return (

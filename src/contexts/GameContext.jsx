@@ -6,9 +6,6 @@ export const GameContextProvider = ({ children }) => {
   const [generation, setGeneration] = useState([]);
   const [starter, setStarter] = useState();
   const [wildPokemon, setWildPokemon] = useState();
-  const [loading, setLoading] = useState(true);
-  const [isSelected, setIsSelected] = useState(false);
-  const [move, setMove] = useState("");
   const [wildHealth, setWildHealth] = useState(50);
   const [starterHealth, setStarterHealth] = useState(50);
   const [textMessageOne, setTextMessageOne] = useState(" ");
@@ -17,16 +14,9 @@ export const GameContextProvider = ({ children }) => {
   const [starterFaint, setStarterFaint] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [winPokemon, setWinPokemon] = useState("");
-  const [starterOverKill, setStarterOverKill] = useState(false);
-  const [wildOverKill, setWildOverKill] = useState(false);
-
   //by default the starter's turn is the first, so starterTurnOver is set to false and wildTurnOver is set to true
   const [starterTurnOver, setStarterTurnOver] = useState(false);
   const [wildTurnOver, setWildTurnOver] = useState(true);
-
-  //to update the catch Pokemons
-  const [totalPokemon, setTotalPokemon] = useState(0);
-  const [capturedPokemons, setCapturedPokemons] = useState([]);
 
   return (
     <GameContext.Provider
@@ -37,12 +27,6 @@ export const GameContextProvider = ({ children }) => {
         setStarter,
         wildPokemon,
         setWildPokemon,
-        loading,
-        setLoading,
-        move,
-        setMove,
-        isSelected,
-        setIsSelected,
         starterHealth,
         setStarterHealth,
         wildHealth,
@@ -59,18 +43,10 @@ export const GameContextProvider = ({ children }) => {
         setGameOver,
         winPokemon,
         setWinPokemon,
-        starterOverKill,
-        setStarterOverKill,
-        wildOverKill,
-        setWildOverKill,
         starterTurnOver,
         setStarterTurnOver,
         wildTurnOver,
-        setWildTurnOver,
-        totalPokemon,
-        setTotalPokemon,
-        capturedPokemons,
-        setCapturedPokemons,
+        setWildTurnOver
       }}
     >
       {children}

@@ -3,7 +3,7 @@ import GameContext from "../../../contexts/GameContext";
 
 function StarterAvatar() {
   const { starterFaint, starter } = useContext(GameContext);
-  const starterImage = starter[0].sprites.back_default; //add condition in case back_default is not available
+  const starterImage = starter[0].sprites.back_default || starter[0].sprites.front_default;
   let animation;
   if (starterFaint === true) {
     animation = "animated fadeOut slow";
