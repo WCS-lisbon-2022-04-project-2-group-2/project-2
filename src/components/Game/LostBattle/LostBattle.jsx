@@ -12,7 +12,7 @@ function LostBattle() {
   useEffect(() => {
     setTimeout(() => {
       setIsPokemonIn(false)
-    },2000)
+    },1500)
   })
   
   return (
@@ -20,8 +20,8 @@ function LostBattle() {
       <h1 className="lost-battle_title">
         You Lost the Fight! {name} ran away!
       </h1>
-      <Link to="/game/choose-region">
-          <button className="btn-lost_game">Go Back to Region</button>
+      <Link to="/">
+          <button className="btn-lost_game">PLAY AGAIN</button>
         </Link>
       <div className="lost-pokemon_container">
         {isPokemonIn && (<img
