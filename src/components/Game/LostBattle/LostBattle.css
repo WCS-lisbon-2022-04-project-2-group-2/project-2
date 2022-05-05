@@ -27,6 +27,8 @@
   height: auto;
   margin: 3rem 2rem;
   align-self: center;
+  animation-duration: 2s;
+  animation-name: slideOut;
 }
 
 .btn-lost_game {
@@ -41,15 +43,18 @@
   cursor: pointer;
 }
 
+
 @keyframes slideOut {
   from {
-    margin-right: 4000px;
+    margin: 0%;
   }
-
   to {
-    margin-left: 0%;
+    margin-right: -9000px;
+    opacity: 0%;
   }
 }
+
+
 @media (max-width: 767px) {
   .lost-fight_pokemon {
     width: 250px;
