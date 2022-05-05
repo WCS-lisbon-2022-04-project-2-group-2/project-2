@@ -4,7 +4,7 @@ import "./Pagination.css";
 export default function Pagination({ gotoNextPage, gotoPrevPage }) {
   return (
     <div className="btn-container">
-      {gotoNextPage && (
+      {gotoPrevPage && (
         <button className="btn-prev" onClick={gotoPrevPage}>
           BACK
         </button>
