@@ -5,8 +5,8 @@ import "./LostBattle.css";
 
 function LostBattle() {
   const { wildPokemon } = useContext(GameContext);
-  const name = wildPokemon.name.toUpperCase();
-
+  const name = wildPokemon[0].name.toUpperCase();
+  const image = wildPokemon[0].sprites.other["official-artwork"].front_default;
   return (
     <div className="lost-battle_card">
       <h1 className="lost-battle_title">
@@ -15,7 +15,7 @@ function LostBattle() {
       <div className="lost-pokemon_container">
         <img
           className="lost-fight_pokemon"
-          src={wildPokemon.sprites.other["official-artwork"].front_default}
+          src={image}
           alt="pokemon loser"
         />
 

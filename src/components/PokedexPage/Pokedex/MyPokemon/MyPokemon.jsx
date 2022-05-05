@@ -5,7 +5,9 @@ import GameContext from "../../../../contexts/GameContext";
 import "./MyPokemon.css";
 
 function MyPokemon() {
-  const { capturedPokemons } = useContext(GameContext);
+  // const { capturedPokemons } = useContext(GameContext);
+  let capturedPokemons = localStorage.getItem("myPokemon");
+  console.log(capturedPokemons)
 
   return (
     <>

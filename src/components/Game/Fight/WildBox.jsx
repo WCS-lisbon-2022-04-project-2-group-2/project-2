@@ -4,8 +4,8 @@ import WildAvatar from "./WildAvatar";
 import "./Fight.css";
 
 function WildBox() {
-  const { wildHealth, wildPokemon, wildOverKill } = useContext(GameContext);
-  const nameWild = wildPokemon.name.toUpperCase();
+  const { wildHealth, wildPokemon } = useContext(GameContext);
+  const nameWild = wildPokemon[0].name.toUpperCase();
   // calc enemy progress bar percentage based on HP
   let percentage = (wildHealth / 200) * 100 + "%";
   let num = (wildHealth / 200) * 100;

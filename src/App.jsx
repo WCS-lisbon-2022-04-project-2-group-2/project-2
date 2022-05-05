@@ -52,7 +52,7 @@ function App() {
             ></Route>
             <Route path="/game/fight" element={<Fight />}></Route>
             <Route path="/game/captured" element={<Captured />}></Route>
-            <Route path="/game/lost-battle/:id" element={<LostBattle />} />
+            <Route path="/game/lost-battle" element={<LostBattle />} />
             <Route path="/game/restart-game/" element={<RestartGame />} />
           </Routes>
         </GameContextProvider>

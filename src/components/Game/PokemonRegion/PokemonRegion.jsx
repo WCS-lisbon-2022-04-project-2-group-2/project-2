@@ -26,7 +26,7 @@ function PokemonRegion() {
   const handleClick = async (min, max, region) => {
     const id = getRandomId(min, max);
     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`);
-    setWildPokemon(res.data);
+    setWildPokemon([res.data]);
     navigate(`/game/wild-pokemon/${region}/${id}`);
   };
 

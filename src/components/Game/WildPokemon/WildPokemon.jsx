@@ -1,22 +1,12 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
-import useFetch from "../../../hooks/useFetch";
+import React, {useContext} from "react";
+import { Link } from "react-router-dom";
+import GameContext from "../../../contexts/GameContext";
 import "./WildPokemon.css";
 
 function WildPokemon() {
-  const params = useParams();
-  const url = `https://pokeapi.co/api/v2/pokemon/${params.id}/`;
-  const { isLoading, error, response } = useFetch(url);
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Oops...something went wrong...</div>;
-  }
-
-  const name = response.name.toUpperCase();
+  const { wildPokemon} = useContext(GameContext);
+  const name = wildPokemon[0].name.toUpperCase();
+  const image = wildPokemon[0].sprites.other["official-artwork"].front_default;
 
   return (
     <div className="wild-pokemon_card">
@@ -24,7 +14,7 @@ function WildPokemon() {
 
       <img
         className="enemy-img"
-        src={response.sprites.other["official-artwork"].front_default}
+        src={image}
         alt="pokemon region"
       />
       <div className="wild-pokemon-btn_container">
