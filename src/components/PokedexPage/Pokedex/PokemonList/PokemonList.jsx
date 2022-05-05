@@ -7,7 +7,7 @@ export default function PokemonList() {
   const { allPokemons } = useContext(PokedexContext);
   const myData = [].concat(allPokemons).sort((a, b) => (a.id > b.id ? 1 : -1));
   return (
-    <div>
+    <div className="mainContainer">
       <div className="mainCardContainer" id="name">
         {myData.map((item) => {
           return (

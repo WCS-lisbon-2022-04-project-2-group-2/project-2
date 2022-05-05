@@ -1,5 +1,6 @@
 progress {
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 .avatar {
   width: 150px;
@@ -108,7 +109,7 @@ progress {
 
 #text-box {
   position: relative;
-  top: 80px;
+  top: 86px;
   height: 100px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -171,17 +172,21 @@ progress {
 
 /* from CSS bootstrap */
 .d-flex {
-  display: flex !important; }
+  display: flex !important;
+}
 
 .justify-content-between {
-  justify-content: space-between !important; }
+  justify-content: space-between !important;
+}
 
 .align-items-center {
-  align-items: center !important; }
+  align-items: center !important;
+}
 
 .mr-1,
 .mx-1 {
-  margin-right: 0.25rem !important; }
+  margin-right: 0.25rem !important;
+}
 
 .progress {
   display: flex;
@@ -189,13 +194,17 @@ progress {
   overflow: hidden;
   font-size: 0.75rem;
   background-color: #e9ecef;
-  border-radius: 10px; }
+  border-radius: 10px;
+}
 
 .bg-success {
-  background-color: #28a745 !important; }
+  background-color: #28a745 !important;
+}
 
 .bg-warning {
-background-color: #ffc107 !important; }
+  background-color: #ffc107 !important;
+}
 
 .bg-danger {
-  background-color: #dc3545 !important; }
+  background-color: #dc3545 !important;
+}
