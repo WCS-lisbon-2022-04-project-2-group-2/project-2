@@ -9,8 +9,8 @@ export const GameContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [isSelected, setIsSelected] = useState(false);
   const [move, setMove] = useState("");
-  const [wildHealth, setWildHealth] = useState(100);
-  const [starterHealth, setStarterHealth] = useState(1);
+  const [wildHealth, setWildHealth] = useState(50);
+  const [starterHealth, setStarterHealth] = useState(50);
   const [textMessageOne, setTextMessageOne] = useState(" ");
   const [textMessageTwo, setTextMessageTwo] = useState("");
   const [wildFaint, setWildFaint] = useState(false);
