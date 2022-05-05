@@ -6,16 +6,13 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-html,
-#root {
-  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+body {
+  background-color: rgba(223, 194, 198, 0.5);
 }
 
 .App {
   text-align: center;
-  overflow: hidden;
 }
-
 
 .App-header {
   background-color: #282c34;

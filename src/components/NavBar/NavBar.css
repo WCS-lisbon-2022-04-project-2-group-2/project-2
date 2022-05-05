@@ -6,7 +6,7 @@
   position: relative;
   justify-content: space-between;
 
-  background: linear-gradient(45deg, rgb(156, 14, 14), rgb(238, 238, 244));
+  background-color: rgb(156, 14, 14);
 }
 
 .logo-img {

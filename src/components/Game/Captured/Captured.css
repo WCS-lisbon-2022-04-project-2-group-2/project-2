@@ -2,15 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 3rem;
 }
 
 .captured-pokemon_info {
   display: flex;
   justify-content: center;
   margin: 5rem 5rem 1rem 5rem;
-  border-radius: 50px;
-  background: #e0e0e0;
-  box-shadow: 40px 40px 80px #bebebe, -40px -40px 70px #ffffff;
 }
 .captured-pokemon_message_container {
   width: 25rem;
@@ -23,9 +21,9 @@
 .captured-pokemon_message {
   font-size: 2rem;
   text-align: center;
-  margin: 3rem 1rem;
-  font-weight: 500;
-  color: #000000;
+  margin: 3rem 2rem;
+  font-weight: 600;
+  color: #295783;
   line-height: 50px;
 }
 
@@ -48,7 +46,12 @@
 }
 
 @media (max-width: 767px) {
+  .captured-pokemon_card {
+    margin-top: 5rem;
+  }
+
   .btn-capture {
+    margin-top: 4rem;
     width: 200px;
     height: 60px;
     font-size: 1.5rem;

@@ -19,25 +19,23 @@ export default function Captured() {
     setIsMessageOpen(true);
     const currentCollection = localStorage.getItem("myPokemon");
     const parsed = JSON.parse(currentCollection) || [];
-    parsed.push({ id: id, name: name , image : image, type : type});
+    parsed.push({ id: id, name: name, image: image, type: type });
     localStorage.setItem("myPokemon", JSON.stringify(parsed));
     setTimeout(() => {
       navigate("/pokedex-page/my-pokemon");
-    }, 3000);
+    }, 4000);
   };
 
   return (
     <div className="captured-pokemon_card">
-      <div className="captured-pokemon_info">
-        <img className="captured_pokemon" src={image} alt="Captured Pokemon" />
-        {isMessageOpen && (
-          <div className="captured-pokemon_message_container">
-            <p className="captured-pokemon_message">
-              Congratulations! {name} was captured!
-            </p>
-          </div>
-        )}
-      </div>
+      <img className="captured_pokemon" src={image} alt="Captured Pokemon" />
+      {isMessageOpen && (
+        <div className="captured-pokemon_message_container">
+          <p className="captured-pokemon_message">
+            Congratulations! {name} was captured!
+          </p>
+        </div>
+      )}
 
       {!isMessageOpen && (
         <button onClick={handleCapturePokemon} className="btn-capture">
