@@ -11,7 +11,7 @@
   margin: 5rem 5rem 1rem 5rem;
 }
 .captured-pokemon_message_container {
-  width: 25rem;
+  width: 35rem;
   height: 10rem;
   border-radius: 10px;
   display: flex;
@@ -49,7 +49,9 @@
   .captured-pokemon_card {
     margin-top: 5rem;
   }
-
+  .captured-pokemon_message_container {
+    width: 20rem;
+  }
   .btn-capture {
     margin-top: 4rem;
     width: 200px;

@@ -1,14 +1,18 @@
 .my-pokemon_info {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   margin: 3rem 8rem 3rem 8rem;
 }
 .my-pokemon_display {
   display: grid;
-  grid-template-columns: repeat(5, 5fr);
+  grid-template-columns: repeat(6, 6fr);
   margin: 0 8rem 0 8rem;
   gap: 20px;
+  /* width: 200px;
+  height: auto; */
 }
+
 .pokemon-img_captured {
   background-color: rgb(240, 236, 236);
   border-radius: 10px;

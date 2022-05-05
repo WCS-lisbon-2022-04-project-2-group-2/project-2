@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 // import { Swiper, SwiperSlide } from "swiper/react";
 import GameContext from "../../../contexts/GameContext";
+import PokemonBall from "../../../media/images/generation-ball-open.png-transparent.png";
 import "./ChooseGeneration.css";
 // import "swiper/css";
 
@@ -16,7 +17,6 @@ function ChooseGeneration() {
   const gen6 = [650, 651, 652, 653, 654, 655, 656, 657, 658];
   const gen7 = [722, 723, 724, 725, 726, 727, 728, 729, 730];
   const gen8 = [810, 811, 812, 813, 814, 815, 816, 817, 818];
-  
 
   function selectGen(element) {
     switch (element) {

@@ -34,15 +34,14 @@
 .btn-lost_game {
   width: 250px;
   height: 70px;
-  font-weight: bold;
+  font-weight: 500;
   background-color: #5fa5e5;
   border: 2px solid #295783;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #ffffff;
   border-radius: 10px;
   cursor: pointer;
 }
-
 
 @keyframes slideOut {
   from {
@@ -53,7 +52,6 @@
     opacity: 0%;
   }
 }
-
 
 @media (max-width: 767px) {
   .lost-fight_pokemon {
