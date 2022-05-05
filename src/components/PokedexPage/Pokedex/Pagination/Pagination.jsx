@@ -6,7 +6,7 @@ export default function Pagination({ gotoNextPage, gotoPrevPage }) {
     <div className="btn-container">
       {gotoNextPage && (
         <button className="btn-prev" onClick={gotoPrevPage}>
-          PREV
+          BACK
         </button>
       )}
       {gotoNextPage && (

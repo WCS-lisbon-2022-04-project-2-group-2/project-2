@@ -5,7 +5,7 @@ const GameContext = createContext();
 export const GameContextProvider = ({ children }) => {
   const [generation, setGeneration] = useState([]);
   const [starter, setStarter] = useState();
-  const [wildPokemon, setWildPokemon] = useState({});
+  const [wildPokemon, setWildPokemon] = useState();
   const [loading, setLoading] = useState(true);
   const [isSelected, setIsSelected] = useState(false);
   const [move, setMove] = useState("");

@@ -22,8 +22,15 @@ function MyPokemon() {
                   className="pokemon-img_captured"
                   src={pokemon.sprites.other["official-artwork"].front_default}
                   alt="My pokemon captured"
+                  style={{
+                    backgroundColor: "#92E469",
+                    border: "2px solid #78C850",
+                    boxShadow: "5px 5px 15px 5px #4E8234",
+                  }}
                 />
-                <span>{pokemon.name}</span>
+                <span className="pokemon-captured_name">
+                  {pokemon.name.toUpperCase()}
+                </span>
               </div>
             ))}
         </div>

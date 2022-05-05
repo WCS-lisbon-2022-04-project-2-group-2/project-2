@@ -21,7 +21,7 @@ function Fight() {
     wildHealth,
   } = useContext(GameContext);
 
-  const nameWildPokemon = wildPokemon.name.toUpperCase();
+  const nameWildPokemon = wildPokemon[0].name.toUpperCase();
 
   const nameStarter = starter[0].name.toUpperCase();
   const moveStarter1 = starter[0].moves[0].move.name.toUpperCase();

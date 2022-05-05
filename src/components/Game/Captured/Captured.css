@@ -3,36 +3,65 @@
   flex-direction: column;
   align-items: center;
 }
+
+.captured-pokemon_info {
+  display: flex;
+  justify-content: center;
+  margin: 5rem 5rem 1rem 5rem;
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 40px 40px 80px #bebebe, -40px -40px 70px #ffffff;
+}
 .captured-pokemon_message_container {
   width: 25rem;
   height: 10rem;
-  border: 2px solid #000000;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .captured-pokemon_message {
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
-  padding: 1rem;
+  margin: 3rem 1rem;
   font-weight: 500;
   color: #000000;
-  line-height: 30px;
+  line-height: 50px;
 }
 
 .captured_pokemon {
   width: 25rem;
   height: auto;
+  margin: 1rem;
 }
-.btn-save {
+.btn-capture {
   margin: 2rem;
   width: 250px;
-  height: 60px;
-  font-weight: bold;
-  background-color: #92e469;
-  font-size: 1.5rem;
-  border: 1px solid #4e8234;
+  height: 70px;
+  font-weight: 500;
+  font-size: 2rem;
+  background-color: #5fa5e5;
+  border: 2px solid #295783;
   border-radius: 10px;
+  color: #ffffff;
   cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .btn-capture {
+    width: 200px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  .captured_pokemon {
+    width: 15rem;
+    height: auto;
+    margin: 1rem;
+  }
+
+  .captured-pokemon_message {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 2rem 1rem;
+  }
 }

@@ -17,14 +17,15 @@
 @media (max-width: 767px) {
   .pokedex-page-main-container {
     flex-direction: column;
-    margin-top: 6rem;
+
+    margin-top: 0;
   }
   .pokedex-title {
     font-size: 2rem;
   }
 
   .cardPokedexPage {
-    margin-bottom: 6rem;
+    margin-bottom: 1rem;
   }
   .cardPokedexPage img {
     width: 200px;

@@ -26,11 +26,11 @@ function EnemyTurn() {
     setWinPokemon,
   } = useContext(GameContext);
 
-  const nameWildPokemon = wildPokemon.name.toUpperCase();
-  const moveWild1 = wildPokemon.moves[0].move.name.toUpperCase();
-  const moveWild2 = wildPokemon.moves[1].move.name.toUpperCase();
-  const moveWild3 = wildPokemon.moves[2].move.name.toUpperCase();
-  const moveWild4 = wildPokemon.moves[3].move.name.toUpperCase();
+  const nameWildPokemon = wildPokemon[0].name.toUpperCase();
+  const moveWild1 = wildPokemon[0].moves[0].move.name.toUpperCase();
+  const moveWild2 = wildPokemon[0].moves[1].move.name.toUpperCase();
+  const moveWild3 = wildPokemon[0].moves[2].move.name.toUpperCase();
+  const moveWild4 = wildPokemon[0].moves[3].move.name.toUpperCase();
   const wildMoves = [moveWild1, moveWild2, moveWild3, moveWild4];
 
   useEffect(() => {
