@@ -8,51 +8,23 @@ import "./Captured.css";
 export default function Captured() {
   const navigate = useNavigate();
   const { wildPokemon, setCapturedPokemons } = useContext(GameContext);
-
   const [isMessageOpen, setIsMessageOpen] = useState(false);
 
-  // Para testes de CSS
-  // const url = "https://pokeapi.co/api/v2/pokemon/6/";
-
-  // correcta
-
-  //   const url = `https://pokeapi.co/api/v2/pokemon/${wildPokemon.id}/`;
-
-  // const { isLoading, error, response } = useFetch(url);
-
-  // if (isLoading) {
-  //   return <div>Loading...</div>;
-  // }
-
-  // if (error) {
-  //   return <div>Oops...something went wrong...</div>;
-  // }
-
   const name = wildPokemon[0].name.toUpperCase();
-
   const id = wildPokemon[0].id;
   const image = wildPokemon[0].sprites.other["official-artwork"].front_default;
-  // const handleCapturePokemon = () => {
-  //   setIsMessageOpen(true);
-  // setCapturedPokemons((prevState) => [...prevState, response]);
-  // localStorage.setItem(id, name);
+  const type = wildPokemon[0].types[0].type.name;
 
   const handleCapturePokemon = () => {
     setIsMessageOpen(true);
     const currentCollection = localStorage.getItem("myPokemon");
     const parsed = JSON.parse(currentCollection) || [];
-    parsed.push({ id: id, name: name });
+    parsed.push({ id: id, name: name , image : image, type : type});
     localStorage.setItem("myPokemon", JSON.stringify(parsed));
     setTimeout(() => {
       navigate("/pokedex-page/my-pokemon");
     }, 3000);
   };
-  // }
-
-  //   setTimeout(() => {
-  //     navigate("/pokedex-page/my-pokemon");
-  //   }, 3000);
-  // };
 
   return (
     <div className="captured-pokemon_card">
