@@ -98,6 +98,7 @@ progress {
   justify-content: space-around;
   align-items: center;
 }
+
 #hero-container {
   justify-content: space-between;
   position: relative;
@@ -157,17 +158,29 @@ progress {
 }
 
 @media (max-width: 767px) {
+
   .move-pointer:hover,
   #play-again-text:hover {
     color: #c9def8;
   }
+
   #battle-container {
     margin-top: 3rem;
     margin-left: 0;
   }
+
   #text-box {
     width: 100vw;
   }
+}
+
+.playing-pokemon {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 2s;
+  margin-bottom: 3rem;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: revert;
 }
 
 /* from CSS bootstrap */

@@ -20,7 +20,6 @@ export const GameContextProvider = ({ children }) => {
   const [starterOverKill, setStarterOverKill] = useState(false);
   const [wildOverKill, setWildOverKill] = useState(false);
   const [isPokemonIn, setIsPokemonIn] = useState(true);
-
   //by default the starter's turn is the first, so starterTurnOver is set to false and wildTurnOver is set to true
   const [starterTurnOver, setStarterTurnOver] = useState(false);
   const [wildTurnOver, setWildTurnOver] = useState(true);

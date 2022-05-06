@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import GameContext from "../../../contexts/GameContext";
 
 function WildAvatar() {
-  const { wildFaint, wildPokemon } = useContext(GameContext);
+  const { wildFaint, wildPokemon, wildTurnOver } = useContext(GameContext);
   const wildImage = wildPokemon[0].sprites.front_default;
   let animation;
   if (wildFaint === true) {
@@ -14,7 +14,10 @@ function WildAvatar() {
   }
   return (
     <div className={animation}>
-      <img className="avatar mr-3 mt-4" src={wildImage} alt="" />
+      {wildTurnOver
+        ? <img className="avatar mr-3 mt-4" src={wildImage} alt="" />
+        : <img className="avatar mr-3 mt-4 playing-pokemon" src={wildImage} alt="" />}
+
     </div>
   );
 }
