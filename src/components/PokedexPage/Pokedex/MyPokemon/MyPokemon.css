@@ -35,7 +35,8 @@
   }
   .my-pokemon_display {
     grid-template-columns: repeat(2, 2fr);
-    margin: 0 3rem 0 3rem;
+    margin: 0 2rem 0 2rem;
+    padding-bottom: 2rem;
   }
   .pokemon-img_captured {
     width: 7rem;

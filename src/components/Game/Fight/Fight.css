@@ -44,7 +44,7 @@ progress {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 #enemy-container {

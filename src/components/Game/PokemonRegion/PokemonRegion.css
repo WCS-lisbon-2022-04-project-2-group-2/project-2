@@ -23,11 +23,12 @@ h1 {
 
 @media (max-width: 767px) {
   .regions-card {
-    margin-top: 3rem;
+    margin-top: 1rem;
     display: grid;
     grid-template-columns: repeat(2, 2fr);
     justify-content: center;
     gap: 15px;
+    padding-bottom: 2rem;
   }
 
   .region-name {

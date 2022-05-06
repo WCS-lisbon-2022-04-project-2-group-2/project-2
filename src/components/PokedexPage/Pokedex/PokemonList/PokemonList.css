@@ -1,3 +1,6 @@
+.pokedex{
+  padding: 1rem;
+}
 .mainCardContainer {
   display: flex;
   flex-wrap: wrap;

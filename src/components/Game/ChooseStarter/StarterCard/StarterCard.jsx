@@ -12,9 +12,9 @@ function StarterCard() {
   //     localStorage.setItem(el, res.data.name);
   // }
 
-  const saveChosen = async (element) => {
+  const saveChosen = async (id) => {
     const res = await axios.get(
-      `https://pokeapi.co/api/v2/pokemon/${element}/`
+      `https://pokeapi.co/api/v2/pokemon/${id}/`
     );
     setStarter([res.data]);
   };
