@@ -221,3 +221,8 @@ progress {
 .bg-danger {
   background-color: #dc3545 !important;
 }
+
+.battle-text-content a {
+  text-decoration: none;
+  color: #FFFFFF;
+}

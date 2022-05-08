@@ -17,11 +17,29 @@ function EnemyTurn() {
   } = useContext(GameContext);
 
   const nameWildPokemon = wildPokemon[0].name.toUpperCase();
-  const moveWild1 = wildPokemon[0].moves[0].move.name.toUpperCase();
-  const moveWild2 = wildPokemon[0].moves[1].move.name.toUpperCase();
-  const moveWild3 = wildPokemon[0].moves[2].move.name.toUpperCase();
-  const moveWild4 = wildPokemon[0].moves[3].move.name.toUpperCase();
-  const wildMoves = [moveWild1, moveWild2, moveWild3, moveWild4];
+
+  //randomize attacks
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+  function getRandomInts(num) {
+    let moves = [];
+    while (moves.length < num) {
+      let randNum = getRandomInt(0, wildPokemon[0].moves.length);
+      if (!moves.indexOf(randNum) > -1) {
+        moves.push(wildPokemon[0].moves[randNum].move.name.toUpperCase());
+      }
+    }
+    return moves;
+  }
+  const wildMoves = getRandomInts(4);
+
+
+  // const moveWild1 = wildPokemon[0].moves[0].move.name.toUpperCase();
+  // const moveWild2 = wildPokemon[0].moves[1].move.name.toUpperCase();
+  // const moveWild3 = wildPokemon[0].moves[2].move.name.toUpperCase();
+  // const moveWild4 = wildPokemon[0].moves[3].move.name.toUpperCase();
+  // const wildMoves = [moveWild1, moveWild2, moveWild3, moveWild4];
 
   useEffect(() => {
     //if enemy health reaches 0, fight is over
@@ -39,19 +57,25 @@ function EnemyTurn() {
   }, [setGameOver, setStarterFaint, setWildFaint, starterHealth, wildHealth]);
 
   const enemyTurn = (attack) => {
-    const effectiveness = Number.parseFloat(Math.random() * (50 - 10) + 10).toFixed(0)
-    // if enemy is still alive, proceed with enemy turn
-
-    if (starterHealth - effectiveness <= 0) {
+    const effectiveness = Number.parseFloat(Math.random()).toFixed(2);
+    let damage;
+    if (effectiveness >= 0.9) {
+      damage = Number.parseFloat(Math.random() * (50 - 41) + 41).toFixed(0);
+    } else if (effectiveness >= 0.5 && effectiveness < 0.9) {
+      damage = Number.parseFloat(Math.random() * (40 - 31) + 31).toFixed(0);
+    } else {
+      damage = Number.parseFloat(Math.random() * (30 - 15) + 15).toFixed(0);
+    }
+    if (starterHealth - damage <= 0) {
       setStarterHealth(0);
       setTextMessageOne(
-        `${nameWildPokemon} used ${attack} for ${effectiveness} damage!`
+        `${nameWildPokemon} used ${attack} for ${damage} damage!`
       );
       setWinPokemon(nameWildPokemon);
     } else {
-      setStarterHealth(starterHealth - effectiveness);
+      setStarterHealth(starterHealth - damage);
       setTextMessageOne(
-        `${nameWildPokemon} used ${attack} for ${effectiveness} damage!`
+        `${nameWildPokemon} used ${attack} for ${damage} damage!`
       );
     }
     setTimeout(() => {

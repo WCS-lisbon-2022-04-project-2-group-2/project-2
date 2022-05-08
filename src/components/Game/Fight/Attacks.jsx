@@ -51,18 +51,26 @@ function Attacks({ el }) {
   ]);
 
   const handleAttackClick = (attack) => {
-    const effectiveness = Number.parseFloat(Math.random() * (50 - 10) + 10).toFixed(0);
+    const effectiveness = Number.parseFloat(Math.random()).toFixed(2);
+    let damage;
+    if (effectiveness >= 0.9) {
+      damage = Number.parseFloat(Math.random() * (50 - 41) + 41).toFixed(0);
+    } else if (effectiveness >= 0.5 && effectiveness < 0.9) {
+      damage = Number.parseFloat(Math.random() * (40 - 31) + 31).toFixed(0);
+    } else {
+      damage = Number.parseFloat(Math.random() * (30 - 15) + 15).toFixed(0);
+    }
     // use getPlayerAttackDamage to calculate enemy health and adjust progress bar
-    if (wildHealth - effectiveness <= 0) {
+    if (wildHealth - damage <= 0) {
       setWildHealth(0);
       setTextMessageOne(
-        `${nameStarter} used ${attack} for ${effectiveness} damage!`
+        `${nameStarter} used ${attack} for ${damage} damage!`
       );
       setWinPokemon(nameStarter);
     } else {
-      setWildHealth(wildHealth - effectiveness);
+      setWildHealth(wildHealth - damage);
       setTextMessageOne(
-        `${nameStarter} used ${attack} for ${effectiveness} damage!`
+        `${nameStarter} used ${attack} for ${damage} damage!`
       );
     }
 

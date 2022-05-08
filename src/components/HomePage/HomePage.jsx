@@ -1,11 +1,11 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
 import backgroundImage from "../../media/images/background.gif";
 import GameContext from "../../contexts/GameContext";
 
 function HomePage() {
-  const {setGeneration,
+  const { setGeneration,
     setStarter,
     setWildPokemon,
     setWildHealth,
@@ -16,14 +16,14 @@ function HomePage() {
     setStarterFaint,
     setGameOver,
     setStarterTurnOver,
-    setWildTurnOver} = useContext(GameContext)
+    setWildTurnOver } = useContext(GameContext)
 
   const handleResetStates = () => {
     setGeneration()
     setStarter()
     setWildPokemon()
     setWildHealth(60)
-    setStarterHealth(60)
+    setStarterHealth(10)
     setTextMessageOne(" ")
     setTextMessageTwo("")
     setWildFaint(false)

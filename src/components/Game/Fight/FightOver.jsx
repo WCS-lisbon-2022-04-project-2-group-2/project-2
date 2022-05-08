@@ -33,10 +33,10 @@ function FightOver() {
     <div className="battle-text-content">
       <p id="play-again-text">
         {starterFaint ? (
-          <Link to="/game/lost-battle">Click Here To Continue</Link>
+          <Link to="/game/lost-battle">CLICK TO CONTINUE</Link>
         ) : null}
         {wildFaint ? (
-          <Link to="/game/captured">Click Here To Continue</Link>
+          <Link to="/game/captured">CLICK TO CONTINUE</Link>
         ) : null}
       </p>
     </div>
@@ -44,3 +44,4 @@ function FightOver() {
 }
 
 export default FightOver;
+

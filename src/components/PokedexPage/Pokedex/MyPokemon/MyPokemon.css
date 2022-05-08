@@ -4,11 +4,13 @@
   align-items: baseline;
   margin: 3rem 8rem 3rem 8rem;
 }
+
 .my-pokemon_display {
   display: grid;
   grid-template-columns: repeat(6, 6fr);
   margin: 0 8rem 0 8rem;
   gap: 20px;
+  padding-bottom: 2rem;
   /* width: 200px;
   height: auto; */
 }
@@ -20,6 +22,7 @@
   height: auto;
   margin-bottom: 1rem;
 }
+
 .pokemon-captured_name {
   font-weight: 600;
 }
@@ -30,14 +33,17 @@
     align-items: baseline;
     margin: 2rem 0 2rem 0;
   }
+
   .my-pokemon_title {
     margin-right: 4rem;
   }
+
   .my-pokemon_display {
     grid-template-columns: repeat(2, 2fr);
     margin: 0 2rem 0 2rem;
-    padding-bottom: 2rem;
+
   }
+
   .pokemon-img_captured {
     width: 7rem;
     height: auto;

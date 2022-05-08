@@ -22,13 +22,29 @@ function Fight() {
   } = useContext(GameContext);
 
   const nameWildPokemon = wildPokemon[0].name.toUpperCase();
-
   const nameStarter = starter[0].name.toUpperCase();
-  const moveStarter1 = starter[0].moves[0].move.name.toUpperCase();
-  const moveStarter2 = starter[0].moves[1].move.name.toUpperCase();
-  const moveStarter3 = starter[0].moves[2].move.name.toUpperCase();
-  const moveStarter4 = starter[0].moves[3].move.name.toUpperCase();
-  const starterMoves = [moveStarter1, moveStarter2, moveStarter3, moveStarter4];
+
+  //Define 4 random numbers that will be the index of the random moves, based on the moves array length
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+  function getRandomInts(num) {
+    let moves = [];
+    while (moves.length < num) {
+      let randNum = getRandomInt(0, starter[0].moves.length);
+      if (!moves.indexOf(randNum) > -1) {
+        moves.push(starter[0].moves[randNum].move.name.toUpperCase());
+      }
+    }
+    return moves;
+  }
+  const starterMoves = getRandomInts(4);
+
+  // const moveStarter1 = starter[0].moves[0].move.name.toUpperCase();
+  // const moveStarter2 = starter[0].moves[1].move.name.toUpperCase();
+  // const moveStarter3 = starter[0].moves[2].move.name.toUpperCase();
+  // const moveStarter4 = starter[0].moves[3].move.name.toUpperCase();
+  // const starterMoves = [moveStarter1, moveStarter2, moveStarter3, moveStarter4];
 
   const startingBattle = () => {
     setTimeout(() => {
