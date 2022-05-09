@@ -76,8 +76,10 @@
 
 @media (min-width: 800px) {
   .starter-triangle-container img:hover {
-    height: 100px;
-    width: auto;
+    /* height: 100px;
+    width: auto; */
+    transform: scale(2);
+    transform-origin: center;
   }
 }
 @media (max-width: 767px) {

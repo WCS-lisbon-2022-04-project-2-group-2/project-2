@@ -27,10 +27,13 @@
   height: auto;
   border-radius: 20px;
 }
-/* .starter-card-container img {
-  width: 9rem;
-  height: auto;
-} */
+
+@media (min-width: 800px) {
+  .starter-card_pokemon:hover img {
+    transform: scale(1.2);
+    transform-origin: center;
+  }
+}
 
 @media (max-width: 767px) {
   .starter-card-container {
