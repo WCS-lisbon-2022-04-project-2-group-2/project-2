@@ -51,13 +51,13 @@ export default function Captured() {
     <div className="captured-pokemon_card">
       <img className="captured_pokemon" src={image} alt="Captured Pokemon" />
       {isMessageOpen && (
-        <div>
+        <div className="captured-pokemon-card_container">
           <div className="captured-pokemon_message_container">
             <p className="captured-pokemon_message">
               Congratulations! {name} was captured!
             </p>
           </div>
-          <div>
+          <div className="btn-card_captured">
             <Link to="/pokedex-page/my-pokemon">
               <button className="btn-my-pokemon-captured">
                 CHECK YOUR POKÉMON LIST

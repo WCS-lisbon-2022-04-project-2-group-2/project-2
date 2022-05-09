@@ -53,11 +53,6 @@
   width: auto;
 }
 
-.starter-triangle-container img:hover {
-  height: 100px;
-  width: auto;
-}
-
 .top-triangle {
   display: flex;
   justify-content: center;
@@ -79,6 +74,12 @@
   left: 42px;
 }
 
+@media (min-width: 800px) {
+  .starter-triangle-container img:hover {
+    height: 100px;
+    width: auto;
+  }
+}
 @media (max-width: 767px) {
   .generation-container {
     display: grid;
@@ -95,6 +96,7 @@
     height: 50px;
     width: auto;
   }
+
   .pokemon-triangle {
     height: auto;
   }
