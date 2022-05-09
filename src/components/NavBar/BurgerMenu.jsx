@@ -2,12 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./BurgerMenu.css";
 
-
-
 function BurgerMenu({ isOpen }) {
-
-  const body = document.querySelector('body');
-  isOpen ? body.style.overflowY = "hidden" : body.style.overflowY = "initial";
+  const body = document.querySelector("body");
+  isOpen
+    ? (body.style.overflowY = "hidden")
+    : (body.style.overflowY = "initial");
 
   return (
     <>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../../../../hooks/useFetch";
-import { Link } from "react-router-dom";
+import spinner from "../../../../media/images/spinner.gif";
 import "./PokemonCard.css";
 
 function PokemonCard() {
@@ -10,7 +10,13 @@ function PokemonCard() {
   const { isLoading, error, response } = useFetch(url);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <img
+        src={spinner}
+        style={{ width: "200px", margin: "auto", display: "block" }}
+        alt="loading"
+      />
+    );
   }
 
   if (error) {

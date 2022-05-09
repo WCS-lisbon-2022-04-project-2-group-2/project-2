@@ -8,7 +8,7 @@ function PokedexPage() {
     <div className="pokedex-page-main-container">
       <div className="cardPokedexPage">
         <Link to="/pokedex-page/pokedex">
-          <h1 className="pokedex-title">Pokédex</h1>
+          <h1 className="pokedex-title">All Pokémon</h1>
           <img
             className="pokedex-img"
             src={pokedexImage}

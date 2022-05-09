@@ -6,8 +6,8 @@ import GameContext from "../../../contexts/GameContext";
 import "./Captured.css";
 
 export default function Captured() {
-  const navigate = useNavigate();
-  const { wildPokemon,
+  const {
+    wildPokemon,
     setWildPokemon,
     setWildHealth,
     setStarterHealth,
@@ -17,7 +17,7 @@ export default function Captured() {
     setStarterFaint,
     setGameOver,
     setStarterTurnOver,
-    setWildTurnOver
+    setWildTurnOver,
   } = useContext(GameContext);
   const [isMessageOpen, setIsMessageOpen] = useState(false);
 
@@ -27,17 +27,17 @@ export default function Captured() {
   const type = wildPokemon[0].types[0].type.name;
 
   const handleResetStates = () => {
-    setWildPokemon()
-    setWildHealth(10)
-    setStarterHealth(60)
-    setTextMessageOne(" ")
-    setTextMessageTwo("")
-    setWildFaint(false)
-    setStarterFaint(false)
-    setGameOver(false)
-    setStarterTurnOver(false)
-    setWildTurnOver(true)
-  }
+    setWildPokemon();
+    setWildHealth(10);
+    setStarterHealth(60);
+    setTextMessageOne(" ");
+    setTextMessageTwo("");
+    setWildFaint(false);
+    setStarterFaint(false);
+    setGameOver(false);
+    setStarterTurnOver(false);
+    setWildTurnOver(true);
+  };
 
   const handleCapturePokemon = () => {
     setIsMessageOpen(true);
@@ -45,9 +45,6 @@ export default function Captured() {
     const parsed = JSON.parse(currentCollection) || [];
     parsed.push({ id: id, name: name, image: image, type: type });
     localStorage.setItem("myPokemon", JSON.stringify(parsed));
-    // setTimeout(() => {
-    //   navigate("/pokedex-page/my-pokemon");
-    // }, 4000);
   };
 
   return (
@@ -61,8 +58,16 @@ export default function Captured() {
             </p>
           </div>
           <div>
-            <Link to="/pokedex-page/my-pokemon"><button className="btn-my-pokemon-captured">CHECK YOUR POKÉMON LIST</button></Link>
-            <Link to="/game/choose-region" onClick={handleResetStates}><button className="btn-continue-playing-captured">CONTINUE PLAYING</button></Link>
+            <Link to="/pokedex-page/my-pokemon">
+              <button className="btn-my-pokemon-captured">
+                CHECK YOUR POKÉMON LIST
+              </button>
+            </Link>
+            <Link to="/game/choose-region" onClick={handleResetStates}>
+              <button className="btn-continue-playing-captured">
+                CONTINUE PLAYING
+              </button>
+            </Link>
           </div>
         </div>
       )}

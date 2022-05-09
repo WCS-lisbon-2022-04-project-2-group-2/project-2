@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import GameContext from "../../../contexts/GameContext";
 import useFetch from "../../../hooks/useFetch";
 import { Link } from "react-router-dom";
@@ -8,12 +8,12 @@ function RestartGame() {
   const { winPokemon } = useContext(GameContext);
 
   //to lower case
-  const lowerCaseName = winPokemon.toLowerCase()
+  const lowerCaseName = winPokemon.toLowerCase();
   const url = `https://pokeapi.co/api/v2/pokemon/${lowerCaseName}/`;
   const { isLoading, error, response } = useFetch(url);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="loading-spinner">Loading...</div>;
   }
 
   if (error) {

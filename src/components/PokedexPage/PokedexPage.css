@@ -13,7 +13,13 @@
   width: 400px;
   height: auto;
 }
+.cardPokedexPage a {
+  text-decoration: none;
+}
 
+.cardPokedexPage a:visited {
+  color: #000000;
+}
 @media (max-width: 767px) {
   .pokedex-page-main-container {
     flex-direction: column;

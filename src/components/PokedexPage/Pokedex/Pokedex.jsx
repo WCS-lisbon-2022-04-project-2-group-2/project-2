@@ -3,6 +3,7 @@ import axios from "axios";
 import PokemonList from "./PokemonList/PokemonList";
 import Pagination from "./Pagination/Pagination";
 import PokedexContext from "../../../contexts/PokedexContext";
+import spinner from "../../../media/images/spinner.gif";
 import "./PokemonList/PokemonList";
 
 function Pokedex() {
@@ -51,7 +52,14 @@ function Pokedex() {
     setCurrentPageUrl(prevPageUrl);
   }
 
-  if (loading) return "...Loading...";
+  if (loading)
+    return (
+      <img
+        src={spinner}
+        style={{ width: "200px", margin: "auto", display: "block" }}
+        alt="loading"
+      />
+    );
 
   return (
     <div className="pokedex">
@@ -59,6 +67,7 @@ function Pokedex() {
         <PokemonList />
       </div>
       <Pagination
+        className="loading-spinner"
         gotoPrevPage={prevPageUrl ? gotoPrevPage : null}
         gotoNextPage={nextPageUrl ? gotoNextPage : null}
       />

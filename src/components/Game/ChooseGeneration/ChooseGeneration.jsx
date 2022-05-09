@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-// import { Swiper, SwiperSlide } from "swiper/react";
 import GameContext from "../../../contexts/GameContext";
-import PokemonBall from "../../../media/images/generation-ball-open.png-transparent.png";
+
 import "./ChooseGeneration.css";
-// import "swiper/css";
 
 function ChooseGeneration() {
   const { setGeneration } = useContext(GameContext);
@@ -50,37 +48,33 @@ function ChooseGeneration() {
   }
   return (
     <div>
-      <h1>Choose a Generation of Pokémon</h1>
+      <h1 className="choose-generation_title">
+        Choose a Generation of Pokémon
+      </h1>
       <div className="generation-container">
         <Link to="/game/choose-starter" onClick={() => selectGen("1")}>
-          <div>
+          <div className="gen-card">
             <p className="gen-title">Generation 1</p>
             <div className="starter-triangle-container">
-              <div className="top-triangle">
+              <div className="pokemon-triangle">
                 <img
                   src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
                   alt="pokedex section"
                 />
-              </div>
-              <div className="bottom-triangle">
-                <div className="bottom-left">
-                  <img
-                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
-                    alt="pokedex section"
-                  />
-                </div>
-                <div className="bottom-right">
-                  <img
-                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
-                    alt="pokedex section"
-                  />
-                </div>
+                <img
+                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+                  alt="pokedex section"
+                />
+                <img
+                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
+                  alt="pokedex section"
+                />
               </div>
             </div>
           </div>
         </Link>
         <Link to="/game/choose-starter" onClick={() => selectGen("2")}>
-          <div>
+          <div className="gen-card">
             <p className="gen-title">Generation 2</p>
             <div className="starter-triangle-container">
               <div className="top-triangle">
@@ -107,7 +101,7 @@ function ChooseGeneration() {
           </div>
         </Link>
         <Link to="/game/choose-starter" onClick={() => selectGen("3")}>
-          <div>
+          <div className="gen-card">
             <p className="gen-title">Generation 3</p>
             <div className="starter-triangle-container">
               <div className="top-triangle">
@@ -134,7 +128,7 @@ function ChooseGeneration() {
           </div>
         </Link>
         <Link to="/game/choose-starter" onClick={() => selectGen("4")}>
-          <div>
+          <div className="gen-card">
             <p className="gen-title">Generation 4</p>
             <div className="starter-triangle-container">
               <div className="top-triangle">
@@ -161,7 +155,7 @@ function ChooseGeneration() {
           </div>
         </Link>
         <Link to="/game/choose-starter" onClick={() => selectGen("5")}>
-          <div>
+          <div className="gen-card">
             <p className="gen-title">Generation 5</p>
             <div className="starter-triangle-container">
               <div className="top-triangle">
@@ -188,7 +182,7 @@ function ChooseGeneration() {
           </div>
         </Link>
         <Link to="/game/choose-starter" onClick={() => selectGen("6")}>
-          <div>
+          <div className="gen-card">
             <p className="gen-title">Generation 6</p>
             <div className="starter-triangle-container">
               <div className="top-triangle">
@@ -215,7 +209,7 @@ function ChooseGeneration() {
           </div>
         </Link>
         <Link to="/game/choose-starter" onClick={() => selectGen("7")}>
-          <div>
+          <div className="gen-card">
             <p className="gen-title">Generation 7</p>
             <div className="starter-triangle-container">
               <div className="top-triangle">
@@ -242,7 +236,7 @@ function ChooseGeneration() {
           </div>
         </Link>
         <Link to="/game/choose-starter" onClick={() => selectGen("8")}>
-          <div>
+          <div className="gen-card">
             <p className="gen-title">Generation 8</p>
             <div className="starter-triangle-container">
               <div className="top-triangle">

@@ -1,30 +1,103 @@
+.my-pokemon_container {
+  display: flex;
+  flex-direction: column;
+}
 .my-pokemon_info {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin: 3rem 8rem 3rem 8rem;
+  margin: 3rem 8rem 1rem 8rem;
 }
 
 .my-pokemon_display {
   display: grid;
-  grid-template-columns: repeat(6, 6fr);
-  margin: 0 8rem 0 8rem;
+  grid-template-columns: repeat(5, 5fr);
+  margin: 0 4rem 0 4rem;
   gap: 20px;
-  padding-bottom: 2rem;
-  /* width: 200px;
-  height: auto; */
 }
 
+.btn-del-myPokemon {
+  height: 50px;
+  width: 50px;
+  margin: 0.2rem;
+  border-radius: 5px;
+  position: relative;
+  left: 90px;
+  border: none;
+  top: 0;
+  cursor: pointer;
+}
+.btn-del-myPokemon:hover {
+  border: 1px solid rgb(213, 1, 1);
+  background-color: #ffffff;
+}
+.btn-del-myPokemon::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "\274c"; /* use the hex value here... */
+  font-size: 20px;
+  color: #fff;
+  line-height: 50px;
+  text-align: center;
+}
 .pokemon-img_captured {
   background-color: rgb(240, 236, 236);
   border-radius: 10px;
-  width: 10rem;
+  width: 15rem;
   height: auto;
   margin-bottom: 1rem;
 }
 
 .pokemon-captured_name {
   font-weight: 600;
+  padding-bottom: 1rem;
+}
+.no-pokemon_caught {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 200px;
+}
+.errorMessage {
+  width: 450px;
+  height: 200px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  align-self: center;
+  border: 2px solid rgb(198, 184, 167);
+  padding: 50px;
+}
+.btn-restartGame {
+  display: flex;
+  justify-content: center;
+}
+.btn-startPlay {
+  margin: 2rem;
+  width: 250px;
+  height: 70px;
+  font-weight: 500;
+  font-size: 2rem;
+  background-color: #5fa5e5;
+  border: 2px solid #295783;
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.btn-delete_allPokemons {
+  margin: 2rem;
+  width: 250px;
+  height: 70px;
+  font-weight: 500;
+  font-size: 2rem;
+  background-color: rgb(156, 14, 14);
+  border: 2px solid rgb(102, 4, 4);
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 @media (max-width: 767px) {
@@ -37,15 +110,43 @@
   .my-pokemon_title {
     margin-right: 4rem;
   }
-
+  .my-pokemon_card {
+    height: 200px;
+  }
   .my-pokemon_display {
     grid-template-columns: repeat(2, 2fr);
     margin: 0 2rem 0 2rem;
-
   }
 
   .pokemon-img_captured {
     width: 7rem;
     height: auto;
+  }
+  .btn-del-myPokemon {
+    height: 35px;
+    width: 35px;
+    left: 50px;
+    top: 0;
+  }
+
+  .btn-del-myPokemon::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "\274c"; /* use the hex value here... */
+    font-size: 15px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+  }
+  .errorMessage {
+    width: 300px;
+    height: 200px;
+    padding: 70px 10px 10px 10px;
+  }
+  .no-pokemon_caught {
+    padding-top: 150px;
   }
 }
