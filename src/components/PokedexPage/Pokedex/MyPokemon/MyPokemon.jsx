@@ -144,17 +144,23 @@ function MyPokemon() {
 
   const handleRemovePokemon = (id) => {
     const updatedPokemon = [...capturedPokemons];
-    const pokemonIndex = capturedPokemons.findIndex(
-      (pokemon) => pokemon.id === id
-    );
-    updatedPokemon.splice(pokemonIndex, 1);
-    setCapturedPokemons(updatedPokemon);
-    localStorage.setItem("myPokemon", JSON.stringify(updatedPokemon));
+    if (updatedPokemon.length === 1) {
+      setCapturedPokemons([]);
+      localStorage.clear();
+    } else {
+      const pokemonIndex = capturedPokemons.findIndex(
+        (pokemon) => pokemon.id === id
+      );
+      updatedPokemon.splice(pokemonIndex, 1);
+      setCapturedPokemons(updatedPokemon);
+      localStorage.setItem("myPokemon", JSON.stringify(updatedPokemon));
+
+    }
   };
 
   const handleDeleteAllPokemons = () => {
     setCapturedPokemons([]);
-    localStorage.setItem("myPokemon", JSON.stringify(null));
+    localStorage.clear();
   };
 
   if (errorMessage) {
