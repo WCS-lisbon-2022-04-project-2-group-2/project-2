@@ -1,0 +1,252 @@
+progress {
+  vertical-align: baseline;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+}
+
+.hide {
+  opacity: 0;
+}
+
+#enemy-name {
+  margin-bottom: 0.5rem;
+}
+
+#hero-name {
+  margin-bottom: 0.5rem;
+}
+
+#enemy-container .oval {
+  top: 80px;
+  left: -13px;
+}
+
+#hero-container .oval {
+  top: 72px;
+  left: -10px;
+}
+
+#hero-container .avatar-box {
+  left: 7px;
+}
+
+#battle-container {
+  max-width: 1000px;
+  min-width: 280px;
+  height: 500px;
+  margin-top: 5rem;
+
+  display: grid;
+  background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#enemy-container {
+  margin: 0 1rem;
+  position: relative;
+  top: 15px;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+}
+
+#enemy-info-box {
+  background-color: white;
+  width: 210px;
+  height: 85px;
+  border: 5px solid rgb(156, 14, 14);
+  padding: 5px;
+  border-radius: 14px 7px 14px 7px;
+}
+
+#hero-info-box {
+  background-color: white;
+  width: 210px;
+  height: 100px;
+  border: 5px solid #f5ec00;
+  padding: 5px;
+  border-radius: 14px 7px 14px 7px;
+}
+
+.avatar-box {
+  position: relative;
+  z-index: 0;
+}
+
+.oval {
+  width: 165px;
+  height: 60px;
+  background: #ccbaa1;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+
+.both-progress {
+  position: relative;
+  width: 100%;
+}
+
+.health-points_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#hero-container {
+  justify-content: space-between;
+  position: relative;
+  top: 90px;
+  display: flex;
+  height: 100px;
+  margin: 0 1rem;
+}
+
+#text-box {
+  position: relative;
+  top: 86px;
+  height: 100px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#text-box-content {
+  border: 3px solid #383839;
+  background-color: #295783;
+  height: 80px;
+  border-radius: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.attack-container {
+  width: 50%;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.move-pointer {
+  cursor: pointer;
+  padding: 2px 5px;
+  font-size: 18px;
+  color: white;
+}
+
+.battle-text-content {
+  padding: 13px 13px 0px 13px;
+  font-size: 18px;
+  color: white;
+  height: 80px;
+}
+
+.progress-bar {
+  border-radius: 18px;
+}
+
+#play-again-text {
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .oval {
+    width: 155px;
+  }
+
+  .move-pointer:hover,
+  #play-again-text:hover {
+    color: #c9def8;
+  }
+
+  #battle-container {
+    margin-top: 3rem;
+    margin-left: 0;
+  }
+
+  #text-box {
+    width: 100vw;
+  }
+}
+
+@media (min-width: 800px) {
+  #battle-container {
+    max-width: 1000px;
+    min-width: 40%;
+    height: 500px;
+    /* margin-left: 220px; */
+    display: grid;
+    background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .col-sm-12 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 200px);
+  }
+}
+
+.playing-pokemon {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 2s;
+  margin-bottom: 3rem;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: revert;
+}
+
+/* from CSS bootstrap */
+.d-flex {
+  display: flex !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.mr-1,
+.mx-1 {
+  margin-right: 0.25rem !important;
+}
+
+.progress {
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 10px;
+}
+
+.bg-success {
+  background-color: #28a745 !important;
+}
+
+.bg-warning {
+  background-color: #ffc107 !important;
+}
+
+.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+.battle-text-content a {
+  text-decoration: none;
+  color: #FFFFFF;
+}

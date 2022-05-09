@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka&family=Press+Start+2P&family=Roboto:wght@100;400;700&display=swap");
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 10px;
+}
+
+.pokemon-card_info {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.pokemon-img {
+  align-self: center;
+  width: 450px;
+  height: auto;
+  margin-right: 5rem;
+}
+
+.pokemon-card_name {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.card-list {
+  width: 600px;
+  height: 400px;
+  list-style-type: none;
+  background-color: #78c850;
+  border: 1px solid #4e8234;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+}
+
+.info-list {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.pokemon-info {
+  list-style-type: none;
+  margin-bottom: 2rem;
+  list-style-type: none;
+}
+
+.info-list1 {
+  width: 50%;
+}
+
+.info-list2 {
+  width: 50%;
+}
+
+.pokemon-title {
+  font-size: 2rem;
+  color: #ffffff;
+  line-height: 2;
+  font-weight: 700;
+}
+
+.pokemon-description {
+  color: #000000;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.btn-GoBack {
+  width: 250px;
+  height: 70px;
+  font-weight: 500;
+  background-color: #5fa5e5;
+  border: 2px solid #295783;
+  font-size: 2rem;
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .pokemon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    padding: 10px;
+  }
+
+  .pokemon-card_info {
+    flex-direction: column;
+  }
+
+  .pokemon-img {
+    width: 210px;
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+
+  .pokemon-card_name {
+    padding-top: 1rem;
+    margin-top: 0;
+  }
+
+  .pokemon-info {
+    margin-bottom: 0;
+  }
+
+  .card-list {
+    width: 300px;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .pokemon-title {
+    font-size: 1.2rem;
+  }
+
+  .pokemon-description {
+    font-size: 1.1rem;
+  }
+
+  .info-list {
+    display: flex;
+    margin-top: 0;
+  }
+
+  .btn-GoBack {
+    width: 180px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}

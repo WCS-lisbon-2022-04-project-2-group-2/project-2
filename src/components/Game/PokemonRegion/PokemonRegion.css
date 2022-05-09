@@ -1,0 +1,52 @@
+h1 {
+  margin-top: 2rem;
+}
+
+.regions-card {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: 20px;
+}
+
+.region-name {
+  padding-bottom: 2rem;
+}
+
+.region-img {
+  height: 200px;
+  width: 200px;
+  border: 1ps solid black;
+  background-color: rgb(240, 236, 236);
+  border-radius: 10px;
+  transition: all 200ms ease-out;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .regions-card {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    justify-content: center;
+    gap: 15px;
+    padding-bottom: 2rem;
+  }
+
+  .region-name {
+    padding-bottom: 1rem;
+  }
+
+  .region-img {
+    height: 120px;
+    width: 120px;
+  }
+}
+
+@media (min-width: 800px) {
+  .region-img:hover {
+    transform: scale(1.2);
+    transform-origin: center;
+  }
+}

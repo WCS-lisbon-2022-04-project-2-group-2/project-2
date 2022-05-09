@@ -1,0 +1,75 @@
+.lost-battle_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.lost-battle_title {
+  margin: 3rem 1rem;
+  font-size: 3rem;
+  font-weight: 400;
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+}
+
+.lost-pokemon_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation-name: slideOut;
+}
+
+.lost-fight_pokemon {
+  width: 350px;
+  height: auto;
+  margin: 3rem 2rem;
+  align-self: center;
+  animation-duration: 5s;
+  animation-name: slideOut;
+}
+
+.btn-lost_game {
+  width: 250px;
+  height: 70px;
+  font-weight: 500;
+  background-color: #5fa5e5;
+  border: 2px solid #295783;
+  font-size: 2rem;
+  color: #ffffff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@keyframes slideOut {
+  from {
+    margin: 0%;
+  }
+  to {
+    margin-right: -9000px;
+    opacity: 0%;
+  }
+}
+
+@media (max-width: 767px) {
+  .lost-fight_pokemon {
+    width: 250px;
+    margin-top: 2rem;
+  }
+  .lost-battle_title {
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+  .btn-lost_game {
+    width: 220px;
+    height: 50px;
+    font-weight: bold;
+    background-color: #5fa5e5;
+    font-size: 1.5rem;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}

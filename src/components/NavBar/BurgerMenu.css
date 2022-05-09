@@ -1,0 +1,58 @@
+.burger-container {
+  display: none;
+}
+.burger {
+  width: 2rem;
+  height: 0.25rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+  transform-origin: 1px;
+  transition: all 0.3s linear;
+}
+
+@media (max-width: 767px) {
+  .burger-container {
+    width: 2rem;
+    margin: 1.5rem 2rem;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+    margin-right: 2rem;
+  }
+
+  .burger-links_container {
+    position: absolute;
+    height: 91vh;
+    background: linear-gradient(45deg, #9c0e0e, rgb(238, 238, 244));
+    z-index: 10;
+    top: 80px;
+    left: 0;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .burger-links {
+    width: 100vw;
+    height: 80%;
+  }
+
+  .burger-links a {
+    text-decoration: none;
+    font-size: 2rem;
+    margin: 50px 100px;
+    color: #000000;
+    text-align: center;
+    letter-spacing: 5px;
+    padding: 10px;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .burger-links a::after {
+    content: "";
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+}

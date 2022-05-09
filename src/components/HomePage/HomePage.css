@@ -1,0 +1,46 @@
+.homepage-main-container,
+video {
+  height: 90vh;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  width: 100vw;
+  background-position: 50%;
+  position: absolute;
+}
+
+.homepage-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonStart {
+  width: 250px;
+  height: 70px;
+  font-weight: 500;
+  background-color: rgb(156, 14, 14);
+  font-size: 2rem;
+  border: 0px solid #000000;
+  border-radius: 10px;
+  color: rgb(214, 214, 218);
+  position: relative;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -20%); */
+  font-family: "Roboto", sans-serif;
+  -webkit-box-shadow: 5px 5px 9px -1px rgba(0, 0, 0, 0.69);
+  box-shadow: 5px 5px 9px -1px rgba(0, 0, 0, 0.69);
+}
+
+.buttonStart a {
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .buttonStart {
+    width: 200px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
