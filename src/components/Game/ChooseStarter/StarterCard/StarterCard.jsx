@@ -33,17 +33,17 @@ function StarterCard() {
                   style={
                     index < 3
                       ? {
-                          backgroundColor: "#92E469",
-                          border: "2px solid #78C850",
-                          boxShadow: "5px 5px 15px 5px #4E8234",
-                        }
+                        backgroundColor: "#92E469",
+                        border: "2px solid #78C850",
+                        boxShadow: "5px 5px 15px 5px #4E8234",
+                      }
                       : index < 6
-                      ? {
+                        ? {
                           backgroundColor: "#F6A66C",
                           border: "2px solid #F08030",
                           boxShadow: "5px 5px 15px 5px #CB641D",
                         }
-                      : {
+                        : {
                           backgroundColor: "#98B6FF",
                           border: "2px solid #6890F0",
                           boxShadow: "5px 5px 15px 5px #445E9C",

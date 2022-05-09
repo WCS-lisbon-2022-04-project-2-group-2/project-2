@@ -7,7 +7,6 @@ import NavBar from "./components/NavBar/NavBar";
 import PokedexPage from "./components/PokedexPage/PokedexPage";
 import { PokedexContextProvider } from "./contexts/PokedexContext";
 import MyPokemon from "./components/PokedexPage/Pokedex/MyPokemon/MyPokemon";
-import ChooseStarter from "./components/Game/ChooseStarter/ChooseStarter";
 import StarterCard from "./components/Game/ChooseStarter/StarterCard/StarterCard";
 import ChooseGeneration from "./components/Game/ChooseGeneration/ChooseGeneration";
 import { GameContextProvider } from "./contexts/GameContext";
@@ -37,11 +36,10 @@ function App() {
             <Route path="/pokedex-page" element={<PokedexPage />}></Route>
             <Route path="/pokedex-page/pokedex" element={<Pokedex />}></Route>
             <Route path="/pokedex-page/pokedex/:id" element={<PokemonCard />}></Route>
-            <Route path="/pokedex-page/my-pokemon"element={<MyPokemon />}></Route>
+            <Route path="/pokedex-page/my-pokemon" element={<MyPokemon />}></Route>
             <Route path="/" element={<HomePage />}></Route>
             <Route path="/game/choose-generation" element={<ChooseGeneration />}></Route>
-            <Route path="/game/choose-starter" element={<ChooseStarter />}></Route>
-            <Route path="/game/starter-card" element={<StarterCard />}></Route>
+            <Route path="/game/choose-starter" element={<StarterCard />}></Route>
             <Route
               path="/game/choose-region"
               element={<PokemonRegion />}
