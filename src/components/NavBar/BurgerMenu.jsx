@@ -2,13 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./BurgerMenu.css";
 
-
-
 function BurgerMenu({ isOpen }) {
+  const body = document.querySelector("body");
+  isOpen
+    ? (body.style.overflowY = "hidden")
+    : (body.style.overflowY = "initial");
 
-  const body = document.querySelector('body');
-  isOpen ? body.style.overflowY = "hidden" : body.style.overflowY = "initial";
-  
   return (
     <>
       <div className="burger-container">
@@ -20,7 +19,7 @@ function BurgerMenu({ isOpen }) {
       <div className="burger-links_container">
         <ul className="burger-links">
           <Link to="/about">About</Link>
-          <Link to="/">Game</Link>
+          <Link to="/">Play</Link>
           <Link to="/pokedex-page">Pokédex</Link>
         </ul>
       </div>

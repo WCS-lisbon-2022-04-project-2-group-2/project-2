@@ -1,8 +1,7 @@
-import React, { useContext, useParams } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import GameContext from "../../../contexts/GameContext";
 import "./FightEscape.css";
-import useFetch from "../../../hooks/useFetch";
 import HealthBar from "../HealthBar/HealthBar";
 
 function FightEscape() {

@@ -59,6 +59,7 @@ function Pokedex() {
         <PokemonList />
       </div>
       <Pagination
+        className="loading-spinner"
         gotoPrevPage={prevPageUrl ? gotoPrevPage : null}
         gotoNextPage={nextPageUrl ? gotoNextPage : null}
       />

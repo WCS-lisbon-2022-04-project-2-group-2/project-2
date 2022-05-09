@@ -21,7 +21,7 @@ function NavBar() {
 
       <div className="navBar-links">
         <Link to="/about">About</Link>
-        <Link to="/">Game</Link>
+        <Link to="/">Play</Link>
         <Link to="/pokedex-page">Pokédex</Link>
       </div>
 

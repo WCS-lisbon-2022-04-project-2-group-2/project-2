@@ -1,13 +1,12 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import useFetch from "../../../hooks/useFetch";
 
 import GameContext from "../../../contexts/GameContext";
 import "./Captured.css";
 
 export default function Captured() {
   const navigate = useNavigate();
-  const { wildPokemon, setCapturedPokemons } = useContext(GameContext);
+  const { wildPokemon } = useContext(GameContext);
   const [isMessageOpen, setIsMessageOpen] = useState(false);
 
   const name = wildPokemon[0].name.toUpperCase();

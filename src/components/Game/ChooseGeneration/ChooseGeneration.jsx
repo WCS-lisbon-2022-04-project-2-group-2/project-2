@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-// import { Swiper, SwiperSlide } from "swiper/react";
 import GameContext from "../../../contexts/GameContext";
-import PokemonBall from "../../../media/images/generation-ball-open.png-transparent.png";
+import PokemonBall from "../../../media/images/open-pokeball-icon.png";
 import "./ChooseGeneration.css";
-// import "swiper/css";
 
 function ChooseGeneration() {
   const { setGeneration } = useContext(GameContext);
@@ -82,7 +80,10 @@ function ChooseGeneration() {
         <Link to="/game/choose-starter" onClick={() => selectGen("2")}>
           <div>
             <p className="gen-title">Generation 2</p>
-            <div className="starter-triangle-container">
+            <div
+              className="starter-triangle-container"
+              style={{ PokemonBall: `url(${PokemonBall})` }}
+            >
               <div className="top-triangle">
                 <img
                   src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/152.png"
