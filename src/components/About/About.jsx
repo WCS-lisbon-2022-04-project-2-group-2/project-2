@@ -16,11 +16,11 @@ function About() {
           <div className="game-rules_desktop">
             <p>
               Pokémon are creatures of all shapes and sizes who live in the wild
-              or alongside their human partners. In the Pokémon Game, players
-              choose a starter Pokémon, taking in consideration their Generation
-              and the Region and then play against each other, sending their
-              Pokémon into battle with the goal of winning and catch the enemy
-              (collecting cards).
+              or alongside their human partners. In WildPokémon, players choose
+              a starter Pokémon, taking into consideration their Generation, and
+              then fight against wild Pokémon found in their desired Region by
+              sending their chosen Pokémon into battle with the goal of winning
+              and capturing the enemy.
             </p>
           </div>
         </div>

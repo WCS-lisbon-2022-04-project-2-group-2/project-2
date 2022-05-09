@@ -13,7 +13,8 @@ function NavBar() {
 
   return (
     <div className="navBar-container">
-      <div>
+      <div className="logo-container">
+        <h3 className="app-name">WildPokémon</h3>
         <Link to="/">
           <img className="logo-img" src={logo} alt="Logo" />
         </Link>

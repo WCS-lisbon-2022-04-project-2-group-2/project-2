@@ -124,7 +124,7 @@ const cardColor = (type) => {
 function Play() {
   return (
     <Link to="/">
-      <button className="btn-startPlay">Play</button>
+      <button className="btn-startPlay">PLAY</button>
     </Link>
   );
 }
