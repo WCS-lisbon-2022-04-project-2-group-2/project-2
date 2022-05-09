@@ -23,6 +23,7 @@ function Fight() {
 
   const nameWildPokemon = wildPokemon[0].name.toUpperCase();
   const nameStarter = starter[0].name.toUpperCase();
+  console.log(starter[0].moves.length - 1)
 
   //Define 4 random numbers that will be the index of the random moves, based on the moves array length
   function getRandomInt(min, max) {

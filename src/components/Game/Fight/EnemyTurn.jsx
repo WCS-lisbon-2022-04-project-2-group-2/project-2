@@ -17,7 +17,7 @@ function EnemyTurn() {
   } = useContext(GameContext);
 
   const nameWildPokemon = wildPokemon[0].name.toUpperCase();
-
+  console.log(wildPokemon[0].moves.length - 1)
   //randomize attacks
   function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
@@ -26,7 +26,7 @@ function EnemyTurn() {
     let moves = [];
     console.log(moves)
     while (moves.length < num) {
-      let randNum = getRandomInt(0, wildPokemon[0].moves.length);
+      let randNum = getRandomInt(0, wildPokemon[0].moves.length - 1);
       if (moves.indexOf(randNum) === -1) {
         moves.push(randNum);
       }
@@ -37,6 +37,7 @@ function EnemyTurn() {
   let wildMoves = [];
   moves.map(el => wildMoves.push(wildPokemon[0].moves[el].move.name.toUpperCase()))
   console.log(wildMoves)
+  console.log(wildPokemon[0].moves.length - 1)
   // const moveWild1 = wildPokemon[0].moves[0].move.name.toUpperCase();
   // const moveWild2 = wildPokemon[0].moves[1].move.name.toUpperCase();
   // const moveWild3 = wildPokemon[0].moves[2].move.name.toUpperCase();

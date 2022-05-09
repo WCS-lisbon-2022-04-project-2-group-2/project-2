@@ -71,7 +71,7 @@ function PokemonCard() {
         </div>
       </div>
       <Link to="/pokedex-page/pokedex">
-        <button className="btn-GoBack">GO BACK</button>
+        <button className="btn-GoBack">Go Back</button>
       </Link>
     </div>
   );
