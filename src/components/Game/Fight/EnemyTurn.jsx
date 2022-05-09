@@ -24,17 +24,19 @@ function EnemyTurn() {
   }
   function getRandomInts(num) {
     let moves = [];
+    console.log(moves)
     while (moves.length < num) {
       let randNum = getRandomInt(0, wildPokemon[0].moves.length);
-      if (!moves.indexOf(randNum) > -1) {
-        moves.push(wildPokemon[0].moves[randNum].move.name.toUpperCase());
+      if (moves.indexOf(randNum) === -1) {
+        moves.push(randNum);
       }
     }
     return moves;
   }
-  const wildMoves = getRandomInts(4);
-
-
+  let moves = getRandomInts(4);
+  let wildMoves = [];
+  moves.map(el => wildMoves.push(wildPokemon[0].moves[el].move.name.toUpperCase()))
+  console.log(wildMoves)
   // const moveWild1 = wildPokemon[0].moves[0].move.name.toUpperCase();
   // const moveWild2 = wildPokemon[0].moves[1].move.name.toUpperCase();
   // const moveWild3 = wildPokemon[0].moves[2].move.name.toUpperCase();
