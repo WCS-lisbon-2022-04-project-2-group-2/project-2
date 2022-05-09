@@ -31,14 +31,19 @@ function Fight() {
   function getRandomInts(num) {
     let moves = [];
     while (moves.length < num) {
-      let randNum = getRandomInt(0, starter[0].moves.length);
+      let randNum = getRandomInt(0, starter[0].moves.length - 1);
       if (!moves.indexOf(randNum) > -1) {
-        moves.push(starter[0].moves[randNum].move.name.toUpperCase());
+        moves.push(randNum);
       }
     }
     return moves;
   }
-  const starterMoves = getRandomInts(4);
+
+
+  //generate random moves given the 4 random numbers
+  let starterMoves = [];
+  const moves = getRandomInts(4);
+  moves.map(el => starterMoves.push(starter[0].moves[el].move.name.toUpperCase()));
 
   // const moveStarter1 = starter[0].moves[0].move.name.toUpperCase();
   // const moveStarter2 = starter[0].moves[1].move.name.toUpperCase();
