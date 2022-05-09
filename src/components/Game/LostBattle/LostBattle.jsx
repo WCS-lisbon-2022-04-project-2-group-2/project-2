@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import GameContext from "../../../contexts/GameContext";
 import { useNavigate } from "react-router-dom";
 import "./LostBattle.css";
