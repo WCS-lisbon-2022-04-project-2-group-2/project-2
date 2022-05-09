@@ -197,6 +197,6 @@
 
 @media (min-width: 1800px) {
   .my-pokemon_display {
-    grid-template-columns: repeat(6, 6fr);
+    grid-template-columns: repeat(5, 5fr);
   }
 }
