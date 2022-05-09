@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useContext } from "react";
 import axios from "axios";
 import PokemonList from "./PokemonList/PokemonList";
@@ -8,7 +9,6 @@ import "./PokemonList/PokemonList";
 
 function Pokedex() {
   const {
-    allPokemons,
     setAllPokemons,
     currentPageUrl,
     setCurrentPageUrl,
