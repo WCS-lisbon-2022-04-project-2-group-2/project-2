@@ -56,19 +56,25 @@ function ChooseGeneration() {
           <div className="gen-card">
             <p className="gen-title">Generation 1</p>
             <div className="starter-triangle-container">
-              <div className="pokemon-triangle">
+              <div className="top-triangle">
                 <img
                   src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
                   alt="pokedex section"
                 />
-                <img
-                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
-                  alt="pokedex section"
-                />
-                <img
-                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
-                  alt="pokedex section"
-                />
+              </div>
+              <div className="bottom-triangle">
+                <div className="bottom-left">
+                  <img
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+                    alt="pokedex section"
+                  />
+                </div>
+                <div className="bottom-right">
+                  <img
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
+                    alt="pokedex section"
+                  />
+                </div>
               </div>
             </div>
           </div>
