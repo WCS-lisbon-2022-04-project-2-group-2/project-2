@@ -11,6 +11,7 @@
 .choose-starter_title {
   margin: 2rem 1rem 1rem 1rem;
 }
+
 .starter-card-container {
   display: grid;
   grid-template-columns: repeat(3, 3fr);
@@ -26,6 +27,7 @@
   width: 11rem;
   height: auto;
   border-radius: 20px;
+  transition: all 200ms ease-out;
 }
 
 @media (min-width: 800px) {
@@ -47,6 +49,7 @@
     width: 110px;
     height: auto;
   }
+
   .starter-card-container img {
     width: 100px;
   }
