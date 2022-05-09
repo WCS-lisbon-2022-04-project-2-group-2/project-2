@@ -1,11 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka&family=Press+Start+2P&family=Roboto:wght@100;400;700&display=swap");
 .pokemon-card {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 3rem;
   padding: 10px;
 }
 
+.pokemon-card_info {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
 .pokemon-img {
   align-self: center;
   width: 450px;
@@ -22,8 +28,8 @@
   width: 600px;
   height: 400px;
   list-style-type: none;
-  background-color: #5fa5e5;
-  border: 1px solid #000000;
+  background-color: #78c850;
+  border: 1px solid #4e8234;
   margin-top: 1.5rem;
   border-radius: 10px;
 }
@@ -60,6 +66,17 @@
   font-size: 1.5rem;
   font-weight: bold;
 }
+.btn-GoBack {
+  width: 250px;
+  height: 70px;
+  font-weight: 500;
+  background-color: #5fa5e5;
+  border: 2px solid #295783;
+  font-size: 2rem;
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+}
 
 @media (max-width: 767px) {
   .pokemon-card {
@@ -81,7 +98,7 @@
 
   .card-list {
     width: 300px;
-    height: auto;;
+    height: auto;
   }
 
   .pokemon-title {

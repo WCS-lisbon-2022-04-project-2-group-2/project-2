@@ -28,8 +28,8 @@ export default function Captured() {
 
   const handleResetStates = () => {
     setWildPokemon();
-    setWildHealth(10);
-    setStarterHealth(60);
+    setWildHealth(200);
+    setStarterHealth(200);
     setTextMessageOne(" ");
     setTextMessageTwo("");
     setWildFaint(false);
