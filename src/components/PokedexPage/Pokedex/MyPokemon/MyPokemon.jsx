@@ -192,16 +192,18 @@ function MyPokemon() {
                 key={index}
                 style={cardColor(pokemon.type)}
               >
-                <button
-                  className="btn-del-myPokemon"
-                  onClick={() => handleRemovePokemon(pokemon.id)}
-                ></button>
                 <img
                   className="pokemon-img_captured"
                   src={pokemon.image}
                   alt="My pokemon captured"
                 />
                 <p className="pokemon-captured_name">{pokemon.name}</p>
+                <button
+                  className="deleteEachPokemon"
+                  onClick={() => handleRemovePokemon(pokemon.id)}
+                >
+                  Delete
+                </button>
               </div>
             ))}
         </div>
