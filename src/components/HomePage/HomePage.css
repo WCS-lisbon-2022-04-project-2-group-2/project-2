@@ -5,7 +5,13 @@ video {
   background-size: cover !important;
   width: 100vw;
   background-position: 50%;
-  position: relative;
+  position: absolute;
+}
+
+.homepage-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttonStart {
@@ -17,10 +23,11 @@ video {
   border: 0px solid #000000;
   border-radius: 10px;
   color: rgb(214, 214, 218);
-  position: absolute;
+  position: relative;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -20%);
+  transform: translate(-50%, -20%); */
   font-family: "Roboto", sans-serif;
   -webkit-box-shadow: 5px 5px 9px -1px rgba(0, 0, 0, 0.69);
   box-shadow: 5px 5px 9px -1px rgba(0, 0, 0, 0.69);

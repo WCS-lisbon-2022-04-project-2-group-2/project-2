@@ -6,8 +6,9 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
 body {
-  
+
   background-color: rgba(223, 194, 198, 0.5);
 }
 
@@ -24,4 +25,16 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+@media (min-width: 800px) {
+  button:hover {
+    transform: scale(1.2);
+    transform-origin: center;
+  }
+
+  button {
+    transition: all 200ms ease-out;
+    cursor: pointer;
+  }
 }

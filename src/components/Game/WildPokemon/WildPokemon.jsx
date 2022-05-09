@@ -15,12 +15,13 @@ function WildPokemon() {
         <img className="enemy-img" src={image} alt="pokemon region" />
       </div>
       <div className="wild-pokemon-btn_container">
-        <Link to={"/game/fight"}>
-          <button className="wild-pokemon-btn_fight">FIGHT</button>
-        </Link>
         <Link to={"/game/choose-region"}>
           <button className="wild-pokemon-btn_escape">ESCAPE</button>
         </Link>
+        <Link to={"/game/fight"}>
+          <button className="wild-pokemon-btn_fight">FIGHT</button>
+        </Link>
+
       </div>
     </div>
   );

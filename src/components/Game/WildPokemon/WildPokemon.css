@@ -23,9 +23,11 @@
   border-radius: 10px;
   cursor: pointer;
 }
+
 .wildPokemon-container {
   height: 400px;
 }
+
 .wild-pokemon-btn_escape {
   width: 250px;
   height: 70px;
@@ -63,14 +65,16 @@
     width: 200px;
     height: 60px;
     font-size: 1.5rem;
+    margin-top: 1.5rem;
   }
 
   .wild-pokemon-btn_escape {
     width: 200px;
     height: 60px;
     font-size: 1.5rem;
-    margin-top: 1.5rem;
+
   }
+
   .wildPokemon-container {
     height: 250px;
   }
