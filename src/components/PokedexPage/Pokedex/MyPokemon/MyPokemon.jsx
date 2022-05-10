@@ -154,7 +154,6 @@ function MyPokemon() {
       updatedPokemon.splice(pokemonIndex, 1);
       setCapturedPokemons(updatedPokemon);
       localStorage.setItem("myPokemon", JSON.stringify(updatedPokemon));
-
     }
   };
 
@@ -186,7 +185,7 @@ function MyPokemon() {
             className="btn-delete_allPokemons"
             onClick={handleDeleteAllPokemons}
           >
-            Delete All
+            Release All
           </button>
           <Play />
         </div>
@@ -208,7 +207,7 @@ function MyPokemon() {
                   className="deleteEachPokemon"
                   onClick={() => handleRemovePokemon(pokemon.id)}
                 >
-                  Delete
+                  Release
                 </button>
               </div>
             ))}
