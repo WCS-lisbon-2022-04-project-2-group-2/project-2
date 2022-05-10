@@ -177,7 +177,7 @@ function MyPokemon() {
     <>
       <div className="my-pokemon_container">
         <div className="my-pokemon_info">
-          <h2 className="my-pokemon_title">My Pokemons</h2>
+          <h2 className="my-pokemon_title">My Pokémon</h2>
           <h3 className="my-pokemon_total">Total: {capturedPokemons.length}</h3>
         </div>
         <div className="btn-restartGame">
